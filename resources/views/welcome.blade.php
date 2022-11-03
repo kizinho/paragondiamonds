@@ -11,7 +11,7 @@
 <div class="slideshow uk-position-relative" uk-slideshow="autoplay: true;animation: fade;ratio:1920:650;'">
     <div class="uk-position-relative uk-visible-toggle uk-dark">
         <ul class="uk-slideshow-items">
-            <li class="slide" style="background-image: url({{url('frontend/banner-diamond.jpg')}}); background-repeat: no-repeat; background-position: 49.8% 48.7%;">
+            <li class="slide" style="background-image: url({{url('frontend/banner-diamond.JPG')}}); background-repeat: no-repeat; background-position: 49.8% 48.7%;">
                 <div class="uk-container uk-container-large uk-flex uk-height-1-1">
                     <div class="uk-flex uk-flex-middle uk-width-1-1 uk-flex-left">
                         <div class="caption dark">
@@ -33,7 +33,7 @@
                     <div class="img-desc"><span style="color: #fff">JULY 2018 | 342 ct</span></div>
                 </div>
             </li>
-            <li class="slide" style="background-image: url({{url('frontend/maine_farm.jpg')}}); background-repeat: no-repeat; background-position: 53.3% 55.8%;">
+            <li class="slide" style="background-image: url({{url('frontend/maine_farm.JPG')}}); background-repeat: no-repeat; background-position: 53.3% 55.8%;">
                 <div class="uk-container uk-container-large uk-flex uk-height-1-1">
                     <div class="uk-flex uk-flex-middle uk-width-1-1 uk-flex-right">
                         <div class="caption light">
@@ -48,7 +48,7 @@
                     </div>
                 </div>
             </li>
-            <li class="slide" style="background-image: url({{url('frontend/ldc.jpg')}}); background-repeat: no-repeat; background-position: 50% 50%;">
+            <li class="slide" style="background-image: url({{url('frontend/ldc.JPG')}}); background-repeat: no-repeat; background-position: 50% 50%;">
                 <div class="uk-container uk-container-large uk-flex uk-height-1-1">
                     <div class="uk-flex uk-flex-middle uk-width-1-1 uk-flex-left">
                         <div class="caption light">
@@ -133,7 +133,7 @@
         <div uk-grid>
             <div class="uk-width-1-3@m image">
                 <div>JUL 2015 | 342 ct</div>
-                <img src="{{asset('frontend/diamond-dec.jpg')}}" alt="JUL 2015 | 342 ct" />
+                <img src="{{asset('frontend/diamond-dec.JPG')}}" alt="JUL 2015 | 342 ct" />
             </div>
             <div class="uk-width-2-3@m verbage">
                 <h1>{{$settings['site_name']}}</h1>
@@ -757,7 +757,7 @@ autoplay loop muted playsinline><source src="frontend/site/templates/img/clara_r
 </div></div><div class="uk-text-right uk-margin-top"><a 
 href="{{url('register')}}" target="_blank">Create Account</a></div></div></div></div><div class="features">
 <div class="uk-grid-collapse" uk-grid><div class="uk-width-1-2@m feature-item" 
-style="background-image: url(frontend/sustainability-photo.jpg); box-shadow: inset 0 0 0 2000px  rgb(54 54 57 / 30%);"><div class="uk-width-1-1 uk-height-1-1 uk-flex uk-flex-middle">
+style="background-image: url(frontend/sustainability-photo.JPG); box-shadow: inset 0 0 0 2000px  rgb(54 54 57 / 30%);"><div class="uk-width-1-1 uk-height-1-1 uk-flex uk-flex-middle">
 <div class="uk-padding"><h2>Corporate Social 
 Responsibility</h2><p>{{$settings['site_name']}} recognizes that effective stakeholder engagement can create value and mitigate risk for both the company and its stakeholders. We acknowledge that mining is, 
 by definition, finite and, therefore, will work to provide lasting benefits in the communities where we live and work.&nbsp;</p><a 
