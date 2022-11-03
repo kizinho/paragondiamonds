@@ -29,7 +29,7 @@ class UserTableDataSeeder extends Seeder {
         
         $user1->ref_check = "user1";
         $user1->code = true;
-        $user1->email = ' info@paragondiamonds.co.uk';
+        $user1->email = ' info@paragon.diamonds.co.uk';
         $user1->password = bcrypt('secret');
         $user1->save();
     }
