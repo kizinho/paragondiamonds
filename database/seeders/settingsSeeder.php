@@ -24,6 +24,7 @@ class settingsSeeder extends Seeder {
         $settings->logo = 'images/logo/logo.jpg';
         $settings->withdraw_charge = '0';
         $settings->favicon = 'images/favicon/favicon.jpg';
+        
         $settings->location_map = 'Paragondiamonds';
         $settings->location = 'Paragondiamonds';
         $settings->copy_right = '© 2022 all rights reserved';
