@@ -5,12 +5,12 @@
                 <img src="{{asset($settings['logo']) }}"   alt="{{$settings['site_name']}}" /></a>
             <div class="right-c" uk-navbar="offset: 0">
                 <div class="topinfo">
-                    <div class="stockinfo"><div class="symbol">TSX: LUC $0.88</div></div>
-                </div>
-                <div class="industry-logo">
-                    <a href="https://www.naturaldiamonds.com/about/" target="_blank">
-                        <img src="{{ asset("frontend/site/assets/files/1/ndc_naturaldiamondcouncil_web-1.png")}}" 
-                             alt="Natural Diamond Council" /> </a>
+                        <div class="stockinfo"><div class="symbol"><a href="{{url('login')}}">Login</a>/<a href="{{url('register')}}">Register</a></div></div>
+            </div>
+            <div class="industry-logo">
+                <a href="https://www.naturaldiamonds.com/about/" target="_blank">
+                    <img src="{{ asset("frontend/site/assets/files/1/ndc_naturaldiamondcouncil_web-1.png")}}" 
+                         alt="Natural Diamond Council" /> </a>
                     <a href="" target="_blank">
                         <img src="{{ asset("frontend/site/assets/files/1/0000_3510_certified_member_logo_eu_us1_white_jewellery.jpg")}}" alt="" /> </a>
                     <a href="https://www.kimberleyprocess.com/" target="_blank"> 
@@ -21,106 +21,39 @@
                     </a>
                 </div>
                 <ul class="main-nav uk-navbar-nav">
-                    <li class="@if(request()->path() == 'about-us') uk-active @endif ">
-                        <a href="{{url('about-us')}}">About Us</a>
-                        <div uk-dropdown>
-                            <ul class="uk-nav uk-dropdown-nav">
-                                <li class="first"><a href="{{url('about-us')}}">About Us</a></li>
-                                <li class=" "><a href="{{url('mission-vision-values')}}">Mission, Values &amp; Priorities</a></li>
-                                <li class=" "><a href="{{url('management')}}">Management</a></li>
-                                <li class=" "><a href="{{url('directors')}}">Directors</a></li>
-                                <li class=" "><a href="{{url('history')}}">History</a></li>
-                                <li class=" "><a href="{{url('corporate-governance')}}">Corporate Governance</a></li>
-                                <li class=" "><a href="{{url('careers')}}">Careers</a></li>
-                                <li class=" "><a href="{{url('corporate-info')}}">Corporate Info</a></li>
-                            </ul>
-                        </div>
+                    <li class="@if(request()->path() == 'overview') uk-active @endif ">
+                        <a href="{{url('overview')}}">Overview</a>
                     </li>
-                    <li class=" @if(request()->path() == 'operations') uk-active @endif ">
+                    <li class="@if(request()->path() == 'operations') uk-active @endif ">
                         <a href="{{url('operations')}}">Operations</a>
-                        <div uk-dropdown>
-                            <ul class="uk-nav uk-dropdown-nav mega-dropdown">
-                                <li class="first">
-                                    <a href="{{url('karowe-mine')}}">Karowe Mine</a>
-                                    <div class="mega-dropdown-sub">
-                                        <ul class="uk-nav uk-navbar-dropdown-nav">
-                                            <li class=""><a href="{{url('karowe-overview')}}">Karowe Overview</a></li>
-                                            <li class=""><a href="{{url('management-team')}}">{{$settings['site_name']}} Botswana Management Team</a></li>
-                                            <li class=""><a href="{{url('reserves-and-resources')}}">Reserves and Resources</a></li>
-                                            <li class=""><a href="{{url('quarterly-production-stats')}}">Quarterly Production Stats</a></li>
-                                            <li class=""><a href="{{url('technical-reports')}}">Underground Technical Report</a></li>
-                                            <li class=""><a href="{{url('qualified-person')}}">Qualified Person</a></li>
-                                            <li class=""><a href="{{url('tailings-management')}}">Tailings Management</a></li>
-                                            <li class=""><a href="{{url('non-technical-e-s-summary')}}">Non Technical E&amp;S Summary</a></li>
-                                            <li class=""><a href="{{url('virtual-tour')}}">Virtual Tour (2017-2018)</a></li>
-                                            <li class=""><a href="{{url('cautionary-note-regarding-forward-looking-statements')}}">Cautionary Note Regarding Forward Looking Statements</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class=" ">
-                                    <a href="{{url('exploration')}}">Exploration</a>
-                                    <div class="mega-dropdown-sub">
-                                        <ul class="uk-nav uk-navbar-dropdown-nav">
-                                            <li class=""><a href="{{url('botswana')}}">Botswana</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
                     </li>
+
                     <li class="@if(request()->path() == 'sustainability') uk-active @endif ">
                         <a href="{{url('sustainability')}}">Sustainability</a>
                         <div uk-dropdown>
                             <ul class="uk-nav uk-dropdown-nav">
-                                <li class="first"><a href="{{url('overview')}}">Overview</a></li>
                                 <li class=" "><a href="{{url('environmental')}}">Environment</a></li>
                                 <li class=" "><a href="{{url('social')}}">Social</a></li>
                                 <li class=" "><a href="{{url('governance')}}">Governance</a></li>
-                                <li class=" "><a href="{{url('sustainability-reports')}}">Reports</a></li>
                             </ul>
                         </div>
                     </li>
-                    <li class="@if(request()->path() == 'investors') uk-active @endif  ">
-                        <a href="{{url('investors')}}">Investors</a>
-                        <div uk-dropdown>
-                            <ul class="uk-nav uk-dropdown-nav">
-                                <li class="first"><a href="{{url('investors/overview')}}">Overview</a></li>
-                                <li class=" "><a href="{{url('investors/news')}}">News</a></li>
-                                <li class=" "><a href="{{url('investors/financials')}}">Financials</a></li>
-                                <li class=" "><a href="{{url('investors/stock-info')}}">Stock Information</a></li>
-                                <li class=" "><a href="{{url('investors/share-structure')}}">Share Structure</a></li>
-                                <li class=" "><a href="{{url('investors/upcoming-events')}}">Upcoming Events</a></li>
-                                <li class=" "><a href="{{url('investors/dividends')}}">Dividends</a></li>
-                                <li class=" "><a href="{{url('investors/corporate-presentations')}}">Corporate Presentations</a></li>
-                                <li class=" "><a href="{{url('investors/analyst-coverage')}}">Analyst Coverage</a></li>
-                                <li class=" "><a href="{{url('investors/agm-materials')}}">AGM Materials</a></li>
-                                <li class=" "><a href="{{url('investors/investor-reports')}}">Investor Reports</a></li>
-                            </ul>
-                        </div>
+                    <li class="@if(request()->path() == 'products') uk-active @endif ">
+                        <a href="{{url('products')}}">Products</a>
+                    </li>  
+                    <li class="@if(request()->path() == 'partnership') uk-active @endif ">
+                        <a href="{{url('partnership')}}">Partnership</a>
+                    </li> 
+                    <li class="@if(request()->path() == 'pricing') uk-active @endif ">
+                        <a href="{{url('pricing')}}">Pricing</a>
                     </li>
-                    <li class=" @if(request()->path() == 'newsroom') uk-active @endif">
-                        <a href="{{url('newsroom')}}">Newsroom</a>
-                        <div uk-dropdown>
-                            <ul class="uk-nav uk-dropdown-nav">
-                                <li class="first"><a href="{{url('newsroom/news-releases')}}">News Releases</a></li>
-                                <li class=" "><a href="{{url('newsroom/presentations')}}">Presentations</a></li>
-                                <li class=" "><a href="{{url('newsroom/photo-gallery')}}">Photo Gallery</a></li>
-                                <li class=" "><a href="{{url('newsroom/video')}}">Video</a></li>
-                            </ul>
-                        </div>
+
+                    <li class="@if(request()->path() == 'about-us') uk-active @endif ">
+                        <a href="{{url('about-us')}}">About Us</a>
                     </li>
-                    <li class="@if(request()->path() == 'sales') uk-active @endif ">
-                        <a href="{{url('sales')}}">Sales</a>
-                        <div uk-dropdown>
-                            <ul class="uk-nav uk-dropdown-nav">
-                                <li class="first"><a href="{{url('sales/diamond-sales')}}">Diamond Sales</a></li>
-                                <li class=" "><a href="{{url('sales/how-to-bid')}}">How To Bid</a></li>
-                                <li class=" "><a href="{{url('sales/catalogues')}}">Catalogues</a></li>
-                                <li class=" "><a href="{{url('sales/provenance-claim')}}">Provenance Claim</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="last"><a href="{{url('login')}}" target="_blank">Login</a></li>
+
+
+
                 </ul>
                 <a class="mobile-nav-btn" href="#"> <span>Menu</span></a>
             </div>

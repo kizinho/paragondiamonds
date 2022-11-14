@@ -12,7 +12,7 @@
             </div>
             <div class="right-c">
                 <a class="btn-big" href="{{url('contact-us')}}">Contact Us</a>
-                <ul class="social">
+<!--                <ul class="social">
                     <li class="facebook">
                         <a
                             href="http://facebook.com/{{$settings['site_name']}}"
@@ -27,11 +27,11 @@
                     <li class="linkedin"><a href="http://linkedin.com/company/{{$settings['site_name']}}" target="_blank" title="Visit our LinkedIn Page" class="uk-icon" uk-icon="icon: linkedin;ratio:2"></a></li>
                     <li class="instagram"><a href="http://instagram.com/{{$settings['site_name']}}" target="_blank" title="Visit our Instagram Page" class="uk-icon" uk-icon="icon: instagram;ratio:2"></a></li>
                     <li class="youtube"><a href="http://youtube.com/channel/UCtCMNI07Qb3HxUbPWQ" target="_blank" title="Visit our YouTube Page" class="uk-icon" uk-icon="icon: youtube;ratio:2"></a></li>
-                </ul>
+                </ul>-->
             </div>
         </div>
         <div class="bottom">
-            <div class="links"><a href="{{url('legal/disclaimer')}}">Legal</a> | <a href="{{url('contact/email-alert')}}">Subscribe for Updates</a></div>
+            <div class="links"><a href="{{url('legal/disclaimer')}}">Legal</a> | <a href="{{url('register')}}">Register</a></div>
             <p class="etc">{{$settings['copy_right']}} | <a class="adnet" href="{{url('/')}}" target="_blank">Designed & Powered by {{$settings['site_name']}}</a></p>
         </div>
     </div>
