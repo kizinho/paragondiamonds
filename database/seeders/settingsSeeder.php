@@ -17,7 +17,7 @@ class settingsSeeder extends Seeder {
         $settings->site_email = 'info@paragondiamonds.co.uk';
         $settings->site_phone = '+44 7458934748';
         $settings->send_notify_email = 'info@paragondiamonds.co.uk';
-        $settings->site_name = 'Paragondiamonds';
+        $settings->site_name = 'Paragon Diamonds';
         $settings->address = '<strong>28 Queen Street</strong>,<br> Whalley, Lancashire,<br> United Kingdom';
         $settings->site_url = 'https://paragondiamonds.co.uk';
         $settings->site_code = 'DM';

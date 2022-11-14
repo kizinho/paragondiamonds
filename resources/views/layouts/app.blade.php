@@ -125,6 +125,48 @@
     }
 
 
+        #google_translate_element {
+            position: relative;
+        }
+
+        .goog-logo-link {
+            display: none !important;
+        }
+
+        .goog-logo-link #text {
+            display: none !important;
+        }
+
+        .goog-te-gadget {
+            font-size: 0px !important;
+        }
+
+        .goog-te-gadget div {
+            display: inline;
+        }
+
+        .goog-te-gadget div select {
+            width: 130px;
+            height: 40px;
+            border: 1px solid #0691ab !important;
+            color: #0691ab;
+            outline: none;
+           
+            border: none;
+        }
+
+        .goog-te-gadget div select option {
+            border: 1px solid #0691ab !important;
+        }
+
+        .goog-te-gadget div select option:hover {
+            cursor: pointer;
+        }
+
+        .goog-te-gadget div select:hover {
+            border: 1px solid #0691ab !important;
+            cursor: pointer;
+        }
 </style>
 
 </head>

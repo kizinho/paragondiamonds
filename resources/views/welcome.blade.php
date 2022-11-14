@@ -25,11 +25,9 @@
                                 <p style="color: #fff">The Most Precious</p>
                                    <p style="color: #fff">  
                                     Commodity in </p>
-                                   <p style="color: #fff">   the World, You</p>
-                                   <p style="color: #fff"> can discover the </p>
-                                         <p style="color: #fff"> diamond industry </p>
-                                         <p style="color: #fff">   in absolute </p>
-                                          <p style="color: #fff">transparencyMaking </p>
+                                  <p style="color: #fff">   the World, You</p>
+                                  <h6 style="color: #fff"> can discover the diamond industry  in absolute <br>transparency Making</h6>
+                            
                                
                                 <p>&nbsp;</p>
                             </div>
@@ -47,7 +45,6 @@
                                 <h2>Sustainability</h2>
                                 <p>Is Fundamental to Our</p>
                                 <p>Success as An Organization</p>
-                                <p><a href="link pdf" rel="nofollow noreferrer noopener" target="_blank">Sustainability Report</a></p>
                             </div>
                         </div>
                     </div>
@@ -136,8 +133,8 @@
     <div class="uk-container uk-container-large">
         <div uk-grid>
             <div class="uk-width-1-3@m image">
-                <div>JUL 2015 | 342 ct</div>
-                <img src="{{asset('frontend/diamond-dec.jpeg')}}" alt="JUL 2015 | 342 ct" />
+                
+                <img class="uk-padding" src="{{asset('frontend/diamond-dec.jpeg')}}" alt="JUL 2015 | 342 ct" />
             </div>
             <div class="uk-width-2-3@m verbage">
                 <h1>{{$settings['site_name']}}</h1>
@@ -159,17 +156,17 @@ We conducts all operations according to the highest ethical standards . Our comp
         
             <div class="uk-flex-1" uk-grid>
                 <div class="uk-width-1-3@m first">
-                    <h3>Financial Partners</h3>
+                    <a href="">   <h3>Financial Partners</h3>    </a>
                    Adding transparency and liquidity to the diamond market will provide first time access to the financial and capital markets.<br />
-                    
+                
                 </div>
                 <div class="uk-width-1-3@m">
-                    <h3>Investment Pricing</h3>
+                   <a href="">  <h3>Investment Pricing</h3>   </a>
                   A self explanatory tool to display the criteria and benefits of our investments plan tailored for your financial aspirations.<br />
                 
                 </div>
                 <div class="uk-width-1-3@m">
-                    <h3>Diamond Products</h3>
+                 <a href="">    <h3>Diamond Products</h3>  </a> 
                     Review our diamonds products traded on the international diamond exchange in Antwerp defined by the 4C’s.<br />
                     
                 </div>
@@ -183,7 +180,8 @@ We conducts all operations according to the highest ethical standards . Our comp
 <div class="video-container"><video autoplay loop muted playsinline>
 <source src="frontend/site/templates/img/clara_diamond_spin.mp4" type="video/mp4"></video>
 </div>
-        <div class="content"><img src="{{asset($settings['logo']) }}" width="80" height="80" alt="{{$settings['site_name']}} Logo" class="uk-margin-bottom" />
+        <div class="content">
+
 <h1>WHY DIAMONDS?</h1>
 
 <div class="process" 
@@ -195,10 +193,9 @@ src="frontend/site/templates/img/icon_diamond_2.png" alt=""></div>
 </div><div class="entry"><div><img src="frontend/site/templates/img/icon_diamond.svg" alt="">
 </div></div><div class="entry clip"><video 
 autoplay loop muted playsinline><source src="frontend/site/templates/img/clara_ring_small.mp4" type="video/mp4"></video>
-</div></div><div class="uk-text-right uk-margin-top "><a 
-href="{{url('register')}}" target="_blank">Create Account</a></div></div></div>
-    <p class="uk-padding" style="color:#fff!important">Diamonds are a good investment for several reasons. More recently, these precious ‘everlasting’ gemstones have already proven their security aspect for investment purposes, as they offer protection against any credit risks of banks or financial institutions, currency fluctuations and inflation. Diamonds are not only considered as secure – crisis resistant – investments, moreover the macro-economic law of supply and demand indicates a structural increase of the diamond prices on the world market. Investing in diamonds offers a large variety of benefits. In general, diamonds are likely to increase in value. This value augmentation is caused by significant increase in demand and decrease in supply
-</p>
+</div></div></div></div>
+    <div class="uk-padding" style="color:#fff!important">Diamonds are a good investment for several reasons. More recently, these precious ‘everlasting’ gemstones have already proven their security aspect for investment purposes, as they offer protection against any credit risks of banks or financial institutions, currency fluctuations and inflation. Diamonds are not only considered as secure – crisis resistant – investments, moreover the macro-economic law of supply and demand indicates a structural increase of the diamond prices on the world market. Investing in diamonds offers a large variety of benefits. In general, diamonds are likely to increase in value. This value augmentation is caused by significant increase in demand and decrease in supply
+</div>
 </div><div class="features">
 <div class="uk-grid-collapse" uk-grid><div class="uk-width-1-2@m feature-item" 
 style="background-image: url(frontend/sustainability-photo.jpeg); box-shadow: inset 0 0 0 2000px  rgb(54 54 57 / 30%);"><div class="uk-width-1-1 uk-height-1-1 uk-flex uk-flex-middle">
