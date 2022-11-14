@@ -25,8 +25,8 @@
                                 <p style="color: #fff">The Most Precious</p>
                                    <p style="color: #fff">  
                                     Commodity in </p>
-                                  <p style="color: #fff">   the World, You</p>
-                                  <h6 style="color: #fff"> can discover the diamond industry  in absolute <br>transparency Making</h6>
+                                  <p style="color: #fff">   the World.</p>
+                                  <h4 style="color: #fff">You can discover the diamond industry in <br>absolute  transparency</h6>
                             
                                
                                 <p>&nbsp;</p>
