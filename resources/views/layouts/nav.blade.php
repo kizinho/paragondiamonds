@@ -34,9 +34,9 @@
                         <a href="{{url('overview')}}">Overview</a>
                         <div uk-dropdown>
                             <ul class="uk-nav uk-dropdown-nav">
-                                <li class=" "><a href="{{url('about-diamond')}}">About Diamond</a></li>
+                                <li class=" "><a href="{{url('about-diamond')}}">About Diamonds</a></li>
                                 <li class=" "><a href="{{url('diamond-formation')}}">Diamond Formation</a></li>
-                                <li class=" "><a href="{{url('diamonds-mining')}}">Diamonds Mining</a></li>
+                                <li class=" "><a href="{{url('diamonds-mining')}}">Diamond Mining</a></li>
                             </ul>
                         </div>
                     </li>
