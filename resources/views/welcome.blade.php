@@ -134,7 +134,7 @@
         <div uk-grid>
             <div class="uk-width-1-3@m image">
                 
-                <img class="uk-padding" src="{{asset('frontend/diamond-dec.jpeg')}}" alt="JUL 2015 | 342 ct" />
+                <img style="margin-left: 20px!important" src="{{asset('frontend/diamond-dec.jpeg')}}" alt="JUL 2015 | 342 ct" />
             </div>
             <div class="uk-width-2-3@m verbage">
                 <h1>{{$settings['site_name']}}</h1>
