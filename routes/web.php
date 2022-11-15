@@ -19,8 +19,17 @@ Route::get('/reset', 'FrontController@reset');
 Route::get('about-us', function () {
     return view('pages.about');
 });
+Route::get('about-overview', function () {
+    return view('pages.about');
+});
+Route::get('about-vision-mission', function () {
+    return view('pages.about-vision-mission');
+});
 Route::get('platform', function () {
     return view('pages.platform');
+});
+Route::get('management', function () {
+    return view('pages.management');
 });
 
 Route::get('accounts', function () {

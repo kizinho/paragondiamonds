@@ -7,82 +7,50 @@
 @endsection
 @extends('layouts.app')
 @section('content')
-<div class="vApp">
-    <div class="vBannerWrapper w-100" style="background-image: url({{url('frontend/about.jpg')}}); background-size: cover;">
-        <div class="container pb-100">
-            <div class="row align-items-center pR">
-                <div class="col-md-12">
-                    <h1>Superior Trading</h1>
-                    <p>Solid Trading Experience with {{$settings['site_name']}}. Trade Global Markets on the most advanced MT5 trading platform.</p>
-                    <a href="{{url('register')}}" style="background-color: #25c676 !important;" class="bBtn open-account">Open An Account</a>
+<div class="slideshow uk-position-relative" uk-slideshow="autoplay: true;animation: fade;ratio:1920:450;'">
+    <div class="uk-position-relative uk-visible-toggle uk-dark">
+        <ul class="uk-slideshow-items">
+            <li class="slide subpage" style="background-image: url({{url('frontend/about.jpeg')}}); background-repeat: no-repeat; background-position: 50% 50%;">
+                <div class="sub-banner uk-height-1-1">
+                    <div class="uk-container uk-container-large uk-height-1-1 uk-flex uk-flex-middle">
+                        <h2  class="sub-caption" uk-scrollspy="cls:text-focus-in;delay: 500">About Us</h2>
+                    </div>
                 </div>
-            </div>
-        </div>
+            </li>
+        </ul>
     </div>
+</div>
+<div class="uk-clearfix"></div>
+<div id="page-main" data-parents="2" data-siblings="8" data-children="0">
+    <div class="uk-container uk-container-large">
+        <div class="uk-grid-collapse uk-margin-large-bottom" uk-grid>
+            <div class="uk-width-3-4@m uk-flex-last@m uk-flex-first@s">
+                <div id="page-body" class="uk-margin-large-left r-col">
+                    <h1 style="color:#000" class="uk-margin-medium-bottom page-title">About Us</h1>
+                    <div id="content">
+                        <p> Paragon Diamonds is an international diamond production and distribution company and a consistent supplier of polished diamonds to the international market. We have an extensive portfolio incorporating interests in Lemphane project in Lesotho.
+                        </p>
+                        <p> Paragon Diamonds is regarded by industry experts to be one of the most innovative global diamond company in today’s quickly evolving industry. Our Lemphane Open-pit mine is among the biggest diamond producing mines in Lesotho. We have an experienced board and management team and operates transparently in accordance with international best practices in the areas of sustainability, health, safety, environment, and community relations. Our employees come from a very wide range of cultures, religions and ethnic backgrounds, each contributing to the rich tapestry that has formed our corporate culture.
+                        </p>
+                        <p>
+                            Paragon's strategy is to focus on value rather than volume production by optimizing recoveries from its high-quality asset base inorder to maximize their efficiency and profitability. We have a significant resource base of ca. 243 million carats, which supports the potential for long- life operations.
+                        </p>
+                        <p> We conducts all operations according to the highest ethical standards . Our company aims to generate tangible value for each of our stakeholders, thereby contributing to the socio- economic development of our host countries and supporting long-term sustainable operations to the benefit of our employees, partners and communities. Paragon Diamonds offers unparalleled portfolio and risk management services to our registered clients in polished diamonds and crypto currency. Our in-depth knowledge and global commodity relationship benefits our clients in securing efficient commodity procurement , logistics and financial security across the globe.
+                        </p>
 
-    <div class="vBodyContent pt-30 aboutSection">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <img src="{{asset('frontend/about_body_images.jpg')}}" alt="About" />
-                    <div class="borderTop"></div>
-                    <h3 class="vF900 mt-15">Who We Are</h3>
-                    <p>
-                        A reputable trading company that aims to provide the greatest trading services &amp; facilities, enabling both beginners and seasoned traders to benefit from our expert advisors &amp; generate higher profits. Our
-                        vision is to become a market leader recognized for outstanding customer support and exemplary services. We strive for excellence.
-                    </p>
-                    <a href="{{url('register')}}" style="background-color: #25c676 !important;" class="bBtn open-account">Open An Account</a>
-                </div>
-                <div class="col-md-6">
-                    <div class="vBox shadow shadowHover mb-25 bg-light">
-                        <h3 class="vF900 mt-15">What We Provide</h3>
-                        <p>
-                            For trading Crypto, indices, precious metal, CFD’s online, we offer various account options, the latest trading software, &amp; tools. All clients can access a range of spreads &amp; liquidity via latest trading
-                            platform.
-                        </p>
                     </div>
-                    <div class="vBox shadow shadowHover mb-25 bg-gradient text-white">
-                        <h3 class="vF900 mt-15">What More We Offer</h3>
-                        <p>Enjoy the healthy leverage ratio we offer. We provide all of the tools and tricks required for clients of any level to achieve their trading goals, along with excellent trading conditions and swift execution.</p>
-                    </div>
-                    <div class="vBox shadow shadowHover mb-25 blueLight">
-                        <h3 class="vF900 mt-15">Best Client Service</h3>
-                        <p>
-                            Our goal is to create an excellent client-centric culture in order to give the best customer experience to our clients. In this way, we can secure our position as a market leader known for superior customer
-                            services.
-                        </p>
-                    </div>
+                    <div></div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="vBodyContent pb-50 vBodyBefore aboutSection-pt-70">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 mb-30">
-                    <div class="borderTop"></div>
-                    <h3 class="vF900 text-uppercase">Why {{$settings['site_name']}}</h3>
-                    <p><span style="color: rgb(52, 64, 85); font-family: Lato, sans-serif;">Enhance your trading experience like no other. We provide all the trading tools and support you need to achieve success.</span></p>
-                    <p>
-                        <font color="#344055" face="Lato, sans-serif"><b>Catering to your trading requirements, we provide:</b></font>
-                    </p>
-                    <ul>
-                        <li>
-                            <font color="#344055" face="Lato, sans-serif"><b>Powerful Trading platform:</b> Most powerful trading Platform designed to suit traders of all styles on any device. </font>
-                        </li>
-                        <li>
-                            <font color="#344055" face="Lato, sans-serif"><b>60+ Trading Products:</b> Elevate your trading experience and diversify your investment portfolio. </font>
-                        </li>
-                        <li>
-                            <font color="#344055" face="Lato, sans-serif"><b>24/5 Qualified Support:</b> Always present to resolve issues and ensure you get the best trading conditions.</font>
-                        </li>
+            <div class="uk-width-1-4@m uk-flex-first@m uk-flex-last@s">
+                <div class="aside">
+                    <h2>About Us</h2>
+                    <ul class="aside uk-nav">
+                        <li class="level-2 uk-active"><a href="{{url('about-us')}}">About Us</a></li>
+                        <li class="level-2 "><a href="{{url('about-overview')}}">Overview</a></li>
+                        <li class="level-2 "><a href="{{url('about-vision-mission')}}">Vision and Mission</a></li>
+                        <li class=" level-2"><a href="{{url('management')}}">Management</a></li>
                     </ul>
-                    <p>
-                        <span style="color: rgb(34, 34, 34); font-family: Lato, sans-serif;">Since we are customer-centric, delivering the best service is our highest priority</span>
-                        <font color="#344055" face="Lato, sans-serif"><br /></font>
-                    </p>
-                    <p><br /></p>
-                    <a href="{{url('register')}}" style="background-color: #25c676 !important;" class="bBtn open-account">Open An Account</a>
                 </div>
             </div>
         </div>

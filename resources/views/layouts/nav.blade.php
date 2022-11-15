@@ -57,6 +57,8 @@
                         <a href="{{url('sustainability')}}">Sustainability</a>
                         <div uk-dropdown>
                             <ul class="uk-nav uk-dropdown-nav">
+                                
+                                 <li class=" "><a href="{{url('sustainability')}}">Sustainability</a></li>
                                 <li class=" "><a href="{{url('environmental')}}">Environment</a></li>
                                 <li class=" "><a href="{{url('social')}}">Social</a></li>
                                 <li class=" "><a href="{{url('governance')}}">Governance</a></li>
@@ -77,7 +79,7 @@
                         <div uk-dropdown>
                             <ul class="uk-nav uk-dropdown-nav">
                                 <li class=" "><a href="{{url('about-overview')}}">Overview</a></li>
-                                <li class=" "><a href="{{url('about-Vision-mission')}}">Vision and Mission</a></li>
+                                <li class=" "><a href="{{url('about-vision-mission')}}">Vision and Mission</a></li>
                                 <li class=" "><a href="{{url('management')}}">Management</a></li>
                             </ul>
                         </div>

@@ -116,7 +116,7 @@
                         </a>
                     </div>
                     <div class="uk-relative">
-                        <a class="slider-feature uk-flex uk-flex-middle uk-flex-center text-center h-full last fancybox-iframe" href="{{url('governance')}}">
+                        <a class="slider-feature uk-flex uk-flex-middle uk-flex-center text-center h-ful" href="{{url('governance')}}">
                             <div class="uk-padding flex items-center h-full"><span class="uppercase">Governance</span></div>
                         </a>
                     </div>
@@ -134,7 +134,7 @@
         <div uk-grid>
             <div class="uk-width-1-3@m image">
                 
-                <img style="margin-left: 20px!important" src="{{asset('frontend/diamond-dec.jpeg')}}" alt="JUL 2015 | 342 ct" />
+                <img style="padding-left: 20px!important" src="{{asset('frontend/diamond-dec.jpeg')}}" alt="JUL 2015 | 342 ct" />
             </div>
             <div class="uk-width-2-3@m verbage">
                 <h1>{{$settings['site_name']}}</h1>
@@ -167,7 +167,7 @@ We conducts all operations according to the highest ethical standards . Our comp
                 </div>
                 <div class="uk-width-1-3@m">
                  <a href="">    <h3>Diamond Products</h3>  </a> 
-                    Review our diamonds products traded on the international diamond exchange in Antwerp defined by the 4C’s.<br />
+                    Review our diamonds products traded on the international diamond exchange defined by the 4C’s.<br />
                     
                 </div>
             </div>
