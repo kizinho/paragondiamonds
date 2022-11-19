@@ -26,7 +26,7 @@
         <div class="uk-grid-collapse uk-margin-large-bottom" uk-grid>
             <div class="uk-width-3-4@m uk-flex-last@m uk-flex-first@s">
                 <div id="page-body" class="uk-margin-large-left r-col">
-                    <h1 style="color:#000" class="uk-margin-medium-bottom page-title">About Us</h1>
+                    <br>
                     <div id="content">
                         <p> Paragon Diamonds is an international diamond production and distribution company and a consistent supplier of polished diamonds to the international market. We have an extensive portfolio incorporating interests in Lemphane project in Lesotho.
                         </p>
@@ -46,7 +46,7 @@
                 <div class="aside">
                     <h2>About Us</h2>
                     <ul class="aside uk-nav">
-                        <li class="level-2 uk-active"><a href="{{url('about-us')}}">About Us</a></li>
+
                         <li class="level-2 "><a href="{{url('about-overview')}}">Overview</a></li>
                         <li class="level-2 "><a href="{{url('about-vision-mission')}}">Vision and Mission</a></li>
                         <li class=" level-2"><a href="{{url('management')}}">Management</a></li>

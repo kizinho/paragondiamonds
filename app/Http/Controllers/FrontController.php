@@ -27,6 +27,11 @@ class FrontController extends Controller {
         return view('welcome', $data);
     }
 
+    public function pricing() {
+        $data['plans'] = Plan::all();
+        return view('pages.pricing', $data);
+    }
+
     public function contact(Request $request) {
         $input = $request->all();
         $rules = ([
@@ -51,7 +56,7 @@ class FrontController extends Controller {
         $email = $request->email;
         $message = $request->message;
         Notification::route('mail', $setting['send_notify_email'])
-                ->notify(new ContactUsMail($subject, $name, $email, $message, $request->phone_no, $request->service,$request->others));
+                ->notify(new ContactUsMail($subject, $name, $email, $message, $request->phone_no, $request->service, $request->others));
         return [
             'status' => 200,
             'message' => 'Message Sent, We will get back to You',

@@ -26,23 +26,8 @@
         <div class="uk-grid-collapse uk-margin-large-bottom" uk-grid>
             <div class="uk-width-3-4@m uk-flex-last@m uk-flex-first@s">
                 <div id="page-body" class="uk-margin-large-left r-col">
-                    <br>
-                    <div id="content">
-                        <div uk-grid>
-                            <div class="uk-width-1-3@m image text-center">
-
-                                <img style="padding-left: 20px!important" src="{{asset('frontend/team1.jpeg')}}" alt=" Graham" />
-                            </div>
-                            <div class="uk-width-2-3@m verbage">
-                                <h3 style=" margin: 0 0 0px 0 !important;">Larry K. Graham</h3>
-
-                                Chairman & Director
-                                <hr>
-                                Mr. Graham is a serial entrepreneur and private investor with more than 20 years’ experience in exploration, development, project and corporate finance and management in the mining sector in Asia, North and South America and Europe. He is known for recognizing value and superior global investment opportunities in the natural resource sector. He has led several companies through highly profitable business acquisitions and mergers such as EuroZinc the $1.5 billion sale of Tanganyika Oil Company Ltd. Mr. Graham is a graduate of the New Mexico Institute of Mining and Technology. He currently sits on the Board of a number of publicly traded companies.
-                            </div>
-                        </div>
-                    </div>
-                    <br>
+                    <br> <br>
+                   
                     <div id="content">
                         <div uk-grid>
                             <div class="uk-width-1-3@m image text-center">
@@ -50,7 +35,7 @@
                                 <img style="padding-left: 20px!important" src="{{asset('frontend/team2.jpeg')}}" alt="Boesten" />
                             </div>
                             <div class="uk-width-2-3@m verbage">
-                                <h3 style=" margin: 0 0 0px 0 !important;">Allan H. Boesten</h3>
+                                <h3 style=" margin: 0 0 0px 0 !important;">Larry H. Boesten</h3>
 
                                 Chief Executive Officer (CEO)
                                 <hr>
@@ -58,35 +43,38 @@
                             </div>
                         </div>
                     </div>
-                    <br>
+                      <br>
                     <div id="content">
                         <div uk-grid>
                             <div class="uk-width-1-3@m image text-center">
 
-                                <img style="padding-left: 20px!important" src="{{asset('frontend/team3.jpeg')}}" alt="Russo" />
+                                <img style="padding-left: 20px!important" src="{{asset('frontend/team1.jpeg')}}" alt=" Graham" />
                             </div>
                             <div class="uk-width-2-3@m verbage">
-                                <h3 style=" margin: 0 0 0px 0 !important;">Cino L. Russo</h3>
+                                <h3 style=" margin: 0 0 0px 0 !important;">George E. Graham</h3>
 
-                                Chief Operating Officer (COO)
+                                Chairman & Director
                                 <hr>
-                                Mr. Russo has held public company executive management and director's positions with Tenke Mining Corp. where he was instrumental in progressing the world class Tenke Fungurume copper/cobalt project towards its current position as a major mining operation in Central Asia. His background includes 21 years of project and construction management across a diverse range of minerals projects encompassing base and precious metal, coal, uranium and potash investments.
+                                Mr. Graham is a serial entrepreneur and private investor with more than 20 years’ experience in exploration, development, project and corporate finance and management in the mining sector in Asia, North and South America and Europe. He is known for recognizing value and superior global investment opportunities in the natural resource sector. He has led several companies through highly profitable business acquisitions and mergers such as EuroZinc the $1.5 billion sale of Tanganyika Oil Company Ltd. Mr. Graham is a graduate of the New Mexico Institute of Mining and Technology. He currently sits on the Board of a number of publicly traded companies.
                             </div>
                         </div>
                     </div>
+                   
                     <br>
                     <div id="content">
                         <div uk-grid>
                             <div class="uk-width-1-3@m image text-center">
 
-                                <img style="padding-left: 20px!important" src="{{asset('frontend/team4.jpeg')}}" alt="Brandon" />
+                                <img style="padding-left: 20px!important" src="{{asset('frontend/team4.jpeg')}}" alt="Reid" />
                             </div>
                             <div class="uk-width-2-3@m verbage">
-                                <h3 style=" margin: 0 0 0px 0 !important;">Paul G. Brandon</h3>
+                                <h3 style=" margin: 0 0 0px 0 !important;">Carolyn K. Reid</h3>
 
                                 Chief Investment Officer (CIO)
                                 <hr>
-                                Mr. Brandon has more than 15 years of experience in public company financial management and reporting. He has held senior positions GBS Gold International Inc. and was appointed CFO of the company in 1997. From June 2002 to July 2008, he served as Vice President and Corporate Controller of Lionore Mining International Ltd. Prior to 2002. He held a position having responsibility for financial reporting with an international publicly traded technology company. He is a Chartered Professional Accountant and spent 5 years in public accounting with Deloitte Canada.
+                                Mrs. Reid has more than 15 years of experience in public company financial management and reporting. She has held senior positions GBS Gold International Inc. and was appointed CFO of the company in 1997. From June 2002 to July 2008, She served as Vice President and Corporate Controller of Lionore Mining International Ltd. Prior to 2002. 
+                                She held a position having responsibility for financial reporting with an international publicly traded technology company. 
+                                She is a Chartered Professional Accountant and spent 5 years in public accounting with Deloitte Canada.
                             </div>
                         </div>
                     </div>
@@ -97,7 +85,7 @@
                 <div class="aside">
                     <h2>About Us</h2>
                     <ul class="aside uk-nav">
-                        <li class="level-2 uk-active"><a href="{{url('about-us')}}">About Us</a></li>
+                      
                         <li class="level-2 "><a href="{{url('about-overview')}}">Overview</a></li>
                         <li class="level-2 "><a href="{{url('about-vision-mission')}}">Vision and Mission</a></li>
                         <li class=" level-2"><a href="{{url('management')}}">Management</a></li>

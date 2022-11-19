@@ -1,102 +1,70 @@
 @section('title')
-<title>{{ucfirst($settings['site_name'])}} &mdash; partnership</title>
-<meta  name="description" content="partnership">
-<meta itemprop="keywords" name="keywords" content="{{ucfirst($settings['site_name'])}} - partnership"/>
+<title>{{ucfirst($settings['site_name'])}} &mdash; Partnership</title>
+<meta  name="description" content="Partnership">
+<meta itemprop="keywords" name="keywords" content="{{ucfirst($settings['site_name'])}} - Partnership"/>
 <meta name="author" content="{{ucfirst($settings['site_name'])}}" />
-
+<style>
+    .shadow{
+        box-shadow: 0 2px 17px 0 rgb(0 0 0 / 30%); 
+    }
+</style>
 @endsection
 @extends('layouts.app')
 @section('content')
-<div class="vApp">
-    <div class="vBannerWrapper w-100" style="background-image: url({{asset('frontend/partnership_banner_images.jpg')}}); background-size: cover;">
-        <div class="container pb-100">
-            <div class="row align-items-center pR">
-                <div class="col-md-12">
-                    <h1>Dumb Money Investment Partnership Program</h1>
-                    <p>Dumb Money Investment has launched some of the industry&#039;s most attractive offers to enhance the growth prospects of our partners.</p>
-                    <a href="{{url('register')}}" style="background-color: #25c676 !important;"  class="bBtn open-account">Open An Account</a>
+<div class="slideshow uk-position-relative" uk-slideshow="autoplay: true;animation: fade;ratio:1920:450;'">
+    <div class="uk-position-relative uk-visible-toggle uk-dark">
+        <ul class="uk-slideshow-items">
+            <li class="slide subpage" style="background-image: url({{url('frontend/partnership.jpeg')}}); background-repeat: no-repeat; background-position: 50% 50%;">
+                <div class="sub-banner uk-height-1-1">
+                    <div class="uk-container uk-container-large uk-height-1-1 uk-flex uk-flex-middle">
+                        <h2  class="sub-caption" uk-scrollspy="cls:text-focus-in;delay: 500">Partnership</h2>
+                    </div>
                 </div>
-            </div>
-        </div>
+            </li>
+        </ul>
     </div>
+</div>
+<div class="uk-clearfix"></div>
+<div id="page-main" data-parents="2" data-siblings="8" data-children="0">
+    <div class="uk-container uk-container-large">
+        <div class="uk-grid-collapse uk-margin-large-bottom" uk-grid>
+            <div class="uk-width-3-4@m uk-flex-last@m uk-flex-first@s">
+                <div id="page-body" class="uk-margin-large-left r-col">
+                    <br> <br>
 
-    <div class="vBodyContent pt-30 aboutSection">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <img src="{{asset('frontend/ib_images.jpg')}}" alt="About" />
-                </div>
-                <div class="col-md-6">
-                    <div class="vBox shadow shadowHover mb-25 bg-light">
-                        <h3 class="vF900 mt-15">Why We Created A Partnership Program</h3>
-                        <p class="MsoNormal">
-                            <span style="font-size: 12pt; line-height: 107%; mso-bidi-font-family: Calibri; mso-bidi-theme-font: minor-latin;">
-                                Because we know there are lot of reasons for our investors to refer their friends and business partners, most of our new business now comes from valued, personal referrals provided by our happy investors. lue
-                                to our clients, we are continuing to expand our services and offers.
-                                <p>
-                                    We decided to stop expensive marketing and advertising, and create an exclusive automated affiliate downline, focused on providing the very best passive income and care to our members. Rewarding our
-                                    registered members for being our best advertisers.
-                                </p>
-                            </span>
-                        </p>
-                        <p class="MsoNormal"><b>Offerings at a glance:</b><br /></p>
-                        <ul>
-                            <li>Unlimited opportunities to earn commissions.</li>
-                            <li>Massive growth opportunity for businesses.</li>
-                            <li>24/7 support for clients.<br /></li>
-                        </ul>
-                        <a href="{{url('register')}}" style="background-color: #25c676 !important;"  class="bBtn open-account">Open An Account</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="vBodyContent pb-50 pt-70 vBodyBefore aboutSection-pt-70 blueLight">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6 mb-30">
-                    <div class="bg-light pt-30 pb-30 pl-15 pr-15">
-                        <img src="{{asset('frontend/white_label_images.jpg')}}" alt="White_label" />
-                        <div class="borderTop mt-30"></div>
-                        <h3 class="vF900 mt-15 text-uppercase">White Label</h3>
-                        <p>We designed a trusted proven automated system to track record of all affiliates/referrals from your 1st generation down to your 10th generation.</p>
-                        <p><span style="font-weight: bolder;">Offerings at a glance:</span><br /></p>
-                        <ul>
-                            <li>Fully branded and co-branded trading platform.</li>
-                            <li>No extra development is required.</li>
-                            <li>Low start-up cost.</li>
-                            <li>24/5 technical support.</li>
-                        </ul>
-                        <a href="{{url('register')}}" style="background-color: #25c676 !important;"  class="bBtn open-account">START BROKERAGE</a>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-30">
-                    <div class="shadow pt-30 pb-30 pl-15 pr-15">
-                        <img src="{{asset('frontend/affiliate_images.png')}}" alt="" />
-                        <div class="borderTop mt-30"></div>
-                        <h3 class="vF900 text-uppercase">AFFILIATE</h3>
+                    <div id="content">
+                        <h3>  Paragon Diamonds Partnership</h3>
                         <p>
-                            EARN 10% TO 1% REFERRAL COMMISSION. HOW DO I REFER A FRIEND? Kindly log into your account, go to affiliates to copy your unique referral link and share with new investor to earn commissions on their deposits. We
-                            designed a trusted proven automated system to reward and track all affiliates/referrals from your 1st generation down to your 10th generation.
+                            Axon Diamonds has multiple membership opportunities. Axon Diamonds is open to all investors and companies that meet the relevant criteria, as established by the Exchange’s Rules and Regulations and subject to the application procedures.
+
                         </p>
-                        <p><span style="font-weight: bolder;">Offerings at a glance:</span><br /></p>
-                        <ul>
-                            <li>Limitless referral.</li>
-                            <li>Attractive and rewarding packages for referrals.</li>
-                            <li>Withdraw referral commission easily.</li>
-                        </ul>
-                        <a href="{{url('register')}}" style="background-color: #25c676 !important;"  class="bBtn open-account">EARN NOW</a>
                     </div>
+                    <br>
+                    <div id="content">
+                        <h3>  Economy Partner</h3>
+                        <p>
+                            This partnership is strictly for exclusive investors who intend to alleviate and proliferate their finances through our colossal aid from the diamond exchange market.   
+                        </p>
+                    </div>
+                    <br>
+                    <div id="content">
+                        <h3>  Business Partner</h3>
+                        <p>
+                            This partnership is strictly for companies which have interest in the expansion and augmentation of their business through our quintessential benefits from the diamond exchange market.
+                        </p>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="uk-width-1-4@m uk-flex-first@m uk-flex-last@s">
+                <div class="aside">
+                      <div class=" image text-center">
+
+                                <img style="padding-left: 20px!important" src="{{asset('frontend/pp.jpeg')}}" alt="pp" />
+                            </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div class="col-md-6 mb-30">
-    <div class="shadow pt-30 pb-30 pl-15 pr-15">
-        <div class="borderTop mt-30"></div>
-        <h3 class="vF900 text-uppercase">Are there any fees to be an affiliate? Absolutely not!</h3>
-    </div>
-</div>
-
 @endsection

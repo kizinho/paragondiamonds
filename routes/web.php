@@ -44,9 +44,49 @@ Route::get('nft', function () {
     
     return view('pages.nft');
 });
-Route::get('pricing', function () {
-    return view('pages.pricing');
+
+Route::get('overview', function () {
+    return view('pages.overview');
 });
+Route::get('about-diamond', function () {
+    return view('pages.overview');
+});
+Route::get('diamond-formation', function () {
+    return view('pages.diamond-formation');
+});
+
+Route::get('diamonds-mining', function () {
+    return view('pages.diamonds-mining');
+});
+Route::get('operations', function () {
+    return view('pages.operations');
+});
+Route::get('processing', function () {
+    return view('pages.operations');
+});
+Route::get('sorting-distribution', function () {
+    return view('pages.sorting-distribution');
+});
+Route::get('cutting-polishing', function () {
+    return view('pages.cutting-polishing');
+});
+Route::get('trading', function () {
+    return view('pages.trading');
+});
+Route::get('sustainability', function () {
+    return view('pages.sustainability');
+});
+Route::get('environmental', function () {
+    return view('pages.environmental');
+});
+Route::get('social', function () {
+    return view('pages.social');
+});
+Route::get('governance', function () {
+    return view('pages.governance');
+});
+
+
 
 
 
@@ -58,7 +98,7 @@ Route::get('contact', function () {
     return view('pages.contact-us');
 });
 
-
+Route::get('pricing', [App\Http\Controllers\FrontController::class, 'pricing'])->name('pricing');
 Route::get('faq-categories', [App\Http\Controllers\FrontController::class, 'faq'])->name('faq-categories');
 Route::post('contact', 'FrontController@contact');
 //my routes

@@ -17,7 +17,7 @@
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="{{ asset("frontend/use.fontawesome.com/releases/v5.6.3/css/all.css")}}" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous" />
         <link rel="stylesheet" href="{{ asset("frontend/site/assets/pwpc/pwpc-7ce1a2c9d24a928d1fe2b3a8ef2135352e4c1323.css")}}" />
-     
+     <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
 
     <style>
         .home-page .features .feature a {
