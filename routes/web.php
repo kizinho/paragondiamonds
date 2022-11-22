@@ -99,6 +99,7 @@ Route::get('contact', function () {
 });
 
 Route::get('pricing', [App\Http\Controllers\FrontController::class, 'pricing'])->name('pricing');
+
 Route::get('faq-categories', [App\Http\Controllers\FrontController::class, 'faq'])->name('faq-categories');
 Route::post('contact', 'FrontController@contact');
 //my routes
@@ -108,6 +109,8 @@ Route::get('verify', 'VerifyController@verify')->name('verify');
 Route::get('resend', 'VerifyController@resend')->name('resend');
 Route::post('verify', 'VerifyController@verifyPost');
 Auth::routes();
+Route::get('/diamond-baskets-pdf', [App\Http\Controllers\HomeController::class, 'diamondBasketsPdf'])->name('diamond-baskets-pdf');
+Route::get('/single-stone-pdf', [App\Http\Controllers\HomeController::class, 'singleStonePdf'])->name('single-stone-pdf');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/office', [App\Http\Controllers\HomeController::class, 'index'])->name('office');
 Route::post('/select-gateway', [App\Http\Controllers\HomeController::class, 'gateway']);

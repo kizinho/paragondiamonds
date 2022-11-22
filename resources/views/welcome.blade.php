@@ -134,7 +134,7 @@
         <div uk-grid>
             <div class="uk-width-1-3@m image">
                 
-                <img style="padding-left: 20px!important" src="{{asset('frontend/diamond-dec.jpeg')}}" alt="JUL 2015 | 342 ct" />
+                <img style="padding-right: 40px!important" src="{{asset('frontend/diamond-dec.jpeg')}}" alt="" />
             </div>
             <div class="uk-width-2-3@m verbage">
                 <h1>{{$settings['site_name']}}</h1>
@@ -156,17 +156,17 @@ We conducts all operations according to the highest ethical standards . Our comp
         
             <div class="uk-flex-1" uk-grid>
                 <div class="uk-width-1-3@m first">
-                    <a href="">   <h3>Financial Partners</h3>    </a>
+                    <a href="{{url('partnership')}}">   <h3>Financial Partners</h3>    </a>
                    Adding transparency and liquidity to the diamond market will provide first time access to the financial and capital markets.<br />
                 
                 </div>
                 <div class="uk-width-1-3@m">
-                   <a href="">  <h3>Investment Pricing</h3>   </a>
+                   <a href="{{url('pricing')}}">  <h3>Investment Pricing</h3>   </a>
                   A self explanatory tool to display the criteria and benefits of our investments plan tailored for your financial aspirations.<br />
                 
                 </div>
                 <div class="uk-width-1-3@m">
-                 <a href="">    <h3>Diamond Products</h3>  </a> 
+                 <a href="{{url('products')}}">    <h3>Diamond Products</h3>  </a> 
                     Review our diamonds products traded on the international diamond exchange defined by the 4C’s.<br />
                     
                 </div>
@@ -210,7 +210,7 @@ uk-transition-opaque uk-flex uk-flex-middle"><div class="uk-width-1-1">Processin
 href="{{url('sorting-distribution')}}" class="uk-transition-scale-up uk-transition-opaque uk-flex uk-flex-middle">
         <div class="uk-width-1-1">Sorting and Distribution</div></a>
 </div><div 
-class="feature f-2 uk-transition-toggle uk-margin-bottom"><a href="{{url('Cctting-polishing')}}" class="uk-transition-scale-up uk-transition-opaque uk-flex uk-flex-middle"><div 
+class="feature f-2 uk-transition-toggle uk-margin-bottom"><a href="{{url('cutting-polishing')}}" class="uk-transition-scale-up uk-transition-opaque uk-flex uk-flex-middle"><div 
 class="uk-width-1-1">Cutting and Polishing</div></a></div><div class="feature f-3 uk-transition-toggle uk-margin-bottom">
 <a href="{{url('trading')}}" class="uk-transition-scale-up 
 uk-transition-opaque uk-flex uk-flex-middle">

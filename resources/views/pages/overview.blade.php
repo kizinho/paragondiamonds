@@ -35,7 +35,7 @@
                     <div id="content">
                         <div uk-grid>
 
-                            <div class="uk-width-1-3@m verbage">
+                            <div class=" verbage">
                                 <h3 style=" margin: 0 0 0px 0 !important;">Color.</h3>
 
                                 <p>
@@ -43,12 +43,11 @@
                                     <br>D, E and F are considered colorless and because of their rarity they are more costly. As the letters go up, the diamond will have more of a yellow tint and be less valuable.
                                     <br>The exceptions to this rule are diamonds that have a vivid color. That puts them into the category of Fancy Color diamonds, and their natural color adds to their value.
                                 </p>
-                            </div>
-
-                            <div class="uk-width-2-3@m image  text-center">
-
+                                
                                 <img class="shadow"  src="{{asset('frontend/color.jpg')}}" alt="color" />
                             </div>
+
+                          
                         </div>
                     </div>
 
@@ -56,38 +55,36 @@
                     <div id="content">
                         <div uk-grid>
 
-                            <div class="uk-width-1-3@m verbage">
+                            <div class=" verbage">
                                 <h3 style=" margin: 0 0 0px 0 !important;">Cut.</h3>
 
                                 <p>
                                     Cut refers to the precise angles of the facets of the diamond. This, more than any other factor, determines how brilliant and sparkling a diamond will be.
                                     <br>While Color and Clarity are characteristics that depend on nature, Cut is in the hands of the artisan. A skilled diamond polisher will cut each diamond to bring out the maximum fire, sparkle and brilliance, while taking into account its natural imperfections and the desired carat weight.
                                     <br>The ultimate test of a well cut diamond is its return of light. While this has usually been determined visually, today it can be measured scientifically using a scanner developed by GemEx Systems.  </p>
-                            </div>
-
-                            <div class="uk-width-2-3@m image text-center">
-
+                          
                                 <img class=" shadow"  src="{{asset('frontend/cut.jpg')}}" alt="cut" />
                             </div>
+
+                       
                         </div>
                     </div>
                     <br><br>
                     <div id="content">
                         <div uk-grid>
 
-                            <div class="uk-width-1-3@m verbage">
+                            <div class=" verbage">
                                 <h3 style=" margin: 0 0 0px 0 !important;">Clarity.</h3>
 
                                 <p>
                                     As a natural substance, diamonds are rarely pure and flawless. They will usually have imperfections called inclusions that may affect the appearance of the diamond, depending on the nature of the inclusions, their size, their position in the diamond and the distance from the surface. Since the brilliance of a diamond is the result of light rays bouncing through the diamond’s facets and returning through its crown, any imperfection that blocks the passage of light through the diamond will have some effect on its brilliance.
                                     <br>Diamond laboratories grade the clarity of a diamond using a scale that ranges from Flawless to I3. Flawless diamonds are extremely rare and beautiful, so they are the most valuable.
                                 </p>
-                            </div>
-
-                            <div class="uk-width-2-3@m image text-center">
-
+                                
                                 <img class=" shadow"  src="{{asset('frontend/clarity.jpg')}}" alt="Clarity" />
                             </div>
+
+                        
                         </div>
                     </div>
 
@@ -95,7 +92,7 @@
                     <div id="content">
                         <div uk-grid>
 
-                            <div class="uk-width-1-3@m verbage">
+                            <div class=" verbage">
                                 <h3 style=" margin: 0 0 0px 0 !important;">Carat Weight.</h3>
 
                                 <p>
@@ -103,29 +100,27 @@
                                     <br>Diamonds are very rare in nature, and larger diamond crystals are extremely rare, so the larger the diamond, the more valuable it will be. As a diamond’s size increases, its value rises in a steep curve. A 2-carat diamond, for example, will cost much more than twice the cost of a 1 carat diamond.
                                     <br>While a bigger diamond may not be more beautiful than a smaller diamond, its value will always be affected by its carat weight. The scale at the right shows the comparative sizes of round diamonds of different carat weights.
                                 </p>
-                            </div>
-
-                            <div class="uk-width-2-3@m image text-center">
-
+                                
                                 <img class=" shadow"  src="{{asset('frontend/carat.jpg')}}" alt="Carat" />
                             </div>
+
+                          
                         </div>
                     </div> <br><br>
                     <div id="content">
                         <div uk-grid>
 
-                            <div class="uk-width-1-3@m verbage">
+                            <div class=" verbage">
                                 <h3 style=" margin: 0 0 0px 0 !important;">Certification.</h3>
 
                                 <p>
                                     When you buy or sell a diamond, a certificate by an independent laboratory is your assurance of its quality and its Four Cs grading. The most prominent gemological labs are the GIA, IGI, AGS, EGL and IGL.
                                     <br>In addition to these, there are labs that grade specific aspects of the diamond, such as GemEx, which uses technology to measure the light performance of a diamond.  </p>
-                            </div>
-
-                            <div class="uk-width-2-3@m image text-center">
-
                                 <img class=" shadow"  src="{{asset('frontend/certification.jpg')}}" alt="Certification" />
+                           
                             </div>
+
+                           
                         </div>
                     </div>
 
@@ -141,6 +136,7 @@
                         <li class="level-2 "><a href="{{url('diamond-formation')}}">Diamond Formation</a></li>
                         <li class="level-2 "><a href="{{url('diamonds-mining')}}">Diamond Mining</a></li>
                     </ul>
+                    
                 </div>
             </div>
         </div>

@@ -17,7 +17,7 @@
             <li class="slide subpage" style="background-image: url({{url('frontend/operations.jpeg')}}); background-repeat: no-repeat; background-position: 50% 50%;">
                 <div class="sub-banner uk-height-1-1">
                     <div class="uk-container uk-container-large uk-height-1-1 uk-flex uk-flex-middle">
-                        <h2  class="sub-caption" uk-scrollspy="cls:text-focus-in;delay: 500">Sorting and Distribution</h2>
+                        <h2  class="sub-caption" uk-scrollspy="cls:text-focus-in;delay: 500">Operations</h2>
                     </div>
                 </div>
             </li>
@@ -33,6 +33,7 @@
                     <br> <br>
 
                     <div id="content">
+                            <h3 style="color:grey">SORTING AND DISTRIBUTION</h3>
                         <p> 
 
                       At the end of each production cycle, the diamonds produced at our mines are delivered to our sorting facility, where they are cleaned and acidized, before being sorted into international sales assortments. The rough diamonds are first sorted by size (carat weight) and then each size faction is sorted into quality ranges, depending on each stone’s colour and clarity. High quality larger stones or coloured stones are sold as single lots. Individual mine production is kept separate, providing buyers with an additional level of knowledge about the goods they are purchasing based upon each mine’s unique diamond characteristics. Our tenders last between four to six working days, during which participants view the assortments and place a confidential electronic bid on the parcel of their choice.
@@ -55,6 +56,8 @@
                         <li class="level-2 "><a href="{{url('cutting-polishing')}}">Cutting and Polishing</a></li>
                         <li class="level-2 "><a href="{{url('trading')}}">Trading</a></li>
                     </ul>
+                          <br>
+                     <img class=" shadow"  src="{{asset('frontend/sorting.jpeg')}}" alt="sorting" />
                 </div>
             </div>
         </div>

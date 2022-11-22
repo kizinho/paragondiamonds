@@ -51,6 +51,12 @@
                         <li class="level-2 "><a href="{{url('about-vision-mission')}}">Vision and Mission</a></li>
                         <li class=" level-2"><a href="{{url('management')}}">Management</a></li>
                     </ul>
+                    
+                                       <br>
+                     <img class=" shadow"  src="{{asset('frontend/about1.jpeg')}}" alt="trading" />
+                     <br>
+                     
+                     <img class=" shadow"  src="{{asset('frontend/about2.jpeg')}}" alt="trading" />
                 </div>
             </div>
         </div>

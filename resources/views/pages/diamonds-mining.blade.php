@@ -56,6 +56,8 @@ Open pits are excavated until the strip ratio (the amount of host rock that must
                         <li class="level-2 "><a href="{{url('diamond-formation')}}">Diamond Formation</a></li>
                         <li class="level-2 "><a href="{{url('diamonds-mining')}}">Diamond Mining</a></li>
                     </ul>
+                    <br>
+                     <img class=" shadow"  src="{{asset('frontend/diamond-mm.jpeg')}}" alt="mining" />
                 </div>
             </div>
         </div>

@@ -14,7 +14,7 @@
 <div class="slideshow uk-position-relative" uk-slideshow="autoplay: true;animation: fade;ratio:1920:450;'">
     <div class="uk-position-relative uk-visible-toggle uk-dark">
         <ul class="uk-slideshow-items">
-            <li class="slide subpage" style="background-image: url({{url('frontend/partnership.jpeg')}}); background-repeat: no-repeat; background-position: 50% 50%;">
+            <li class="slide subpage" style="background-image: url({{url('frontend/pp.jpeg')}}); background-repeat: no-repeat; background-position: 50% 50%;">
                 <div class="sub-banner uk-height-1-1">
                     <div class="uk-container uk-container-large uk-height-1-1 uk-flex uk-flex-middle">
                         <h2  class="sub-caption" uk-scrollspy="cls:text-focus-in;delay: 500">Partnership</h2>
@@ -28,14 +28,14 @@
 <div id="page-main" data-parents="2" data-siblings="8" data-children="0">
     <div class="uk-container uk-container-large">
         <div class="uk-grid-collapse uk-margin-large-bottom" uk-grid>
-            <div class="uk-width-3-4@m uk-flex-last@m uk-flex-first@s">
+            <div class=" uk-flex-last@m uk-flex-first@s">
                 <div id="page-body" class="uk-margin-large-left r-col">
                     <br> <br>
 
                     <div id="content">
                         <h3>  Paragon Diamonds Partnership</h3>
                         <p>
-                            Axon Diamonds has multiple membership opportunities. Axon Diamonds is open to all investors and companies that meet the relevant criteria, as established by the Exchange’s Rules and Regulations and subject to the application procedures.
+                            Paragon Diamonds has multiple membership opportunities. Paragon Diamonds is open to all investors and companies that meet the relevant criteria, as established by the Company’s Rules and Regulations and subject to the application procedures.
 
                         </p>
                     </div>
@@ -56,14 +56,7 @@
                     <div></div>
                 </div>
             </div>
-            <div class="uk-width-1-4@m uk-flex-first@m uk-flex-last@s">
-                <div class="aside">
-                      <div class=" image text-center">
-
-                                <img style="padding-left: 20px!important" src="{{asset('frontend/pp.jpeg')}}" alt="pp" />
-                            </div>
-                </div>
-            </div>
+          
         </div>
     </div>
 </div>

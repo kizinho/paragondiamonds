@@ -7,6 +7,14 @@
     .shadow{
         box-shadow: 0 2px 17px 0 rgb(0 0 0 / 30%); 
     }
+    .border-green-500 {
+        border-color: #2596be!important;
+        color: #2596be!important;
+    }
+    .hover\:bg-green-500:hover{
+        background: #2596be!important;
+        color: #fff!important;
+    }
 </style>
 @endsection
 @extends('layouts.app')
@@ -36,7 +44,7 @@
                         <div uk-grid>
                             <div class="uk-width-1-3@m image text-center">
 
-                                <img style="padding-left: 20px!important" src="{{asset('frontend/single-stones.jpg')}}" alt="single-stones" />
+                                <img style="padding-left: 20px!important;height: 500px!important" src="{{asset('frontend/single-stones.jpg')}}" alt="single-stones" />
                             </div>
                             <div class="uk-width-2-3@m verbage">
 
@@ -52,33 +60,40 @@
                                     <p> <li class="fa fa-check"> Buyers can place indicative price bids by diamond category</li></p>
                                     <p><li class="fa fa-check"> GIA lab graded</li></p>
                                 </ul>
+
+                                 <a target="_black" href="{{url('single-stone-pdf')}}"> <button class="border-2 border-green-500 px-4 py-2  hover:bg-green-500 hover:text-white">SINGLE STONE PRODUCT SPEC</button>
+                                 </a>
+                             <br>   <br>
                             </div>
                         </div>
                     </div>
                     <br>
-                    <div id="content">
+                     <div id="content">
                         <div uk-grid>
                             <div class="uk-width-1-3@m image text-center">
 
-                                <img style="padding-left: 20px!important" src="{{asset('frontend/diamond-baskets.jpg')}}" alt="single-stones" />
-                            </div>
-                            <div class="uk-width-2-3@m verbage">
+                                <img style="padding-left: 20px!important;height: 600px!important"  src="{{asset('frontend/diamond-baskets.jpg')}}" alt="single-stones" />
+                             </div>
+                             <div class="uk-width-2-3@m verbage">
 
-                                <h3>Diamond Baskets</h3>
-                                <p> Immobilized and fungible baskets to be traded on a price/time priority in a continuous market.
-                                </p>
-                                <ul>
-                                    <p> <li class="fa fa-check"> A collection of GIA lab graded diamonds</li></p>
-                                    <p><li class="fa fa-check"> All baskets are fungible</li></p>
-                                    <p><li class="fa fa-check"> Baskets are traded electronically on price / time priority</li></p>
-                                    <p><li class="fa fa-check"> Baskets are defined by the 4 C’s</li></p>
-                                    <p> <li class="fa fa-check"> Each basket has identical number of stones and total weight</li></p>
-                                    <p><li class="fa fa-check"> Each basket includes stones of identical cut</li></p>
-                                    <p><li class="fa fa-check"> Each basket includes stones of identical clarity</li></p>
-                                    <p><li class="fa fa-check"> Each basket includes stones of identical color</li></p>
+                                 <h3>Diamond Baskets</h3>
+                                 <p> Immobilized and fungible baskets to be traded on a price/time priority in a continuous market.
+                                 </p>
+                                 <ul>
+                                     <p> <li class="fa fa-check"> A collection of GIA lab graded diamonds</li></p>
+                                     <p><li class="fa fa-check"> All baskets are fungible</li></p>
+                                     <p><li class="fa fa-check"> Baskets are traded electronically on price / time priority</li></p>
+                                     <p><li class="fa fa-check"> Baskets are defined by the 4 C’s</li></p>
+                                     <p> <li class="fa fa-check"> Each basket has identical number of stones and total weight</li></p>
+                                     <p><li class="fa fa-check"> Each basket includes stones of identical cut</li></p>
+                                     <p><li class="fa fa-check"> Each basket includes stones of identical clarity</li></p>
+                                     <p><li class="fa fa-check"> Each basket includes stones of identical color</li></p>
 
-                                </ul>
-                            </div>
+                                 </ul>
+                                   <a target="_black" href="{{url('diamond-baskets-pdf')}}"> <button class="border-2 border-green-500 px-4 py-2  hover:bg-green-500 hover:text-white">DIAMOND BASKETS PRODUCT SPEC</button>
+                                 </a>
+                             <br>   <br>
+                             </div>
                         </div>
                     </div>
 

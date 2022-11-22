@@ -62,9 +62,9 @@
                                                     <div class="bg-white text-black rounded-lg border-t border-gray-100 shadow-lg overflow-hidden">
                                                         <div class="block text-left text-sm sm:text-md max-w-sm mx-auto mt-2 text-black px-8 lg:px-6">
                                                             <h3 class="text-lg font-medium uppercase p-3 pb-0 text-center tracking-wide">
-                                                                {{$plan->name}}
+                                                                {{strtoupper($plan->name)}}
                                                             </h3>
-                                                            <h2 class="text-sm text-gray-500 text-center">${{number_format($plan->min)}}</h2>
+                                                            <h2 class=" text-gray-500 text-center">${{number_format($plan->min)}}</h2>
                                                             <div class="text-center"> Minimum</div>
                                                         </div>
 
@@ -81,7 +81,7 @@
                                                                             ></polyline>
                                                                         </svg>
                                                                     </div>
-                                                                    <span class="text-gray-700 text-lg ml-3">Monthly ROI - {{number_format($plan->percentage)}}%</span
+                                                                    <span class="text-gray-700 text-sm ml-3">Monthly ROI - {{number_format($plan->percentage)}}%</span
                                                                     >
                                                                 </li>
                                                                 <li class="flex items-center">
@@ -107,7 +107,7 @@
                                                                             ></polyline>
                                                                         </svg>
                                                                     </div>
-                                                                    <span class="text-gray-700 text-lg ml-3"
+                                                                    <span class="text-gray-700 text-sm ml-3"
                                                                           >Affiliate Bonus - {{number_format($plan->ref)}}%</span
                                                                     >
                                                                 </li>
@@ -122,7 +122,7 @@
                                                                             ></polyline>
                                                                         </svg>
                                                                     </div>
-                                                                    <span class="text-gray-700 text-lg ml-3">Trading Commission - {{number_format($plan->trading_commision)}}%</span>
+                                                                    <span class="text-gray-700 text-sm ml-3">Trading Commission - {{number_format($plan->trading_commision)}}%</span>
                                                                 </li>
  <li class="flex items-center">
                                                                     <div class=" rounded-full p-2 fill-current text-green-700">
@@ -135,12 +135,12 @@
                                                                             ></polyline>
                                                                         </svg>
                                                                     </div>
-                                                                   <span class="text-gray-700 text-lg ml-3">100% Guaranteed</span>
+                                                                   <span class="text-gray-700 text-sm ml-3">100% Guaranteed</span>
                                                                 </li>
                                                             </ul>
                                                         </div>
                                                         <div class="block flex items-center p-8  uppercase">
-                                                            <a href="/register" class="mt-3 text-lg font-semibold bg-indigo-500 w-full text-white rounded-lg px-6 py-3 block shadow-xl hover:bg-indigo-600 text-center">Get Started</a>
+                                                            <a href="/register" class="mt-3 text-sm font-semibold bg-indigo-500 w-full text-white rounded-lg px-6 py-3 block shadow-xl hover:bg-indigo-600 text-center">Get Started</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -160,7 +160,7 @@
                                                                     <polyline points="22 4 12 14.01 9 11.01"></polyline>
                                                                     </svg>
                                                                 </div>
-                                                                <span class="text-gray-700 text-lg ml-3">10% trading commission( taxes included )</span>
+                                                                <span class="text-gray-700 text-sm ml-3">10% trading commission( taxes included )</span>
                                                             </li>
                                                             <li class="flex items-center">
                                                                 <div class=" rounded-full p-2 fill-current text-green-700">
@@ -169,7 +169,7 @@
                                                                     <polyline points="22 4 12 14.01 9 11.01"></polyline>
                                                                     </svg>
                                                                 </div>
-                                                                <span class="text-gray-700 text-lg ml-3">Weekly withdrawal</span
+                                                                <span class="text-gray-700 text-sm ml-3">Weekly withdrawal</span
                                                                 >
                                                             </li>
                                                             <li class="flex items-center">
@@ -179,7 +179,7 @@
                                                                     <polyline points="22 4 12 14.01 9 11.01"></polyline>
                                                                     </svg>
                                                                 </div>
-                                                                <span class="text-gray-700 text-lg ml-3">Altcoins Accepted</span>
+                                                                <span class="text-gray-700 text-sm ml-3">Altcoins Accepted</span>
                                                             </li>
                                                         </ul>
 

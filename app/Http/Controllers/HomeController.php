@@ -49,6 +49,16 @@ class HomeController extends Controller {
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+    public function singleStonePdf() {
+        $file = public_path('frontend/single-stone-pdf.pdf');
+        return response()->file($file);
+    }
+
+    public function diamondBasketsPdf() {
+        $file = public_path('frontend/diamond-baskets-pdf.pdf');
+        return response()->file($file);
+    }
+
     public function index() {
         $data['total_balance'] = UserWithdrawal::whereUser_id(Auth::user()->id)->sum('amount');
         $data['total_deposit'] = Investment::whereUser_id(Auth::user()->id)->whereStatus_deposit(1)->sum('amount');

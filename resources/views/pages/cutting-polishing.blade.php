@@ -17,7 +17,7 @@
             <li class="slide subpage" style="background-image: url({{url('frontend/operations.jpeg')}}); background-repeat: no-repeat; background-position: 50% 50%;">
                 <div class="sub-banner uk-height-1-1">
                     <div class="uk-container uk-container-large uk-height-1-1 uk-flex uk-flex-middle">
-                        <h2  class="sub-caption" uk-scrollspy="cls:text-focus-in;delay: 500">Cutting and Polishing</h2>
+                        <h2  class="sub-caption" uk-scrollspy="cls:text-focus-in;delay: 500">Operations</h2>
                     </div>
                 </div>
             </li>
@@ -33,6 +33,7 @@
                     <br> <br>
 
                     <div id="content">
+                          <h3 style="color:grey">CUTTING AND POLISHING</h3>
                         <p> 
 
                      A well-cut diamond reflects light within itself, from one facet to another, as well as through the top of the diamond, bringing out its spectral brilliance. The cutting and polishing of a diamond crystal always results in a dramatic loss of weight; rarely is it less than 50%. Sometimes the cutters compromise and accept lesser proportions and symmetry in order to avoid inclusions or to preserve the carat rating.
@@ -58,6 +59,8 @@ The most popular cut favoured by jewelers is the round ‘brilliant’ cut, whic
                         <li class="level-2 "><a href="{{url('cutting-polishing')}}">Cutting and Polishing</a></li>
                         <li class="level-2 "><a href="{{url('trading')}}">Trading</a></li>
                     </ul>
+                                     <br>
+                     <img class=" shadow"  src="{{asset('frontend/cutting.jpeg')}}" alt="cutting" />
                 </div>
             </div>
         </div>

@@ -17,7 +17,7 @@
             <li class="slide subpage" style="background-image: url({{url('frontend/operations.jpeg')}}); background-repeat: no-repeat; background-position: 50% 50%;">
                 <div class="sub-banner uk-height-1-1">
                     <div class="uk-container uk-container-large uk-height-1-1 uk-flex uk-flex-middle">
-                        <h2  class="sub-caption" uk-scrollspy="cls:text-focus-in;delay: 500">Trading</h2>
+                        <h2  class="sub-caption" uk-scrollspy="cls:text-focus-in;delay: 500">Operations</h2>
                     </div>
                 </div>
             </li>
@@ -33,6 +33,8 @@
                     <br> <br>
 
                     <div id="content">
+                          <h3 style="color:grey">TRADING</h3>
+                       
                         <h3> Trade Matching Rules</h3>
                         <p> Axon Diamonds has implemented standard exchange based technology delivered by MarketGrid Systems. The MarketGrid team have extensive experience in the development of matching engines and automated trading systems for global financial markets. They have developed highly evolved next generation architecture, with the fastest commercially available matching engine that provides complete infrastructure for automated trading including execution, clearing, depository, surveillance and regulatory requirements.
                         </p>
@@ -61,6 +63,8 @@
                         <li class="level-2 "><a href="{{url('cutting-polishing')}}">Cutting and Polishing</a></li>
                         <li class="level-2 "><a href="{{url('trading')}}">Trading</a></li>
                     </ul>
+                                       <br>
+                     <img class=" shadow"  src="{{asset('frontend/trading.jpeg')}}" alt="trading" />
                 </div>
             </div>
         </div>
