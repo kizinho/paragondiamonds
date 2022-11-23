@@ -133,8 +133,10 @@
     <div class="uk-container uk-container-large">
         <div uk-grid>
             <div class="uk-width-1-3@m image">
+                   <img style="padding-right: 40px!important" src="{{asset('frontend/diamond-dec1.jpeg')}}" alt="" />
                 
-                <img style="padding-right: 40px!important" src="{{asset('frontend/diamond-dec.jpeg')}}" alt="" />
+                   <p>   <img style="padding-right: 40px!important" src="{{asset('frontend/diamond-dec.jpeg')}}" alt="" /></p>
+                   <br>
             </div>
             <div class="uk-width-2-3@m verbage">
                 <h1>{{$settings['site_name']}}</h1>

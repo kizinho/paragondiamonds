@@ -41,7 +41,7 @@
         <div class="uk-grid-collapse uk-margin-large-bottom" uk-grid>
             <div class="uk-flex-last@m uk-flex-first@s">
                 <div id="page-body" class="">
-                    <br> 
+                
 
                     <div >
                         <div >
@@ -50,10 +50,6 @@
                                 <section class=""> 
                                     <div class="container max-w-full mx-auto py-12 px-6">
 
-                                        <p class="text-center text-lg text-gray-700 mt-2 px-6">
-                                            Partnership Pricing
-                                        </p>
-                                        <div class="h-1 mx-auto bg-pink-500 w-24 opacity-75 mt-4 rounded"></div>
 
                                         <div class="max-w-full md:max-w-6xl mx-auto my-3 md:px-8">
                                             <div class="relative block flex flex-col md:flex-row items-center">

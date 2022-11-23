@@ -5,104 +5,92 @@
 <meta name="author" content="{{ucfirst($settings['site_name'])}}" />
 @endsection
 
-@extends('layouts.auth')
+@extends('layouts.app')
 @section('content')
 
-<section class="y auth">
-    <div class="container">
-        <div class="pb-3 row justify-content-center">
-
-            <div class="col-12 col-md-6 col-lg-6 col-sm-10 col-xl-6">
-                <div class="text-center">
-                    <a href="{{url('/')}}">
-                        <img src="{{asset($settings['logo']) }}" alt="" class="mb-3 img-fluid auth__logo"></a>
+<div class="slideshow uk-position-relative" uk-slideshow="autoplay: true;animation: fade;ratio:1920:450;'">
+    <div class="uk-position-relative uk-visible-toggle uk-dark">
+        <ul class="uk-slideshow-items">
+            <li class="slide subpage" style="background-image: url({{url('frontend/auth.jpeg')}}); background-repeat: no-repeat; background-position: 50% 50%;">
+                <div class="sub-banner uk-height-1-1">
+                    <div class="uk-container uk-container-large uk-height-1-1 uk-flex uk-flex-middle">
+                        <h2  class="sub-caption" uk-scrollspy="cls:text-focus-in;delay: 500">Create Account</h2>
+                    </div>
                 </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="uk-clearfix"></div>
+<div id="page-main" data-parents="2" data-siblings="8" data-children="0">
+<!-- Container -->
 
-
-                <div class="bg-white shadow card login-page roundedd border-1 ">
-                    <div class="card-body">
-                        <h4 class="text-center card-title">Create an Account</h4>
-                        <form  id="register-user"  class="mt-4 login-form">                           
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="form-group">
-                                        <label>UserName <span class="text-danger">*</span></label>
-                                        <div class="position-relative">
-                                            <i data-feather="user" class="fea icon-sm icons"></i>
-                                            <input type="text"  class="pl-5 form-control"  id="username"  placeholder="Enter Unique Username" required>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--end col-->
-
-                                <div class="col-lg-12">
-                                    <div class="form-group">
-                                        <label>FullName <span class="text-danger">*</span></label>
-                                        <div class="position-relative">
-                                            <i data-feather="user-check" class="fea icon-sm icons"></i>
-                                            <input type="text" class="pl-5 form-control" id="full_name" value="" placeholder="Enter FullName" required>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--end col-->
-
-                                <div class="col-lg-12">
-                                    <div class="form-group">
-                                        <label>Your Email <span class="text-danger">*</span></label>
-                                        <div class="position-relative">
-                                            <i data-feather="mail" class="fea icon-sm icons"></i>
-                                            <input type="email" class="pl-5 form-control" id="email" value="" placeholder="name@example.com" required>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--end col-->
-
-
-
-                                <div class="col-lg-12">
-                                    <div class="form-group">
-                                        <label>Phone Number <span class="text-danger">*</span></label>
-                                        <div class="position-relative">
-                                            <i data-feather="phone" class="fea icon-sm icons"></i>
-                                            <input type="phone" class="pl-5 form-control" id="phone_no" value=""  placeholder="Enter Phone number" required>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--end col-->
-
-                                <div class="col-lg-12">
-                                    <div class="form-group">
-                                        <label>Password <span class="text-danger">*</span></label>
-                                        <div class="position-relative">
-                                            <i data-feather="key" class="fea icon-sm icons"></i>
-                                            <input type="password" class="pl-5 form-control" id="password"  placeholder="Enter Password" required>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--end col-->
-
-                                <div class="col-lg-12">
-                                    <div class="form-group">
-                                        <label>Confirm Password <span class="text-danger">*</span></label>
-                                        <div class="position-relative">
-                                            <i data-feather="key" class="fea icon-sm icons"></i>
-                                            <input type="password" class="pl-5 form-control" id="password_confirmation" value=""  placeholder="Confirm Password" required>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--end col-->
-
-                                <div class="col-md-12">
-                                    <div class="form-group ">
-                                        <label>Country <span class="text-danger">*</span></label>
-                                        <div class="position-relative">
-                                            <i data-feather="map-pin" class="fea icon-sm icons"></i>
-                                            <select class="pl-5 d-block w-100 px-2 py-3 border border-light rounded-right" id="country"  required>
+<div class="container mx-auto">
+    <div class="flex justify-center items-center px-6">
+        <!-- Row -->
+        <div class="w-full xl:w-3/4 lg:w-11/12 flex">
+            <!-- Col -->
+            <div
+                class="w-full h-auto bg-gray-400 hidden lg:block lg:w-5/12 bg-cover rounded-l-lg"
+                style="background-image: url({{url('frontend/auth1.png')}});width: 600px;height: 800px"
+                ></div>
+            <!-- Col -->
+            <div class="w-full lg:w-7/12 bg-white p-5 rounded-lg lg:rounded-l-none">
+                <h3 class="pt-4 text-2xl text-center">Create an Account!</h3>
+                <form class="px-8 pt-6 pb-8 mb-4 bg-white rounded">
+                    <div class="mb-4 md:flex md:justify-between">
+                        <div class="mb-4 md:mr-2 md:mb-0">
+                            <label class="block mb-2 text-sm font-bold text-gray-700" for="Username">
+                                Username
+                            </label>
+                            <input
+                                class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                id="username"
+                                type="text"
+                                placeholder="Username"
+                                />
+                        </div>
+                        <div class="md:ml-2">
+                            <label class="block mb-2 text-sm font-bold text-gray-700" for="FullName">
+                                Full Name
+                            </label>
+                            <input
+                                class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                id="full_name"
+                                type="text"
+                                placeholder="Full Name"
+                                />
+                        </div>
+                    </div>
+                      <div class="mb-4 md:flex md:justify-between">
+                        <div class="mb-4 md:mr-2 md:mb-0">
+                            <label class="block mb-2 text-sm font-bold text-gray-700" for="Email">
+                                Email
+                            </label>
+                            <input
+                                class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                id="email"
+                                type="email"
+                                placeholder="Email"
+                                />
+                        </div>
+                        <div class="md:ml-2">
+                            <label class="block mb-2 text-sm font-bold text-gray-700" for="Mobile Number">
+                                Mobile Number
+                            </label>
+                            <input
+                                class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                id="phone_no"
+                                type="text"
+                                placeholder="Mobile Number"
+                                />
+                        </div>
+                    </div>
+                     <div class="mb-4">
+                        <label class="block mb-2 text-sm font-bold text-gray-700" for="email">
+                            Country
+                        </label>
+                         <select class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="country"  required>
                                                 <option selected disabled>Choose Country</option>
                                                 <option value="Afganistan">Afghanistan</option>
                                                 <option value="Albania">Albania</option>
@@ -352,61 +340,69 @@
                                                 <option value="Zambia">Zambia</option>
                                                 <option value="Zimbabwe">Zimbabwe</option>    
                                             </select>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-12">
-                                    <div class="form-group">
-                                        <label>Referral ID</label>
-                                        <div class="position-relative">
-                                            <i data-feather="user" class="fea icon-sm icons"></i>
-                                            <input type="text" class="pl-5 form-control"   id="ref" value="{{$sponsor}}" placeholder="optional referral id">
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <!--end col-->
-
-                                <div class="mb-0 col-lg-12">
-                                    <button class="btn btn-primary btn-block pad" id="control" type="submit">Register</button>
-                                    <button class="btn btn-primary btn-block pad" id="control-name" style="display: none">Processing please wait...</button>
-                                </div>
-                                <!--end col-->
-
-                                <div class="mt-4 text-center col-lg-12">
-                                </div>
-                                <!--end col-->
-                                <!--end col-->
-
-                                <div class="text-center col-12">
-                                    <p class="mt-3 mb-0"><small class="mr-2 text-dark">Already have an account
-                                        </small> <a href="{{url('login')}}"
-                                                    class="text-dark font-weight-bold">Login</a></p>
-                                </div>
-                                <!--end col-->
-
-                                <div class="text-center col-12">
-                                    <p class="mt-4 mb-0"><small class="mr-2 text-dark">
-                                            {{$settings['copy_right']}}
-
-                                        </small>
-                                    </p>
-                                </div>
-                            </div>
-                            <!--end row-->
-                        </form>
+                       
                     </div>
-                </div>
-                <!---->
+                    <input type="hidden"   id="ref" value="{{$sponsor}}" placeholder="optional referral id">
+                                    
+                    <div class="mb-4 md:flex md:justify-between">
+                        <div class="mb-4 md:mr-2 md:mb-0">
+                            <label class="block mb-2 text-sm font-bold text-gray-700" for="password">
+                                Password
+                            </label>
+                            <input
+                                class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                id="password"
+                                type="password"
+                                placeholder="******************"
+                                />
+                            <p class="text-xs italic text-red-500">Please choose a password.</p>
+                        </div>
+                        <div class="md:ml-2">
+                            <label class="block mb-2 text-sm font-bold text-gray-700" for="c_password">
+                                Confirm Password
+                            </label>
+                            <input
+                                class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                id="password_confirmation"
+                                type="password"
+                                placeholder="******************"
+                                />
+                        </div>
+                    </div>
+                    <div class="mb-6 text-center">
+                        <button
+                            class="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline"
+                            type="button"
+                            >
+                            Register Account
+                        </button>
+                    </div>
+                    <hr class="mb-6 border-t" />
+                    <div class="text-center">
+                        <a
+                            class="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800"
+                            href="{{route('password.request')}}"
+                            >
+                            Forgot Password?
+                        </a>
+                    </div>
+                    <div class="text-center">
+                        <a
+                            class="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800"
+                            href="{{url('login')}}"
+                            >
+                            Already have an account? Login!
+                        </a>
+                    </div>
+                </form>
             </div>
-            <!--end col-->
         </div>
-        <!--end row-->
     </div>
-    <!--end container-->
-</section>
+</div>
+
+</div>
+
+<div class="uk-clearfix"></div>
 
 @section('script')
 <script>

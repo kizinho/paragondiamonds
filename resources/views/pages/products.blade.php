@@ -44,7 +44,7 @@
                         <div uk-grid>
                             <div class="uk-width-1-3@m image text-center">
 
-                                <img style="padding-left: 20px!important;height: 500px!important" src="{{asset('frontend/single-stones.jpg')}}" alt="single-stones" />
+                                <img style="padding-left: 20px!important;height: 400px!important" src="{{asset('frontend/single-stones.jpg')}}" alt="single-stones" />
                             </div>
                             <div class="uk-width-2-3@m verbage">
 
@@ -72,7 +72,7 @@
                         <div uk-grid>
                             <div class="uk-width-1-3@m image text-center">
 
-                                <img style="padding-left: 20px!important;height: 600px!important"  src="{{asset('frontend/diamond-baskets.jpg')}}" alt="single-stones" />
+                                <img style="padding-left: 20px!important;height: 400px!important"  src="{{asset('frontend/diamond-baskets.jpg')}}" alt="single-stones" />
                              </div>
                              <div class="uk-width-2-3@m verbage">
 

@@ -20,6 +20,12 @@
      <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
 
     <style>
+        .text-blue-500 {
+    color: #205b66!important;
+}
+        .bg-blue-500 {
+    background-color: #0691ab!important;
+}
         .home-page .features .feature a {
     border: 1px solid #cfdce1 !important;
     color: #fff!important

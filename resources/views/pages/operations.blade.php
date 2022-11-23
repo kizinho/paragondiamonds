@@ -33,7 +33,7 @@
                     <br> <br>
 
                     <div id="content">
-                        <h3 style="color:grey">PROCESSING</h3>
+                        <h1 style="color:grey">PROCESSING</h1>
                         <p> 
 
                             Once a diamond operation yields ore, the diamonds must be sorted from the other materials. Excavated ore is transported to a processing plant. The kimberlite is first crushed and then processed through the plant, which consists of a series of screens, jigs and scrubbers and a gravity pan or DMS plant to remove lighter particles and create a concentrate of heavy material, which includes the diamonds.

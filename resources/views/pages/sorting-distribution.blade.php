@@ -33,7 +33,7 @@
                     <br> <br>
 
                     <div id="content">
-                            <h3 style="color:grey">SORTING AND DISTRIBUTION</h3>
+                            <h1 style="color:grey">SORTING AND DISTRIBUTION</h1>
                         <p> 
 
                       At the end of each production cycle, the diamonds produced at our mines are delivered to our sorting facility, where they are cleaned and acidized, before being sorted into international sales assortments. The rough diamonds are first sorted by size (carat weight) and then each size faction is sorted into quality ranges, depending on each stone’s colour and clarity. High quality larger stones or coloured stones are sold as single lots. Individual mine production is kept separate, providing buyers with an additional level of knowledge about the goods they are purchasing based upon each mine’s unique diamond characteristics. Our tenders last between four to six working days, during which participants view the assortments and place a confidential electronic bid on the parcel of their choice.

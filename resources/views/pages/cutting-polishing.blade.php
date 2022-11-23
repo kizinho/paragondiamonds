@@ -33,7 +33,7 @@
                     <br> <br>
 
                     <div id="content">
-                          <h3 style="color:grey">CUTTING AND POLISHING</h3>
+                          <h1 style="color:grey">CUTTING AND POLISHING</h1>
                         <p> 
 
                      A well-cut diamond reflects light within itself, from one facet to another, as well as through the top of the diamond, bringing out its spectral brilliance. The cutting and polishing of a diamond crystal always results in a dramatic loss of weight; rarely is it less than 50%. Sometimes the cutters compromise and accept lesser proportions and symmetry in order to avoid inclusions or to preserve the carat rating.
