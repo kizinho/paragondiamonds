@@ -26,9 +26,9 @@
 <!-- Container -->
 
 <div class="container mx-auto">
-    <div class="flex justify-center items-center px-6">
+    <div class="flex justify-center items-center">
         <!-- Row -->
-        <div class="w-full xl:w-3/4 lg:w-11/12 flex">
+        <div class="flex">
             <!-- Col -->
             <div
                 class="w-full h-auto bg-gray-400 hidden lg:block lg:w-5/12 bg-cover rounded-l-lg"
