@@ -354,7 +354,7 @@
                                     type="password"
                                     placeholder="******************" class="relative px-3 py-2 pr-10 w-full mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" />
                                         <span class="absolute right-0 z-10 py-3 pr-1 w-8 h-full leading-snug bg-transparent rounded text-base font-normal text-gray-400 text-center  items-center justify-center">
-                                            <i class="fa fa-eye"></i>
+                                            <i class="fa fa-eye toggle-password"></i>
                                         </span>
                                     </div>
                              
@@ -371,7 +371,7 @@
                                     placeholder="******************"
                                     class="relative px-3 py-2 pr-10 w-full mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" />
                                         <span class="absolute right-0 z-10 py-3 pr-1 w-8 h-full leading-snug bg-transparent rounded text-base font-normal text-gray-400 text-center  items-center justify-center">
-                                            <i class="fa fa-eye"></i>
+                                            <i class="fa fa-eye toggle-password-c"></i>
                                         </span>
                                     </div>
                                
@@ -433,7 +433,29 @@
 <div class="uk-clearfix"></div>
 
 @section('script')
+
 <script>
+    $("body").on('click', '.toggle-password', function() {
+  $(this).toggleClass("fa-eye fa-eye-slash");
+  var input = $("#password");
+  if (input.attr("type") === "password") {
+    input.attr("type", "text");
+  } else {
+    input.attr("type", "password");
+  }
+
+});
+    $("body").on('click', '.toggle-password-c', function() {
+  $(this).toggleClass("fa-eye fa-eye-slash");
+  var input = $("#password_confirmation");
+  if (input.attr("type") === "password") {
+    input.attr("type", "text");
+  } else {
+    input.attr("type", "password");
+  }
+
+});
+
     $('#register-user').submit(function (event) {
         event.preventDefault();
         var checkbox = document.getElementById("check2");

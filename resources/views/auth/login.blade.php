@@ -14,7 +14,7 @@
             <li class="slide subpage" style="background-image: url({{url('frontend/auth.jpeg')}}); background-repeat: no-repeat; background-position: 50% 50%;">
                 <div class="sub-banner uk-height-1-1">
                     <div class="uk-container uk-container-large uk-height-1-1 uk-flex uk-flex-middle">
-                        <h2  class="sub-caption" uk-scrollspy="cls:text-focus-in;delay: 500">User Login</h2>
+                        <h2  class="sub-caption" uk-scrollspy="cls:text-focus-in;delay: 500">Login</h2>
                     </div>
                 </div>
             </li>
@@ -36,7 +36,7 @@
                 ></div>
             <!-- Col -->
             <div class="w-full lg:w-7/12 bg-white p-5 rounded-lg lg:rounded-l-none">
-                <h3 class="pt-4 text-2xl text-center">User Login</h3>
+                <h3 class="pt-4 text-2xl text-center">PARTNER Login</h3>
             
                     <form method="POST" action="{{ route('login') }}"  class="px-8 pt-6 pb-8 mb-4 bg-white rounded">
                             @csrf 
@@ -58,10 +58,11 @@
                             </label>
                            <div class="relative mb-3 w-full flex flex-wrap items-stretch">
                                         <input  name="password"
+                                                id="password"
                                     type="password"
                                     placeholder="******************" class="relative px-3 py-2 pr-10 w-full mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" />
                                         <span class="absolute right-0 z-10 py-3 pr-1 w-8 h-full leading-snug bg-transparent rounded text-base font-normal text-gray-400 text-center  items-center justify-center">
-                                            <i class="fa fa-eye"></i>
+                                            <i class="fa fa-eye toggle-password"></i>
                                         </span>
                                     </div>
                         </div>
@@ -103,6 +104,23 @@
 
 <div class="uk-clearfix"></div>
 
+@section('script')
 
+<script>
+    $("body").on('click', '.toggle-password', function() {
+  $(this).toggleClass("fa-eye fa-eye-slash");
+  var input = $("#password");
+  if (input.attr("type") === "password") {
+    input.attr("type", "text");
+  } else {
+    input.attr("type", "password");
+  }
+
+});
+
+
+</script>
+
+@endsection
 
 @endsection

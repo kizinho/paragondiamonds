@@ -25,7 +25,7 @@
             <li class="slide subpage" style="background-image: url({{url('frontend/contact.jpeg')}}); background-repeat: no-repeat; background-position: 50% 50%;">
                 <div class="sub-banner uk-height-1-1">
                     <div class="uk-container uk-container-large uk-height-1-1 uk-flex uk-flex-middle">
-                        <h2  class="sub-caption" uk-scrollspy="cls:text-focus-in;delay: 500">Contact us</h2>
+                        <h2  class="sub-caption" uk-scrollspy="cls:text-focus-in;delay: 500">Contact</h2>
                     </div>
                 </div>
             </li>
@@ -93,7 +93,7 @@
             </div>
             <div class="uk-width-1-4@m uk-flex-first@m uk-flex-last@s uk-first-column uk-grid-margin">
                 <div class="aside">
-                    <h2>Contact us</h2>
+                    
                      <form id="contact" method="POST"  class="px-8 pt-6 pb-8 mb-4 bg-white rounded">
                       
                  

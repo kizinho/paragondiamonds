@@ -14,7 +14,7 @@
             <li class="slide subpage" style="background-image: url({{url('frontend/auth.jpeg')}}); background-repeat: no-repeat; background-position: 50% 50%;">
                 <div class="sub-banner uk-height-1-1">
                     <div class="uk-container uk-container-large uk-height-1-1 uk-flex uk-flex-middle">
-                        <h2  class="sub-caption" uk-scrollspy="cls:text-focus-in;delay: 500">Password Reset Link</h2>
+                        <h2  class="sub-caption" uk-scrollspy="cls:text-focus-in;delay: 500">Password Reset</h2>
                     </div>
                 </div>
             </li>
@@ -36,7 +36,7 @@
                 ></div>
             <!-- Col -->
             <div class="w-full lg:w-7/12 bg-white p-5 rounded-lg lg:rounded-l-none">
-                <h3 class="pt-4 text-2xl text-center">Password Reset Link</h3>
+                <h3 class="pt-4 text-2xl text-center">Password Reset</h3>
                 <form method="POST" action="{{ route('password.email') }}" class="px-8 pt-6 pb-8 mb-4 bg-white rounded">
                       @csrf 
                  

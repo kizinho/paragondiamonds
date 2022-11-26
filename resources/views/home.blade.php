@@ -78,7 +78,7 @@
                                 <div class="card-body">
                                     <div class="d-flex">
                                         <div class="flex-grow-1">
-                                            <p class="text-muted fw-medium">Total Payouts</p>
+                                            <p class="text-muted fw-medium">Total Withdrawal</p>
                                             <h4 class="mb-0">${{number_format($completed_withdraw, 2)}}</h4>
                                         </div>
 
