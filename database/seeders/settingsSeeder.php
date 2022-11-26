@@ -30,9 +30,6 @@ class settingsSeeder extends Seeder {
         $settings->copy_right = '© 2022 all rights reserved';
         $settings->block_io_pin = '123456';
         $settings->min_withdraw = '0';
-        $settings->level_1 = 5;
-        $settings->level_2 = 3;
-        $settings->level_3 = 2;
         $settings->investment_payment_mode = '0';
         $settings->auto_withdraw = true;
         $settings->email_body = '<p> </p>
