@@ -50,6 +50,7 @@
                         <li class="level-2 "><a href="{{url('about-overview')}}">Overview</a></li>
                         <li class="level-2 "><a href="{{url('about-vision-mission')}}">Vision and Mission</a></li>
                         <li class=" level-2"><a href="{{url('management')}}">Management</a></li>
+                         <li class=" level-2"><a href="{{url('contact-us')}}">Contact</a></li>
                     </ul>
                     
                                        <br>

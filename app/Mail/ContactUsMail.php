@@ -16,14 +16,11 @@ class ContactUsMail extends Notification {
      *
      * @return void
      */
-    public function __construct($subject, $name, $email, $message, $phone_no, $service, $others) {
+    public function __construct($subject, $name, $email, $message) {
         $this->name = $name;
         $this->email = $email;
         $this->message = $message;
         $this->subject = $subject;
-        $this->phone_no = $phone_no;
-        $this->service = $service;
-        $this->others = empty($others) ? 'nill' : $others;
     }
 
     public function via($notifiable) {
@@ -41,9 +38,6 @@ class ContactUsMail extends Notification {
                         ->line($this->name . ' Contacted You')
                         ->line('Email : ' . $this->email)
                         ->line('Message : ' . $this->message)
-                        ->line('Mobile number : ' . $this->phone_no)
-                        ->line('service : ' . $this->service)
-                        ->line('other service : ' . $this->others)
                         ->line('You are getting this message because you are the owner of this site!')
         ;
     }

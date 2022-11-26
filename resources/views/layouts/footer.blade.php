@@ -31,7 +31,7 @@
             </div>
         </div>
         <div class="bottom">
-            <div class="links"><a href="{{url('legal/disclaimer')}}">Legal</a> | <a href="{{url('register')}}">Register</a></div>
+            <div class="links"><a href="{{url('login')}}">Login</a> | <a href="{{url('register')}}">Register</a></div>
             <p class="etc">{{$settings['copy_right']}} | <a class="adnet" href="{{url('/')}}" target="_blank">Designed & Powered by {{$settings['site_name']}}</a></p>
         </div>
     </div>

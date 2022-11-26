@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=1024" />
       @endcan
      @can('isUser')
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=1024" />
         @endcan
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Favicons -->
@@ -35,6 +35,11 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/magnific-popup.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/style.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/responsive.css')}}" />
+    <style>
+        .l-main{
+            margin-top: 200px;
+        }
+    </style>
     @endcan
  @can('isUser')
  

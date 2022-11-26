@@ -94,7 +94,7 @@ Route::get('products', function () {
     return view('pages.products');
 });
 
-Route::get('contact', function () {
+Route::get('contact-us', function () {
     return view('pages.contact-us');
 });
 

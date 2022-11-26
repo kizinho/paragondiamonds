@@ -41,15 +41,13 @@
                         <hr>
                         <div class="plan-features mt-5">
                             
-                            <p><i class="bx bx-checkbox-square text-info me-2"></i> Min: ${{number_format($plan->min)}}</p>
-                            <p><i class="bx bx-checkbox-square text-info me-2"></i> Max: ${{number_format($plan->max)}}</p>
-                            <p><i class="bx bx-checkbox-square text-info me-2"></i> {{number_format($plan->percentage,1)}}% ROI Weekly </p>
-                                 <p><i class="bx bx-checkbox-square text-info me-2"></i>  Contract duration of {{$plan->compound->name}} </p>
+                            <p><i class="bx bx-checkbox-square text-info me-2"></i> Minimum - ${{number_format($plan->min)}}</p>
+                           <p><i class="bx bx-checkbox-square text-info me-2"></i> Monthly ROI - {{number_format($plan->percentage,1)}}% </p>
+                                 <p><i class="bx bx-checkbox-square text-info me-2"></i>  Affiliate Bonus - {{number_format($plan->ref)}}% </p>
                            
-                            <p><i class="bx bx-checkbox-square text-info me-2"></i> {{number_format($settings['level_1'] + $settings['level_2'],1)}}% Referral Commssion </p>
-                            <p><i class="bx bx-checkbox-square text-info me-2"></i> Full access to all features</p>
-                            <p><i class="bx bx-checkbox-square text-info me-2"></i> 24/7 support</p>
-                             <p><i class="bx bx-checkbox-square text-info me-2"></i> @if($key == 0) No @endif personal account manager</p>
+                            <p><i class="bx bx-checkbox-square text-info me-2"></i> Trading Commission - {{number_format($plan->trading_commision)}}% </p>
+                            <p><i class="bx bx-checkbox-square text-info me-2"></i> 100% Guaranteed</p>
+                  
                         </div>
                         <div class="text-center ">
                             <a a data-plan="{{$plan->id}}" href="javascript: void(0);" class="btn btn-info btn-sm  select_plan">Invest Now</a>

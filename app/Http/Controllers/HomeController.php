@@ -535,13 +535,15 @@ class HomeController extends Controller {
             session()->flash('message.content', 'Amount is less than the minimum amount for this plan');
             return redirect()->back();
         }
-
+      
+       if($plan->max >=1){
         if ($request->amount > $plan->max) {
             session()->flash('message.level', 'error');
             session()->flash('message.color', 'red');
             session()->flash('message.content', 'Amount is greater than the maxmium amount for this plan');
             return redirect()->back();
         }
+       }
         $all = file_get_contents("https://blockchain.info/ticker");
         $res = json_decode($all);
         $btcrate = $res->USD->last;
@@ -628,7 +630,7 @@ class HomeController extends Controller {
         $qrCode->setForegroundColor(['r' => 0, 'g' => 0, 'b' => 0, 'a' => 0]);
         $qrCode->setBackgroundColor(['r' => 255, 'g' => 255, 'b' => 255, 'a' => 0]);
         $qrCode->setLogoPath(public_path() . '/' . $setting['logo']);
-        $qrCode->setLogoSize(166, 49);
+        $qrCode->setLogoSize(60, 50);
         $qrCode->setValidateResult(false);
         $qrcode_image = $qrCode->writeDataUri();
         $data['image_qrcode'] = $qrcode_image;
@@ -1269,9 +1271,9 @@ class HomeController extends Controller {
                         $address = $first_pay->address;
                         $reward = $invest->amount;
 
-                        $firstUserReward = $setting->level_1 / 100 * $reward;
-                        $secondUserReward = $setting->level_2 / 100 * $reward;
-                        $thirdUserReward = $setting->level_3 / 100 * $reward;
+                        $firstUserReward = $invest->plan->ref / 100 * $reward;
+//                        $secondUserReward = $setting->level_2 / 100 * $reward;
+//                        $thirdUserReward = $setting->level_3 / 100 * $reward;
 
                         //first reward
                         $newFirstUserReward = $firstUserReward;
@@ -1315,37 +1317,37 @@ class HomeController extends Controller {
                                             'address' => null
                                 ]);
                             }
-                            if (is_object($second_pay)) {
-                                $newSecondUserReward = $secondUserReward;
-                                //create user withdrawal data
-                                $user_withdraw_second = new UserWithdrawal();
-                                $user_withdraw_second->amount = $newSecondUserReward;
-                                $user_withdraw_second->user_id = $second_pay->user_id;
-                                $user_withdraw_second->coin_id = $second_pay->id;
-                                $user_withdraw_second->type = "Referral Bonus";
-                                $user_withdraw_second->status = true;
-                                $user_withdraw_second->plan_id = $invest->plan_id;
-                                $user_withdraw_second->save();
-                                $userMoney = userTrackEarn::firstOrNew(array('user_id' => ($second_pay->user_id)));
-                                $userMoney->user_id = $second_pay->user_id;
-                                $userMoney->amount = $userMoney->amount + $newSecondUserReward;
-                                $userMoney->save();
-                                //transcation log
-                                Transaction::create([
-                                    'user_id' => $second_pay->user_id,
-                                    'transaction_id' => $invest->transaction_id,
-                                    'type' => 'Commissions',
-                                    'name_type' => 'Referral Bonus',
-                                    'coin_id' => $second_pay->id,
-                                    'amount' => $newSecondUserReward,
-                                    'amount_profit' => $newSecondUserReward,
-                                    'description' => 'Referral Bonus Under ' . $invest->plan->name . ' license',
-                                    'status' => true
-                                ]);
-                                $message_second = 'USD' . $newSecondUserReward . "Referral Bonus has been successfully sent to wallet";
-                                $name = $second_pay->user->username;
-                                $greeting = "Hello $name";
-                                Mail::to($second_pay->user->email)->send(new MailSender('Referral Bonus', $greeting, $message_second, '', ''));
+//                            if (is_object($second_pay)) {
+//                                $newSecondUserReward = $secondUserReward;
+//                                //create user withdrawal data
+//                                $user_withdraw_second = new UserWithdrawal();
+//                                $user_withdraw_second->amount = $newSecondUserReward;
+//                                $user_withdraw_second->user_id = $second_pay->user_id;
+//                                $user_withdraw_second->coin_id = $second_pay->id;
+//                                $user_withdraw_second->type = "Referral Bonus";
+//                                $user_withdraw_second->status = true;
+//                                $user_withdraw_second->plan_id = $invest->plan_id;
+//                                $user_withdraw_second->save();
+//                                $userMoney = userTrackEarn::firstOrNew(array('user_id' => ($second_pay->user_id)));
+//                                $userMoney->user_id = $second_pay->user_id;
+//                                $userMoney->amount = $userMoney->amount + $newSecondUserReward;
+//                                $userMoney->save();
+//                                //transcation log
+//                                Transaction::create([
+//                                    'user_id' => $second_pay->user_id,
+//                                    'transaction_id' => $invest->transaction_id,
+//                                    'type' => 'Commissions',
+//                                    'name_type' => 'Referral Bonus',
+//                                    'coin_id' => $second_pay->id,
+//                                    'amount' => $newSecondUserReward,
+//                                    'amount_profit' => $newSecondUserReward,
+//                                    'description' => 'Referral Bonus Under ' . $invest->plan->name . ' license',
+//                                    'status' => true
+//                                ]);
+//                                $message_second = 'USD' . $newSecondUserReward . "Referral Bonus has been successfully sent to wallet";
+//                                $name = $second_pay->user->username;
+//                                $greeting = "Hello $name";
+//                                Mail::to($second_pay->user->email)->send(new MailSender('Referral Bonus', $greeting, $message_second, '', ''));
 
 //                                //third reward
 //                                $user_ref_third = Reference::whereReferred_id($second_pay->user_id)->first();
@@ -1392,7 +1394,7 @@ class HomeController extends Controller {
 //                                        Mail::to($third_pay->user->email)->send(new MailSender('Referral Bonus', $greeting, $message_third, '', ''));
 //                                    }
 //                                }
-                            }
+//                            }
                         }
                     }
                 }
@@ -1732,7 +1734,7 @@ class HomeController extends Controller {
         $qrCode->setForegroundColor(['r' => 0, 'g' => 0, 'b' => 0, 'a' => 0]);
         $qrCode->setBackgroundColor(['r' => 255, 'g' => 255, 'b' => 255, 'a' => 0]);
         $qrCode->setLogoPath(public_path() . '/' . $setting['logo']);
-        $qrCode->setLogoSize(166, 49);
+        $qrCode->setLogoSize(60, 50);
         $qrCode->setValidateResult(false);
         $qrcode_image = $qrCode->writeDataUri();
         $data['image_qrcode'] = $qrcode_image;

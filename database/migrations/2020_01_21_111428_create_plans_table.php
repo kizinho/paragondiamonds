@@ -20,9 +20,7 @@ class CreatePlansTable extends Migration {
             $table->float('max', 24)->default(0);
             $table->float('ref', 24)->default(0);
             $table->float('trading_commision', 24)->default(0);
-            
             $table->decimal('percentage')->default(0);
-            $table->decimal('insurance')->default(0);
             $table->unsignedBigInteger('compound_id');
             $table->timestamps();
             $table->foreign('compound_id')

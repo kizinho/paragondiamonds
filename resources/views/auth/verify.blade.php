@@ -5,56 +5,61 @@
 <meta name="author" content="{{ucfirst($settings['site_name'])}}" />
 
 @endsection
-@extends('layouts.auth')
+@extends('layouts.app')
 @section('content')
 
 
-<section class="y auth">
-    <div class="container">
-        <div class="pb-3 row justify-content-center">
 
-            <div class="col-12 col-md-6 col-lg-6 col-sm-10 col-xl-6">
-                <div class="text-center">
-                    <a href="{{url('/')}}">
-                        <img src="{{asset($settings['logo']) }}" alt="" class="mb-3 img-fluid auth__logo"></a>
-                </div>
-
-
-                <div class="bg-white shadow card login-page roundedd border-1 ">
-                    <div class="card-body">
-                        <h4 class="text-center card-title">Verify your Account</h4>
-                        <form  id="register-user"  class="mt-4 login-form">                           
-                            <div class="row">
-                                <div class="text-center col-12">
-                                    <p class="mt-3 mb-0"><small class="mr-2 text-dark">Check your email for activation link was sent or check your spam inbox.
-                                        </small></p>
-                                </div>
-                                <br>
-                                <!--end col-->
-
-                                <div class="mb-0 col-lg-12">
-                                      <a href="{{url('resend')}}" class="btn btn-primary btn-block pad">Resend Code</a>
-                                </div>
-                                <!--end col-->
-
-                                <div class="mt-4 text-center col-lg-12">
-                                </div>
-
-
-                              
-                            </div>
-                            <!--end row-->
-                        </form>
+<div class="slideshow uk-position-relative" uk-slideshow="autoplay: true;animation: fade;ratio:1920:450;'">
+    <div class="uk-position-relative uk-visible-toggle uk-dark">
+        <ul class="uk-slideshow-items">
+            <li class="slide subpage" style="background-image: url({{url('frontend/auth.jpeg')}}); background-repeat: no-repeat; background-position: 50% 50%;">
+                <div class="sub-banner uk-height-1-1">
+                    <div class="uk-container uk-container-large uk-height-1-1 uk-flex uk-flex-middle">
+                        <h2  class="sub-caption" uk-scrollspy="cls:text-focus-in;delay: 500">Verify Account</h2>
                     </div>
                 </div>
-                <!---->
-            </div>
-            <!--end col-->
-        </div>
-        <!--end row-->
+            </li>
+        </ul>
     </div>
-    <!--end container-->
-</section>
+</div>
+<div class="uk-clearfix"></div>
+<div id="page-main" data-parents="2" data-siblings="8" data-children="0">
+    <!-- Container -->
+
+    <div class="container mx-auto">
+        <div class="flex justify-center items-center">
+            <!-- Row -->
+            <div class="flex">
+                <!-- Col -->
+                <div
+                    class="w-full h-auto bg-gray-400 hidden lg:block lg:w-5/12 bg-cover rounded-l-lg"
+                    style="background-image: url({{url('frontend/auth1.png')}});width: 600px;height: 800px"
+                    ></div>
+                <!-- Col -->
+                <div class="w-full lg:w-7/12 bg-white p-5 rounded-lg lg:rounded-l-none">
+                    <h3 class="pt-4 text-2xl text-center">Verify Account</h3>
+                    <p class="mt-3 mb-0">Check your email for activation link was sent or check your spam inbox.
+                        </p>
+                        <br>
+                        <div class="mb-6 text-center">
+                            <a href="{{url('resend')}}" 
+                               class="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline"                            >
+                                Resend Code
+                            </a>
+
+                        </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="uk-clearfix"></div>
+
+
 
 
 

@@ -17,19 +17,19 @@
             <div class="navbar-brand-box">
                 <a href="{{url('/')}}" class="logo logo-dark">
                     <span class="logo-sm">
-                        <img src="{{asset($settings['logo']) }}" alt="" height="22">
+                        <img src="{{asset($settings['logo']) }}" alt="" height="50">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{asset($settings['logo']) }}" alt="" height="17">
+                        <img src="{{asset($settings['logo']) }}" alt="" height="60">
                     </span>
                 </a>
 
                 <a href="{{url('/')}}" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="{{asset($settings['logo']) }}" alt="" height="22">
+                        <img src="{{asset($settings['logo']) }}" alt="" height="50">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{asset($settings['logo']) }}" alt="" height="19">
+                        <img src="{{asset($settings['logo']) }}" alt="" height="60">
                     </span>
                 </a>
             </div>

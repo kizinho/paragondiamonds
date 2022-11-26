@@ -36,8 +36,6 @@ class FrontController extends Controller {
         $input = $request->all();
         $rules = ([
             'name' => ['required', 'string'],
-            'phone_no' => ['required'],
-            'service' => ['required', 'string'],
             'subject' => ['required', 'string'],
             'email' => ['required', 'string', 'email', 'max:255'],
             'message' => ['required', 'string']
@@ -56,7 +54,7 @@ class FrontController extends Controller {
         $email = $request->email;
         $message = $request->message;
         Notification::route('mail', $setting['send_notify_email'])
-                ->notify(new ContactUsMail($subject, $name, $email, $message, $request->phone_no, $request->service, $request->others));
+                ->notify(new ContactUsMail($subject, $name, $email, $message));
         return [
             'status' => 200,
             'message' => 'Message Sent, We will get back to You',

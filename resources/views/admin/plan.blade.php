@@ -104,6 +104,25 @@
                                                         <div class="help-block with-errors"></div>
                                                     </div>
                                                 </div>
+                                                 
+                                                  <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="">Affiliate Bonus</label>
+                                                        <input type=text class="form-control" size=30 name="ref"  placeholder="Affiliate Bonus">
+
+                                                        <div class="help-block with-errors"></div>
+                                                    </div>
+                                                </div>
+                                                 
+                                                 
+                                                  <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="">Trading Commission </label>
+                                                        <input type=text class="form-control" size=30 name="trading_commision"  placeholder="Trading Commission">
+
+                                                        <div class="help-block with-errors"></div>
+                                                    </div>
+                                                </div>
 
                                                 <div class="col-md-6">
                                                     <div class="form-group">
@@ -151,6 +170,8 @@
                                                     <th>Min</th>
                                                     <th>Max</th>
                                                     <th>Percentage</th>
+                                                       <th>Affiliate Bonus</th>
+                                                          <th>Trading Commission </th>
                                                     <th>Compound</th>
                                                     <th>Date Created</th>
                                                 
@@ -164,6 +185,8 @@
                                                     <td> USD{{$plan->min}}</td>
                                                     <td> Unlimited</td>
                                                     <td>{{$plan->percentage}}%</td>
+                                                    <td>{{$plan->ref}}%</td>
+                                                    <td>{{$plan->trading_commision}}%</td>
                                                     <td>{{$plan->compound->name}}</td>
                                                     <td>{{ date('F d, Y', strtotime($plan->created_at)) }}</td>
                                                     <td style='white-space: nowrap'>
@@ -210,6 +233,15 @@
                                                                 <div class="form-group">
                                                                     <label class="active">Percentage</label>
                                                                     <input type="text" name="percentage" value="{{$plan->percentage}}" class="form-control" placeholder="Percentage">
+                                                                </div>
+                                                                     
+                                                                      <div class="form-group">
+                                                                    <label class="active">Affiliate Bonus</label>
+                                                                    <input type="text" name="ref" value="{{$plan->ref}}" class="form-control" placeholder="Affiliate Bonus">
+                                                                </div>
+                                                                         <div class="form-group">
+                                                                    <label class="active">Trading Commission</label>
+                                                                    <input type="text" name="trading_commision" value="{{$plan->trading_commision}}" class="form-control" placeholder="Trading Commission">
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label class="active">Compound</label>

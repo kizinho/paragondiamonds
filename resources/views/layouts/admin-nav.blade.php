@@ -35,7 +35,7 @@
     <div class="container-fluid">
         <div class="cp_logo_wrapper">
             <a href="{{url('/')}}">
-                <img src="{{asset($settings['logo']) }}" alt="logo">
+                <img src="{{asset($settings['logo']) }}" style="width:200px;height:100px" alt="logo">
             </a>
         </div>
         <!-- mobile menu area start -->

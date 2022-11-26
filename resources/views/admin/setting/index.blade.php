@@ -36,8 +36,8 @@
 
 @include('layouts.nav_dashboard')
 <!-- Main section Start -->
-<div class="l-main">         
-   
+<div class="l-main">    
+
     <!--  deposit wrapper start -->
     <div class="deposit_list_wrapper float_left">
 
@@ -71,26 +71,7 @@
                                 <label class="active">Site Url</label>
                                 <input type="text" name="site_url" value="{{$setting['site_url']}}" class="form-control" placeholder="Enter Site Url">
                             </div>
-                              <div class="form-group">
-                                <label class="active">Referral Bonus Level 1</label>
-                                <input type="text" name="level_1" value="{{$setting['level_1']}}" class="form-control" placeholder="Enter Bonus">
-                            </div>
-                              <div class="form-group">
-                                <label class="active">Referral Bonus Level 2</label>
-                                <input type="text" name="level_2" value="{{$setting['level_2']}}" class="form-control" placeholder="Enter Bonus">
-                            </div>
-                              <div class="form-group">
-                                <label class="active">Time for Make Payment</label>
-                                <input type="number" name="time_pay" value="{{$setting['time_pay']}}" class="form-control" placeholder="in Hours">
-                            </div>
-                              <div class="form-group">
-                                <label class="active">Level 1 Education License Referral Bonus</label>
-                                <input type="text" name="level_eduction_license_1" value="{{$setting['level_eduction_license_1']}}" class="form-control" placeholder="Enter Bonus">
-                            </div>
-                              <div class="form-group">
-                                <label class="active">Level 2 and 7 Education License Referral Bonus</label>
-                                <input type="text" name="level_eduction_license_2_7" value="{{$setting['level_eduction_license_2_7']}}" class="form-control" placeholder="Enter Bonus">
-                            </div>
+                           
                             <div class="form-group">
                                 <label class="active">Site Email</label>
                                 <input type="text" name="site_email" value="{{$setting['site_email']}}" class="form-control" placeholder="Site Email">
@@ -99,10 +80,7 @@
                                 <label class="active">Site Send Notify Email</label>
                                 <input type="text" name="send_notify_email" value="{{$setting['send_notify_email']}}" class="form-control" placeholder="site Notify Email">
                             </div>
-                            <div class="form-group">
-                                <label class="active">Referral Percentage</label>
-                                <input type="text" name="ref_percentage" value="{{$setting['ref_percentage']}}" class="form-control" placeholder="Referral Percentage">
-                            </div>
+                            
                             <div class="form-group">
                                 <label class="active">Address</label>
                                 <textarea type="text" name="address" class="form-control" placeholder="Address">{{$setting['address']}}</textarea>
@@ -141,12 +119,12 @@
                             </div>
 
                             <div class="form-group">
-                                <img id="footer-logo-img" class="img-center" src="{{asset($settings['logo']) }}" alt="">
+                                <img id="footer-logo-img" class="img-center" src="{{asset($settings['logo']) }}" style="width:200px;height:100px" alt="">
                                 <label class="active">Site Logo</label>
                                 <input type="file" name="logo"  class="form-control">
                             </div>
                             <div class="form-group">
-                                <img id="footer-logo-img" class="img-center" src="{{asset($settings['favicon']) }}" alt="">
+                                <img id="footer-logo-img" class="img-center" src="{{asset($settings['favicon']) }}" style="width:200px;height:100px" alt="">
                                 <label class="active">Favicon Logo</label>
                                 <input type="file" name="favicon"  class="form-control" >
                             </div>
@@ -161,6 +139,8 @@
 
                                 </select>
                             </div>
+                            <div class="clearfix"></div>
+                            <br> <br>
                             <div class="form-group">
                                 <label class="">Auto Withdraw</label>
 

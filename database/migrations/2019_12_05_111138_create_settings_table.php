@@ -17,11 +17,7 @@ class CreateSettingsTable extends Migration {
             $table->text('site_email')->nullable();
             $table->text('site_phone')->nullable();
             $table->text('send_notify_email')->nullable();
-            $table->decimal('ref_percentage')->default(0);
-            $table->string('time_pay')->default(2);
-            $table->decimal('level_1')->default(0);
-            $table->decimal('level_2')->default(0);
-            $table->decimal('level_3')->default(0);
+         
             $table->longText('site_name')->nullable();
             $table->longText('address')->nullable();
             $table->longText('site_url')->nullable();

@@ -131,12 +131,6 @@ class AdminController extends Controller {
         $setting->site_url = $request->site_url;
         $setting->site_email = $request->site_email;
         $setting->send_notify_email = $request->send_notify_email;
-        $setting->ref_percentage = $request->ref_percentage;
-        $setting->level_1 = $request->level_1;
-        $setting->level_2 = $request->level_2;
-        $setting->level_eduction_license_1 = $request->level_eduction_license_1;
-        $setting->level_eduction_license_2_7 = $request->level_eduction_license_2_7;
-        $setting->time_pay = $request->time_pay;
         $setting->address = $request->address;
         $setting->site_code = $request->site_code;
         $setting->location = $request->location;
@@ -342,9 +336,9 @@ class AdminController extends Controller {
             if (is_object($first_pay)) {
                 $reward = $payment->amount;
 
-                $firstUserReward = $setting->level_1 / 100 * $reward;
-                $secondUserReward = $setting->level_2 / 100 * $reward;
-                $thirdUserReward = $setting->level_3 / 100 * $reward;
+                $firstUserReward = $payment->plan->ref / 100 * $reward;
+//                $secondUserReward = $setting->level_2 / 100 * $reward;
+//                $thirdUserReward = $setting->level_3 / 100 * $reward;
                 //first reward
                 $newFirstUserReward = $firstUserReward;
                 //create user withdrawal data
@@ -388,38 +382,38 @@ class AdminController extends Controller {
                                     'address' => null
                         ]);
                     }
-                    if (is_object($second_pay)) {
-                        $newSecondUserReward = $secondUserReward;
-                        //create user withdrawal data
-                        $user_withdraw_second = new UserWithdrawal();
-                        $user_withdraw_second->amount = $newSecondUserReward;
-                        $user_withdraw_second->user_id = $second_pay->user_id;
-                        $user_withdraw_second->coin_id = $second_pay->id;
-                        $user_withdraw_second->type = "Referral Bonus";
-                        $user_withdraw_second->status = true;
-                        $user_withdraw_second->plan_id = $payment->plan_id;
-                        $user_withdraw_second->save();
-                        $userMoney = userTrackEarn::firstOrNew(array('user_id' => ($second_pay->user_id)));
-                        $userMoney->user_id = $second_pay->user_id;
-                        $userMoney->amount = $userMoney->amount + $newSecondUserReward;
-                        $userMoney->save();
-                        //transcation log
-                        Transaction::create([
-                            'user_id' => $second_pay->user_id,
-                            'transaction_id' => $payment->transaction_id,
-                            'type' => 'Commissions',
-                            'name_type' => 'Referral Bonus',
-                            'coin_id' => $second_pay->id,
-                            'amount' => $newSecondUserReward,
-                            'amount_profit' => $newSecondUserReward,
-                            'description' => 'Referral Bonus Under ' . $payment->plan->name . ' license',
-                            'status' => true
-                        ]);
-                        $message_second = 'USD' . $newSecondUserReward . "Referral Bonus has been successfully sent to wallet";
-                        $name = $second_pay->user->username;
-                        $greeting = "Hello $name";
-                        Mail::to($second_pay->user->email)->send(new MailSender('Referral Bonus', $greeting, $message_second, '', ''));
-//                        //third reward
+//                    if (is_object($second_pay)) {
+//                        $newSecondUserReward = $secondUserReward;
+//                        //create user withdrawal data
+//                        $user_withdraw_second = new UserWithdrawal();
+//                        $user_withdraw_second->amount = $newSecondUserReward;
+//                        $user_withdraw_second->user_id = $second_pay->user_id;
+//                        $user_withdraw_second->coin_id = $second_pay->id;
+//                        $user_withdraw_second->type = "Referral Bonus";
+//                        $user_withdraw_second->status = true;
+//                        $user_withdraw_second->plan_id = $payment->plan_id;
+//                        $user_withdraw_second->save();
+//                        $userMoney = userTrackEarn::firstOrNew(array('user_id' => ($second_pay->user_id)));
+//                        $userMoney->user_id = $second_pay->user_id;
+//                        $userMoney->amount = $userMoney->amount + $newSecondUserReward;
+//                        $userMoney->save();
+//                        //transcation log
+//                        Transaction::create([
+//                            'user_id' => $second_pay->user_id,
+//                            'transaction_id' => $payment->transaction_id,
+//                            'type' => 'Commissions',
+//                            'name_type' => 'Referral Bonus',
+//                            'coin_id' => $second_pay->id,
+//                            'amount' => $newSecondUserReward,
+//                            'amount_profit' => $newSecondUserReward,
+//                            'description' => 'Referral Bonus Under ' . $payment->plan->name . ' license',
+//                            'status' => true
+//                        ]);
+//                        $message_second = 'USD' . $newSecondUserReward . "Referral Bonus has been successfully sent to wallet";
+//                        $name = $second_pay->user->username;
+//                        $greeting = "Hello $name";
+//                        Mail::to($second_pay->user->email)->send(new MailSender('Referral Bonus', $greeting, $message_second, '', ''));
+////                        //third reward
 //                        $user_ref_third = Reference::whereReferred_id($second_pay->user_id)->first();
 //                        if (is_object($user_ref_third)) {
 //                            $third_pay = UserCoin::whereUser_id($user_ref_third->user_id)->whereCoin_id($payment->usercoin->coin->id)->first();
@@ -464,7 +458,7 @@ class AdminController extends Controller {
 //                                Mail::to($third_pay->user->email)->send(new MailSender('Referral Bonus', $greeting, $message_third, '', ''));
 //                            }
 //                        }
-                    }
+//                    }
                 }
             }
         }
