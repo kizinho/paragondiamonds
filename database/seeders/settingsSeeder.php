@@ -21,9 +21,9 @@ class settingsSeeder extends Seeder {
         $settings->address = '<strong>28 Queen Street</strong>,<br> Whalley, Lancashire,<br> United Kingdom';
         $settings->site_url = 'https://paragondiamonds.co.uk';
         $settings->site_code = 'DM';
-        $settings->logo = 'images/logo/logo.jpg';
+        $settings->logo = 'images/logo/logo.JPG';
         $settings->withdraw_charge = '0';
-        $settings->favicon = 'images/favicon/favicon.jpg';
+        $settings->favicon = 'images/favicon/favicon.JPG';
         
         $settings->location_map = 'Paragondiamonds';
         $settings->location = 'Paragondiamonds';
