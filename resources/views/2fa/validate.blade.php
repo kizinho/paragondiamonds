@@ -1,272 +1,81 @@
-
-
-<title>{{ucfirst($settings['site_name'])}} :::One-Time Password</title>
-<meta  name="description" content=" :::One-Time Password">
-<meta itemprop="keywords" name="keywords" content="{{ucfirst($settings['site_name'])}}  :::One-Time Password"/>
+@section('title')
+<title>{{ucfirst($settings['site_name'])}} &mdash; One-Time Password</title>
+<meta  name="description" content="One-Time Password">
+<meta itemprop="keywords" name="keywords" content="{{ucfirst($settings['site_name'])}} - One-Time Password"/>
 <meta name="author" content="{{ucfirst($settings['site_name'])}}" />
 
-<meta name="csrf-token" content="{{ csrf_token() }}">
-<link href="{{ asset('frontend/css/auth.css')}}" rel="stylesheet">
+@endsection
+@extends('layouts.app')
+@section('content')
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<style>
-
-    #snackbar_error {
-        visibility: hidden;
-        min-width: 250px;
-        margin-left: -125px;
-        background-color: red;
-        color: #fff;
-        text-align: center;
-        border-radius: 2px;
-        padding: 16px;
-        position: fixed;
-        z-index: 2000;
-        left: 50%;
-        bottom: 30px;
-        font-size: 17px;
-    }
-
-    #snackbar_error.show {
-        visibility: visible;
-        -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-        animation: fadein 0.5s, fadeout 0.5s 2.5s;
-    }
-    #snackbar_success {
-        visibility: hidden;
-        min-width: 250px;
-        margin-left: -125px;
-        background-color: green;
-        color: #fff;
-        text-align: center;
-        border-radius: 2px;
-        padding: 16px;
-        position: fixed;
-        z-index: 2000;
-        left: 50%;
-        bottom: 30px;
-        font-size: 17px;
-    }
-
-    #snackbar_success.show {
-        visibility: visible;
-        -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-        animation: fadein 0.5s, fadeout 0.5s 2.5s;
-    }
-
-    #google_translate_element {
-        position: relative;
-    }
-
-    .goog-logo-link {
-        display: none !important;
-    }
-
-    .goog-logo-link #text {
-        display: none !important;
-    }
-
-    .goog-te-gadget {
-        font-size: 0px !important;
-    }
-
-    .goog-te-gadget div {
-        display: inline;
-    }
-
-    .goog-te-gadget div select {
-        width: 130px;
-        height: 40px;
-        border: 1px solid #41c321 !important;
-        color: #59bfdd;
-        outline: none;
-        border: none;
-    }
-
-    .goog-te-gadget div select option {
-        border: 1px solid #41c321 !important;
-    }
-
-    .goog-te-gadget div select option:hover {
-        cursor: pointer;
-    }
-
-    .goog-te-gadget div select:hover {
-        border: 1px solid #41c321 !important;
-        cursor: pointer;
-    }
-</style>  
-
-<div class="holder">
-    <div class="main">
-        <div class="main-item logo-h">
-
-            <div class="auth-help">
-                <a href="/" class="auth-help__logo">
-                    <img src="{{asset($settings['logo']) }}" class="logo">
-                </a>
-
-            </div>
-
-        </div>
-        <div class="main-item">
-            <a href="/">
-                <img src="{{asset($settings['logo']) }}" class="logo-m">
-            </a>
-            <div class="auth --a">
-
-                <form  method="POST" action="{{url('2fa/validate') }}" class="form">
-
-                            @csrf
-                   
-                    <div class="auth-item">
-                        <input type=text name="totp" value="{{ $totp ?? old('totp') }}" required placeholder="OTP code" />
-
+<div class="slideshow uk-position-relative" uk-slideshow="autoplay: true;animation: fade;ratio:1920:450;'">
+    <div class="uk-position-relative uk-visible-toggle uk-dark">
+        <ul class="uk-slideshow-items">
+            <li class="slide subpage" style="background-image: url({{url('frontend/auth.jpeg')}}); background-repeat: no-repeat; background-position: 50% 50%;">
+                <div class="sub-banner uk-height-1-1">
+                    <div class="uk-container uk-container-large uk-height-1-1 uk-flex uk-flex-middle">
+                        <h2  class="sub-caption" uk-scrollspy="cls:text-focus-in;delay: 500">One-Time Password</h2>
                     </div>
-                   
-                   
-                    <button type="submit" style="margin: 0 0 20px 0">Validate</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="uk-clearfix"></div>
+<div id="page-main" data-parents="2" data-siblings="8" data-children="0">
+<!-- Container -->
 
-
+<div class="container mx-auto">
+    <div class="flex justify-center items-center">
+        <!-- Row -->
+        <div class="flex">
+            <!-- Col -->
+            <div
+                class="w-full h-auto bg-gray-400 hidden lg:block lg:w-5/12 bg-cover rounded-l-lg"
+                style="background-image: url({{url('frontend/auth1.png')}});width: 600px;height: 800px"
+                ></div>
+            <!-- Col -->
+            <div class="w-full lg:w-7/12 bg-white p-5 rounded-lg lg:rounded-l-none">
+                <h3 class="pt-4 text-2xl text-center">PARTNER Login</h3>
+            
+                    <form method="POST" action="{{url('2fa/validate') }}"  class="px-8 pt-6 pb-8 mb-4 bg-white rounded">
+                            @csrf 
+                      <div class="mb-4 md:flex md:justify-between">
+                        <div class="mb-4 md:mr-2 md:mb-0">
+                            <label class="block mb-2 text-sm font-bold text-gray-700" for="Email">
+                                Otp
+                            </label>
+                            <input
+                                class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                type=text name="totp" value="{{ $totp ?? old('totp') }}" 
+                                placeholder="enter otp"
+                                />
+                        </div>
+                      
+                    </div>
+                    
+                    <div class="mb-6 text-center">
+                        <button id="control"
+                            class="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline"
+                            type="submit"
+                            >
+                         Validate
+                        </button>
+                       
+                    </div>
+                    
+                   
                 </form>
-
             </div>
-            <div class="push"></div>
-            <footer class="footer">
-
-
-
-                <div class="b-header__lang js-header__lang">
-                    <div class="tbl">
-                        <div class="cll">
-                            <div class="tbl b-header__lang-h js-header__lang-h">
-                                <div class="cll">
-                                    <div class="b-header__lang-text"> </div>
-                                </div>
-                                <div class="cll">
-
-                                    <span id="google_translate_element" class=""></span>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="b-header__lang-items js-header__lang-items">
-
-
-
-
-
-                    </div>
-                </div>
-
-
-
-
-                <div class="tbl tbl--xs w100p">
-                    <div class="cll">
-                        <div class="copy">©{{$settings['site_name']}}</div>
-                    </div>
-                    <div class="cll">
-                        <div class="footer-nav">
-                            <a href="{{url('terms-of-use')}}">Terms of Use</a>
-                            <a href="{{url('privacy-policy')}}">Privacy Policy</a>
-                        </div>
-                    </div>
-
-                </div>
-            </footer>
         </div>
     </div>
 </div>
 
+</div>
+
+<div class="uk-clearfix"></div>
 
 
 
+@endsection
 
-
-
-
-
-<div id="snackbar_error"></div>
-<div id="snackbar_success"></div>
-<script type="text/javascript">
-    function googleTranslateElementInit() {
-        new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-    }
-</script>
-
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<script src="{{ asset('frontend/js/vendors/jquery.min.js')}}"></script>
-<script>
-    $(".deleted-list").on("submit", function () {
-
-        return confirm("Are you sure?");
-    });
-
-    function messageAlertError() {
-        var x = document.getElementById("snackbar_error");
-        x.className = "show";
-        setTimeout(function () {
-            x.className = x.className.replace("show", "");
-        }, 5000);
-        $(".modal").hide();
-    }
-    function messageAlertSuccess() {
-        var x = document.getElementById("snackbar_success");
-        x.className = "show";
-        setTimeout(function () {
-            x.className = x.className.replace("show", "");
-        }, 5000);
-        $(".modal").hide();
-    }
-
-</script>
-
-
-
-  @if(session()->has('message.level'))
-    <script type="text/javascript">
-        var message = "{!! session('message.content') !!}";
-        $("#snackbar_error").html(message);
-                @if (session('message.level') == 'error')
-        messageAlertError();
-                @else
-        $("#snackbar_success").html(message);
-        messageAlertSuccess();
-        @endif
-
-    </script>
-
-    @endif
-     @if ($errors->has('totp'))
- <script type="text/javascript">
-    var message = "{!!  $errors->first('totp') !!}";
-    $("#snackbar_error").html(message);
-    messageAlertError();
-          
-</script>
- 
- @endif
-
-    @if (session('status'))
- <script type="text/javascript">
-    var message = "{!!  session('status') !!}";
-    $("#snackbar_success").html(message);
-    messageAlertSuccess();
-</script>
- 
- @endif

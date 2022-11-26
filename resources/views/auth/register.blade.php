@@ -375,9 +375,7 @@
                                         </span>
                                     </div>
                                
-                                <span class="absolute right-0 z-10 py-1 pr-2 w-8 h-full leading-snug bg-transparent rounded text-base font-normal text-gray-400 text-center flex items-center justify-center">
-                                    <i class="fa fa-user"></i>
-                                </span>
+                              
                             </div>
                         </div>
                         <div class="divide-y">

@@ -254,5 +254,14 @@
     </script>
 
     @endif
+     @if ($errors->has('totp'))
+ <script type="text/javascript">
+    var message = "{!!  $errors->first('totp') !!}";
+    $("#snackbar_error").html(message);
+    messageAlertError();
+          
+</script>
+ 
+ @endif
 </body>
 </html>
