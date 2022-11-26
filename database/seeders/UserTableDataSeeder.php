@@ -19,14 +19,13 @@ class UserTableDataSeeder extends Seeder {
         $user->type = 'admin';
         $user->ref_check = "paragondiamonds";
         $user->code = true;
-        $user->email = ' info@paragondiamonds.co.uk';
+        $user->email = 'info@paragondiamonds.co.uk';
         $user->password = bcrypt('secretpragonsxdiamondsnew');
         $user->save();
         $user1 = new User();
         $user1->full_name = 'user1';
         $user1->username = 'user1';
         $user1->type = 'user';
-        
         $user1->ref_check = "user1";
         $user1->code = true;
         $user1->email = ' info@paragon.diamonds.co.uk';
