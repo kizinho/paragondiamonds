@@ -16,7 +16,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                        <h4 class="mb-sm-0 font-size-18">Choose Plan </h4>
+                        <h4 class="mb-sm-0 font-size-18">FINANCE </h4>
 
 
                     </div>
@@ -50,7 +50,7 @@
                   
                         </div>
                         <div class="text-center ">
-                            <a a data-plan="{{$plan->id}}" href="javascript: void(0);" class="btn btn-info btn-sm  select_plan">Invest Now</a>
+                            <a a data-plan="{{$plan->id}}" href="javascript: void(0);" class="btn btn-info btn-sm  select_plan">Invest</a>
                         </div>
                     </div>
 

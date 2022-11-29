@@ -1,7 +1,7 @@
 @section('title')
-<title>{{ucfirst($settings['site_name'])}} &mdash;Earnings History</title>
-<meta  name="description" content="Confirm fund">
-<meta itemprop="keywords" name="keywords" content="{{ucfirst($settings['site_name'])}} - Earnings History"/>
+<title>{{ucfirst($settings['site_name'])}} &mdash;Income History</title>
+<meta  name="description" content="Income History">
+<meta itemprop="keywords" name="keywords" content="{{ucfirst($settings['site_name'])}} - Income History"/>
 <meta name="author" content="{{ucfirst($settings['site_name'])}}" />
 
 @endsection
@@ -18,7 +18,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                        <h4 class="mb-sm-0 font-size-18">Earnings History</h4>
+                        <h4 class="mb-sm-0 font-size-18">INCOME HISTORY</h4>
 
 
 

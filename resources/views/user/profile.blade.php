@@ -97,7 +97,7 @@
                                 <div class="card-body">
 
                                     <h4 class="card-title">Change Password</h4>
-                                    <p class="card-title-desc">Easily chnage your password at any time.</p>
+                                    <p class="card-title-desc">Easily change your password at any time.</p>
 
                                     <form action="{{url('profile/personal')}}" method="post">
                                         @csrf
@@ -132,7 +132,7 @@
                             <div class="card">
                                 <div class="card-body">
 
-                                    <h4 class="card-title">Other Details</h4>
+                                    <h4 class="card-title">Details</h4>
                                     <p class="card-title-desc">Manage your details here at anytime.</p>
 
                                     <form action="{{url('profile/personal')}}" method="post">

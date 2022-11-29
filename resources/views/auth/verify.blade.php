@@ -45,7 +45,7 @@
                         <div class="mb-6 text-center">
                             <a href="{{url('resend')}}" 
                                class="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline"                            >
-                                Resend Code
+                                Resend Link
                             </a>
 
                         </div>

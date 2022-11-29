@@ -1,8 +1,8 @@
 <header>
     <div class="uk-container uk-container-large">
         <div class="grid">
-            <a href="{{url('/')}}" title="Back to Home Page" class="logo">
-                <img src="{{asset($settings['logo']) }}"   alt="{{$settings['site_name']}}" /></a>
+            <a href="{{url('/')}}" title="Back to Home Page" class="">
+                <img src="{{asset($settings['logo']) }}"  style="height:80px;width: 230px!important;margin-top: 30px" alt="{{$settings['site_name']}}" /></a>
             <div class="right-c" uk-navbar="offset: 0">
 
                 <div class="topinfo">

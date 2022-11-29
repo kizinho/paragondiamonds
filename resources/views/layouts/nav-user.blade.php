@@ -90,61 +90,56 @@
                 <li>
                     <a href="{{url('office')}}" class="waves-effect">
                         <i class="bx bx-home-circle"></i>
-                        <span key="t-chat">Dashboard</span>
+                        <span key="t-chat">DASHBOARD</span>
                     </a>
                 </li>
                   <li>
                     <a href="{{url('account/profile/addresses')}}" class="waves-effect">
                         <i class="fa fa-wallet"></i>
-                        <span key="t-chat">My Wallet</span>
+                        <span key="t-chat">WALLET</span>
                     </a>
                 </li>
                  <li>
                     <a href="{{url('profile/personal')}}" class="waves-effect">
                         <i class="fa fa-user"></i>
-                        <span key="t-chat">Profile</span>
+                        <span key="t-chat">PROFILE</span>
                     </a>
                 </li>
                
                 <li>
                     <a href="{{url('deposit')}}" class="waves-effect">
                         <i class="fa fa-box"></i>
-                        <span key="t-chat">Invest</span>
+                        <span key="t-chat">FINANCE</span>
                     </a>
                 </li>
                 <li>
                     <a href="{{url('referrals')}}" class="waves-effect">
                         <i class="fa fa-link"></i>
-                        <span key="t-chat">Referrals</span>
+                        <span key="t-chat">AFFILIATE</span>
                     </a>
                 </li>
               
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="fas fa-compress-alt"></i>
-                        <span key="t-layouts">Transactions</span>
+                        <span key="t-layouts">LEDGER</span>
                     </a>
 
                     <ul class="sub-menu" aria-expanded="true">
                         <li><a href="{{url('transactions')}}" key="t-light-sidebar">All</a></li>
                         <li><a href="{{url('deposit_history')}}" key="t-compact-sidebar">Deposit History</a></li>
                         <li><a href="{{url('withdraw_history')}}" key="t-icon-sidebar">Withdraw History</a></li>
-                        <li><a href="{{url('earnings')}}" key="t-icon-sidebar">Earnings History</a></li>
+                        <li><a href="{{url('earnings')}}" key="t-icon-sidebar">Income History</a></li>
                     </ul>
                 </li>
 
-                <li>
-                    <a href="{{url('faq')}}" class="waves-effect">
-                        <i class="bx bx-question-mark"></i>
-                        <span key="t-chat">FAQ</span>
-                    </a>
-                </li>
+              
                 <hr>
                  <li>
                     <a onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();" href="#" class="waves-effect">
                         <i class="bx bx-power-off"></i>
-                        <span key="t-chat">Logout</span>
+                        <span key="t-chat">LOGOUT</span>
                     </a>
                 </li>
         </div>

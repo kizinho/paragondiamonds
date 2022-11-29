@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                        <h4 class="mb-sm-0 font-size-18">Referrals</h4>
+                        <h4 class="mb-sm-0 font-size-18">AFFILIATE</h4>
 
 
                     </div>
@@ -30,7 +30,7 @@
                                 <div class="card-body">
                                     <div class="d-flex">
                                         <div class="flex-grow-1">
-                                            <p class="text-muted pull-left ">Affiliate link</p>
+                                            <p class="text-muted pull-left ">Affiliate Link</p>
 
                                             <h4 class="mb-5 mt-5">
                                                 <div class="text-center">
@@ -57,7 +57,7 @@
                                 <div class="card-body">
                                     <div class="d-flex">
                                         <div class="flex-grow-1">
-                                            <p class="text-muted pull-left ">Total Users Referred</p>
+                                            <p class="text-muted pull-left ">Total Affiliate</p>
 
                                             <h4 class="mb-5 mt-5">
                                                 <div class="text-center">
@@ -95,7 +95,7 @@
                                 <div class="card-body">
                                     <div class="d-flex">
                                         <div class="flex-grow-1">
-                                            <p class="text-muted pull-left ">Earned</p>
+                                            <p class="text-muted pull-left ">Total Bonus</p>
 
                                             <h4 class="mb-5 mt-5">
                                                 <div class="text-center">
