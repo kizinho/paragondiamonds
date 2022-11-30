@@ -36,9 +36,9 @@ class Kernel extends ConsoleKernel {
     protected function schedule(Schedule $schedule) {
       $schedule->command('weekly:profit')->days([Schedule::FRIDAY])->at('12:00')->timezone('Africa/Lagos');
 
-        $schedule->command('auto:withraw')
-                ->hourly()
-                ->days([Schedule::SUNDAY, Schedule::SATURDAY])->timezone('Africa/Lagos');
+//        $schedule->command('auto:withraw')
+//                ->hourly()
+//                ->days([Schedule::SUNDAY, Schedule::SATURDAY])->timezone('Africa/Lagos');
       
 
 //        $schedule->command('confirm:payouts')->everyFiveMinutes();
