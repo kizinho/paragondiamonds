@@ -35,12 +35,12 @@
                                 <tr>
                                     <th scope="col" style="width: 70px;">#</th>
 
-                                    <th scope="col">transaction ID</th>
-                                    <th scope="col">amount ($)</th>
-                                    <th scope="col">description</th>
-                                    <th scope="col">payment mode</th>
+                                    <th scope="col">Transaction ID</th>
+                                    <th scope="col">Amount ($)</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">Payment mode</th>
                                     <th scope="col">Status</th>
-                                    <th scope="col">date</th>
+                                    <th scope="col">Date</th>
 
                                 </tr>
                             </thead>

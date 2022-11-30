@@ -27,7 +27,7 @@
                                 <div class="card-body">
                                     <div class="d-flex">
                                         <div class="flex-grow-1">
-                                            <p class="text-muted pull-left ">Photo</p>
+                                            <h4 class="card-title">Change Profile image</h4>
                                             <img class="rounded-circle header-profile-user pull-right" src="@if(empty(Auth::user()->photo)){{asset('user/img/avatar-default.png')}} @else {{url(Auth::user()->photo)}} @endif"
                                                  alt="Header Avatar">
                                             <br>
@@ -56,18 +56,18 @@
                                 <div class="card-body">
                                     <div class="d-flex">
                                         <div class="flex-grow-1">
-                                            <p class="text-muted pull-left">2factor Authenticator</p>
+                                                 <h4 class="card-title">2factor Authenticator</h4>
 
                                             <div class="text-muted pull-right"><li class="fas fa-barcode"></li></div> 
                                             <div class="mb-3 mt-5 text-center">
                                                 @if(Auth::user()->google2fa_secret_status == false)
                                                 <p class="text-muted "> <small>Please make sure you have 2fa mobile app to complete it</small></p>
-                                                <p class="text-muted "> click to enable</p>
-                                                <a href="{{url('2fa/enable')}}" class="btn btn-success waves-effect btn-label waves-light"><i class="bx bx-check-double label-icon"></i> Enable</a>
+                                               
+                                                <a href="{{url('2fa/enable')}}" class="btn btn-success waves-effect btn-label waves-light"><i class="bx bx-check-double label-icon"></i> click to Enable</a>
                                                 @else
-                                                <p class="text-muted "> click to disable</p>
+                                             
                                                 <a href="{{url('2fa/disable')}}" class="btn btn-danger waves-effect waves-light">
-                                                    <i class="bx bx-block font-size-16 align-middle me-2"></i> Disable
+                                                    <i class="bx bx-block font-size-16 align-middle me-2"></i> click to Disable
                                                 </a>
                                                 @endif
                                             </div>

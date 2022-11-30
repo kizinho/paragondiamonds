@@ -73,7 +73,7 @@
             <a href="{{url('partnership')}}">Partnership</a>
         </li> 
         <li class="@if(request()->path() == 'pricing') uk-active @endif ">
-            <a href="{{url('pricing')}}">Pricing</a>
+            <a href="{{url('pricing')}}">Finance</a>
         </li>
         <li class="has-sub">
             <a href="{{url('about-us')}}">About Us</a>

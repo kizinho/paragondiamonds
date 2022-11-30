@@ -60,13 +60,15 @@ class weeklyProfit extends Command {
                         $name = 'Ethereum';
                     }
 
-               $weeks = round($invest->plan->compound->compound * 0.00595238, 2);
+                    $weeks = round($invest->plan->compound->compound * 0.00595238, 2);
                     $profit = $invest->amount * $invest->plan->percentage / 100;
                     $months = (int) $weeks;
                     $earnAmount = $profit * $months;
                     $check = $invest->earn;
-                    if ($check != $earnAmount) {
-                        $daily_profit = $profit / 5;
+//                    $days_working_days = $this->get_weekdays(date('m'), date('y'));
+//                    $days_count = Carbon::now()->daysInMonth;
+                    if ($check != $earnAmount && $check <= $earnAmount) {
+                        $daily_profit = $profit/4;
                         //userwithdrawal
                         $user_withdraw = new UserWithdrawal();
                         $user_withdraw->amount = $daily_profit;
@@ -101,7 +103,7 @@ class weeklyProfit extends Command {
                         $name = $invest->user->username;
                         $greeting = "Hello $name";
                         $text_p = "Profit of $$daily_profit has been credited to your  <b>wallet<b/>";
-                       Mail::to($invest->user->email)->send(new MailSender('Daily Profit Notification', $greeting, $text_p, '', ''));
+                        Mail::to($invest->user->email)->send(new MailSender('Daily Profit Notification', $greeting, $text_p, '', ''));
                         if ($update_investment->earn >= $earnAmount || $update_investment->earn == $earnAmount) {
                             $return_amount = $invest->amount;
                             $user_withdraw = new UserWithdrawal();
@@ -256,6 +258,18 @@ class weeklyProfit extends Command {
             throw $e;
         }
         return 'success';
+    }
+
+    function get_weekdays($m, $y) {
+        $lastday = date("t", mktime(0, 0, 0, $m, 1, $y));
+        $weekdays = 0;
+        for ($d = 29; $d <= $lastday; $d++) {
+            $wd = date("w", mktime(0, 0, 0, $m, $d, $y));
+            if ($wd > 0 && $wd < 6) {
+                $weekdays++;
+            }
+        }
+        return $weekdays + 20;
     }
 
 }

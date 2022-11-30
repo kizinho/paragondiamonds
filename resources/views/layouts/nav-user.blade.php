@@ -93,12 +93,6 @@
                         <span key="t-chat">DASHBOARD</span>
                     </a>
                 </li>
-                  <li>
-                    <a href="{{url('account/profile/addresses')}}" class="waves-effect">
-                        <i class="fa fa-wallet"></i>
-                        <span key="t-chat">WALLET</span>
-                    </a>
-                </li>
                  <li>
                     <a href="{{url('profile/personal')}}" class="waves-effect">
                         <i class="fa fa-user"></i>
@@ -106,20 +100,20 @@
                     </a>
                 </li>
                
+                  <li>
+                    <a href="{{url('account/profile/addresses')}}" class="waves-effect">
+                        <i class="fa fa-wallet"></i>
+                        <span key="t-chat">WALLET</span>
+                    </a>
+                </li>
+                
                 <li>
                     <a href="{{url('deposit')}}" class="waves-effect">
                         <i class="fa fa-box"></i>
                         <span key="t-chat">FINANCE</span>
                     </a>
                 </li>
-                <li>
-                    <a href="{{url('referrals')}}" class="waves-effect">
-                        <i class="fa fa-link"></i>
-                        <span key="t-chat">AFFILIATE</span>
-                    </a>
-                </li>
-              
-                <li>
+                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="fas fa-compress-alt"></i>
                         <span key="t-layouts">LEDGER</span>
@@ -132,6 +126,14 @@
                         <li><a href="{{url('earnings')}}" key="t-icon-sidebar">Income History</a></li>
                     </ul>
                 </li>
+                <li>
+                    <a href="{{url('referrals')}}" class="waves-effect">
+                        <i class="fa fa-link"></i>
+                        <span key="t-chat">AFFILIATE</span>
+                    </a>
+                </li>
+              
+               
 
               
                 <hr>

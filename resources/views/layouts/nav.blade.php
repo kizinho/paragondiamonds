@@ -2,7 +2,7 @@
     <div class="uk-container uk-container-large">
         <div class="grid">
             <a href="{{url('/')}}" title="Back to Home Page" class="">
-                <img src="{{asset($settings['logo']) }}"  style="height:80px;width: 230px!important;margin-top: 30px" alt="{{$settings['site_name']}}" /></a>
+                <img src="{{asset($settings['logo']) }}"  style="height:70px;width: 230px!important;margin-top: 30px" alt="{{$settings['site_name']}}" /></a>
             <div class="right-c" uk-navbar="offset: 0">
 
                 <div class="topinfo">
@@ -68,7 +68,7 @@
                         <a href="{{url('partnership')}}">Partnership</a>
                     </li> 
                     <li class="@if(request()->path() == 'pricing') uk-active @endif ">
-                        <a href="{{url('pricing')}}">Pricing</a>
+                        <a href="{{url('pricing')}}"> Finance</a>
                     </li>
                     <li class="@if(request()->path() == 'about-us') uk-active @endif ">
                         <a href="{{url('about-us')}}">About Us</a>

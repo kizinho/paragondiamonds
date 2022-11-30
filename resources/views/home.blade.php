@@ -133,7 +133,7 @@
                                 <div class="card-body">
                                     <div class="d-flex">
                                         <div class="flex-grow-1">
-                                            <p class="text-muted fw-medium">Total Referral</p>
+                                            <p class="text-muted fw-medium">Total Bonus</p>
                                             <h4 class="mb-0">${{number_format($bonus, 2)}}</h4>
                                         </div>
 
