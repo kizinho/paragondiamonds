@@ -353,21 +353,40 @@ class HomeController extends Controller {
 
     public function address() {
         $data['user'] = User::whereId(Auth::user()->id)->with('coin')->first();
-        $data['coinsEnable'] = Coin::whereStatus(true)->with('usercoinUser')->whereStatus(true)->get();
+        $data['coinsEnable'] = Coin::whereStatus(true)->with('usercoinUser')->get();
         return view('user.address', $data);
     }
 
     public function addWallet(Request $request) {
         $input = $request->all();
-        $rules = [
-            'preferable' => 'required',
-            'wallet_type' => 'required',
-            'address' => 'required'
-        ];
-        $error = static::getErrorMessageSweet($input, $rules);
-        if ($error) {
-            return $error;
+        if ($request->wallet_type == 3) {
+            $rules = [
+                'preferable' => 'required',
+                'wallet_type' => 'required',
+                'bank_name' => 'required',
+                'account_name' => 'required',
+                'account_number' => 'required',
+                'wire_routing_number' => 'required',
+                'ach_routing_number' => 'required',
+                'swift_code' => 'required',
+                'bank_address' => 'required'
+            ];
+            $error = static::getErrorMessageSweet($input, $rules);
+            if ($error) {
+                return $error;
+            }
+        } else {
+            $rules = [
+                'preferable' => 'required',
+                'wallet_type' => 'required',
+                'address' => 'required'
+            ];
+            $error = static::getErrorMessageSweet($input, $rules);
+            if ($error) {
+                return $error;
+            }
         }
+
 
         //check perf
         if ($request->preferable == 1) {
@@ -385,7 +404,17 @@ class HomeController extends Controller {
         $usercoin->user_id = Auth::user()->id;
         $usercoin->coin_id = $request->wallet_type;
         $usercoin->preferable = $request->preferable;
-        $usercoin->address = $request->address;
+        if ($request->wallet_type == 3) {
+            $usercoin->bank_name = $request->bank_name;
+            $usercoin->account_name = $request->account_name;
+            $usercoin->account_number = $request->account_number;
+            $usercoin->wire_routing_number = $request->wire_routing_number;
+            $usercoin->ach_routing_number = $request->ach_routing_number;
+            $usercoin->swift_code = $request->swift_code;
+            $usercoin->bank_address = $request->bank_address;
+        } else {
+            $usercoin->address = $request->address;
+        }
         $usercoin->save();
 //        $data_address = ([
 //            'user_id' => $request->id,
@@ -491,11 +520,8 @@ class HomeController extends Controller {
     public function removeCoin($slug) {
         $coin = UserCoin::whereId($slug)->first();
         if (is_object($coin)) {
-            $coin->update([
-                'address' => null,
-                'preferable' => false
-            ]);
             $mm = $coin->coin->name;
+            $coin->delete();
             session()->flash('message.level', 'success');
             session()->flash('message.color', 'green');
             session()->flash('message.content', "Your $mm Wallet removed by you");
@@ -535,15 +561,15 @@ class HomeController extends Controller {
             session()->flash('message.content', 'Amount is less than the minimum amount for this plan');
             return redirect()->back();
         }
-      
-       if($plan->max >=1){
-        if ($request->amount > $plan->max) {
-            session()->flash('message.level', 'error');
-            session()->flash('message.color', 'red');
-            session()->flash('message.content', 'Amount is greater than the maxmium amount for this plan');
-            return redirect()->back();
+
+        if ($plan->max >= 1) {
+            if ($request->amount > $plan->max) {
+                session()->flash('message.level', 'error');
+                session()->flash('message.color', 'red');
+                session()->flash('message.content', 'Amount is greater than the maxmium amount for this plan');
+                return redirect()->back();
+            }
         }
-       }
         $all = file_get_contents("https://blockchain.info/ticker");
         $res = json_decode($all);
         $btcrate = $res->USD->last;
@@ -1274,7 +1300,6 @@ class HomeController extends Controller {
                         $firstUserReward = $invest->plan->ref / 100 * $reward;
 //                        $secondUserReward = $setting->level_2 / 100 * $reward;
 //                        $thirdUserReward = $setting->level_3 / 100 * $reward;
-
                         //first reward
                         $newFirstUserReward = $firstUserReward;
                         //create user withdrawal data
@@ -1348,7 +1373,6 @@ class HomeController extends Controller {
 //                                $name = $second_pay->user->username;
 //                                $greeting = "Hello $name";
 //                                Mail::to($second_pay->user->email)->send(new MailSender('Referral Bonus', $greeting, $message_second, '', ''));
-
 //                                //third reward
 //                                $user_ref_third = Reference::whereReferred_id($second_pay->user_id)->first();
 //                                if (is_object($user_ref_third)) {
@@ -1458,34 +1482,55 @@ class HomeController extends Controller {
 //    }
 
     public function withdraw() {
-        $data['user_withdraw'] = UserWithdrawal::whereUser_id(Auth::user()->id)->whereStatus(true)->get();
-        return view('user.withdraw', $data);
+        return view('user.withdraw');
     }
 
     public function withdrawPost(Request $request) {
-        $check = Withdraw::whereUser_id(Auth::user()->id)->whereUser_withdrawal_id($request->id)->first();
+        $input = $request->all();
+        $rules = [
+            'amount' => 'required'
+        ];
+        $error = static::getErrorMessageSweet($input, $rules);
+        if ($error) {
+            return $error;
+        }
+        $user_wallet = UserCoin::whereUser_id(Auth::user()->id)->wherePreferable(true)->first();
+        if (!is_object($user_wallet)) {
+            session()->flash('message.level', 'error');
+            session()->flash('message.color', 'red');
+            session()->flash('message.content', 'No withdrawal wallet was found in your account please add one and make it Preferable');
+            return redirect()->back();
+        }
+        $check = Withdraw::whereUser_id(Auth::user()->id)->whereStatus(false)->first();
         if (is_object($check)) {
             session()->flash('message.level', 'error');
             session()->flash('message.color', 'red');
-            session()->flash('message.content', 'You have a pending payout. Wait for it to be processed before requesting another one.');
+            session()->flash('message.content', 'You have a pending withdrawal. Wait for it to be processed before requesting another one.');
             return redirect()->back();
         }
-        $usercoin = UserWithdrawal::whereId($request->id)->first();
+        $all_money = userTrackEarn::whereUser_id(Auth::user()->id)->first();
         $setting = Setting::whereId(1)->first();
-        $cal_charge = $usercoin->amount * $setting['withdraw_charge'] / 100;
+        $cal_charge = $request->amount * $setting['withdraw_charge'] / 100;
         $charge = $cal_charge;
-        $amount_to_convert = $usercoin->amount - $charge;
-        $amount = $usercoin->amount;
+        $amount_to_convert = $request->amount - $charge;
+        $amount = $amount_to_convert;
         if ($amount < $setting->min_withdraw) {
             session()->flash('message.level', 'error');
             session()->flash('message.color', 'red');
             session()->flash('message.content', 'Amont does not reach our minimum withdrawal');
             return redirect()->back();
         }
+
+        if ($amount > $all_money->amount) {
+            session()->flash('message.level', 'error');
+            session()->flash('message.color', 'red');
+            session()->flash('message.content', 'Amont to withdraw is higher than amount in your avaliable balance');
+            return redirect()->back();
+        }
         if (Auth::user()->can_withdraw == true) {
             session()->flash('message.level', 'error');
             session()->flash('message.color', 'red');
-            session()->flash('message.content', 'Account suspened for a payout');
+            session()->flash('message.content', 'Account suspened for withdrawal');
             return redirect()->back();
         }
         DB::beginTransaction();
@@ -1501,96 +1546,49 @@ class HomeController extends Controller {
                 session()->flash('message.content', 'Bitcoin Server Very Busy , Try Again');
                 return redirect()->back();
             }
-            $coin = $usercoin->usercoin->coin->slug;
+
+            $coin = $user_wallet->coin->id;
             $action = $coin;
-            //amount in btc or lite or btc cash
-            $general_coin = file_get_contents('https://api.coincap.io/v2/assets');
-//amount in btc or lite or btc cash
-            if ($action == 'bitcoin_address') {
-                $data['amount_convert'] = $amount_to_convert / $btcrate;
+            if ($action == 1) {
+                $all = file_get_contents("https://blockchain.info/ticker");
+                $res = json_decode($all);
+                $btcrate = $res->USD->last;
+                $btc_amount = number_format(floatval($amount / $btcrate), 6, '.', '');
+                $data['amount_convert'] = $btc_amount;
                 $data['name'] = 'BTC';
                 $data['name_full'] = 'Bitcoin';
-            }
-            if ($action == 'litecoin_address') {
+            } else if ($action == 2) {
                 try {
-                    $lit = $general_coin;
-                    $litecoin = json_decode($lit);
-                    $litecoin_final = $litecoin->data[7]->priceUsd;
-                    $data['amount_convert'] = $amount_to_convert / $litecoin_final;
-                    $data['name'] = 'LTE';
-                    $data['name_full'] = 'Litecoin';
-                } catch (\Exception $e) {
-                    return [
-                        'status' => 'error',
-                        'message' => 'Litecoin Server Very Busy , Try Again'
-                    ];
-                }
-            }
-            if ($action == 'ethereum_address') {
 
-                try {
-                    $eth = $general_coin;
-                    $ethereum = json_decode($eth);
-                    $ethereum_final = $ethereum->data[1]->priceUsd;
-                    $data['amount_convert'] = $amount_to_convert / $ethereum_final;
-                    $data['name'] = 'ETH';
-                    $data['name_full'] = 'Ethereum';
-                } catch (\Exception $e) {
-                    return [
-                        'status' => 'error',
-                        'message' => 'Ethereum Server Very Busy , Try Again'
-                    ];
+                    $general_coin = file_get_contents('https://api.blockchain.com/v3/exchange/tickers/ETH-USD');
+                } catch (Exception $ex) {
+                    session()->flash('message.level', 'error');
+                    session()->flash('message.color', 'red');
+                    session()->flash('message.content', 'Eth sever error , Try Again');
+                    return redirect()->back();
                 }
+                $eth = $general_coin;
+                $ethereum = json_decode($eth);
+                $ethereum_final = $ethereum->last_trade_price;
+                $eth_amount = number_format(floatval($amount / $ethereum_final), 6, '.', '');
+                $data['amount_convert'] = $eth_amount;
+                $data['name'] = 'BTC';
+                $data['name_full'] = 'Bitcoin';
+            } else {
+                $data['amount_convert'] = $amount;
+                $data['name'] = 'BW';
+                $data['name_full'] = 'Bank Wire';
             }
-            if ($action == 'bitcoin_cash_address') {
-//bitcoin cash
-                try {
-                    $btic_cash = $general_coin;
-                    $dash = json_decode($btic_cash);
-                    $cash_final = $dash->data[4]->priceUsd;
-                    $data['amount_convert'] = $amount_to_convert / $cash_final;
-                    $data['name'] = 'BTC Cash';
-                    $data['name_full'] = 'Bitcoin Cash';
-                } catch (\Exception $e) {
-                    return [
-                        'status' => 'error',
-                        'message' => 'Bitcoin Cash Server Very Busy , Try Again'
-                    ];
-                }
-            }
-            if ($action == 'dash_address') {
-
-//dash
-                try {
-                    $da = $general_coin;
-                    $dash = json_decode($da);
-                    $dash_final = $dash->data[21]->priceUsd;
-                    $data['amount_convert'] = $amount_to_convert / $dash_final;
-                    $data['name'] = 'dash';
-                    $data['name_full'] = 'Dash';
-                } catch (\Exception $e) {
-                    return [
-                        'status' => 'error',
-                        'message' => 'Dash Cash Server Very Busy , Try Again'
-                    ];
-                }
-            }
-            $am = number_format(floatval($data['amount_convert']), 8, '.', '');
-            //create withdraw
-            $final_am = $amount - $charge;
             $data_withdraw = ([
-                'transaction_id' => strtoupper(Str::random(10)),
+                'transaction_id' => strtoupper(Str::random(12)),
                 'user_id' => Auth::user()->id,
-                'coin_id' => $usercoin->coin_id,
-                'user_withdrawal_id' => $request->id,
-                'withdraw_from' => $usercoin->type,
-                'description' => 'You Withdrew  ' . '$' . $final_am,
-                'amount' => $final_am,
-                //'comment' => $request->comment,
+                'coin_id' => $user_wallet->id,
+                'description' => 'You Withdrew  ' . '$' . $amount,
+                'amount' => $amount,
                 'total_amount' => $amount + $charge,
                 'withdraw_charge' => $charge,
                 'message' => null,
-                'amount_check' => $am,
+                'amount_check' => $data['amount_convert'],
                 'confirm' => 1,
                 'status' => 0
             ]);
@@ -1602,14 +1600,12 @@ class HomeController extends Controller {
             throw $e;
         }
         $data['withdraw'] = $withdraw;
-        $data['amount_convert'] = number_format(floatval($data['amount_convert']), 8, '.', '');
-        $data['address'] = $usercoin->usercoin->address;
-        $data['coin'] = $usercoin->usercoin->coin->name;
+        $data['amount_convert'] = $data['amount_convert'];
+        $data['address'] = $user_wallet;
         return view('user.withdraw-fund', $data);
     }
 
     public function withdrawFund(Request $request) {
-        $setting = Setting::whereId(1)->first();
         $input = $request->all();
         $rules = [
             'transaction_id' => 'required'
@@ -1623,24 +1619,26 @@ class HomeController extends Controller {
         $withdraw->transaction_id = $withdraw_create['transaction_id'];
         $withdraw->user_id = $withdraw_create['user_id'];
         $withdraw->coin_id = $withdraw_create['coin_id'];
-        $withdraw->user_withdrawal_id = $withdraw_create['user_withdrawal_id'];
-        $withdraw->withdraw_from = $withdraw_create['withdraw_from'];
         $withdraw->description = $withdraw_create['description'];
         $withdraw->amount = $withdraw_create['amount'];
-        //$withdraw->comment = $withdraw_create['comment'];
         $withdraw->total_amount = $withdraw_create['total_amount'];
-        $withdraw->withdraw_charge = $withdraw_create['withdraw_charge'];
         $withdraw->message = null;
         $withdraw->amount_check = $withdraw_create['amount_check'];
         $withdraw->confirm = $withdraw_create['confirm'];
         $withdraw->status = $withdraw_create['status'];
         $withdraw->save();
-        $address = $withdraw->usercoin->address;
+        if ($withdraw->usercoin->coin_id == 3) {
+            $address = $withdraw->usercoin->account_number;
+        } else {
+            $address = $withdraw->usercoin->address;
+        }
+
         //maual withdraw 
         //send mail
         $email = $withdraw->user->email;
+        $user = $withdraw->user->username;
         $subject = 'Withdrawal has been Confirmed ';
-        $text = "You Iniated a payout of  " . "$" . $withdraw->amount;
+        $text = "You Iniated a withdrawal of  " . "$" . $withdraw->amount;
         $message = $text . ' from  Wait for your fund to arrive in your  ' . " account " . $address . ' We will notify you once fund is confirmed Withdrawal';
         Withdraw::whereId($request->withdraw)->update([
             'confirm' => true
@@ -1656,7 +1654,8 @@ class HomeController extends Controller {
             'amount' => $withdraw->amount,
             'description' => 'You Widthrew  ' . '$' . $withdraw->amount
         ]);
-        $this->sendMail($email, $withdraw->user->username, $subject, $message);
+        $greeting = "Hello $user";
+        Mail::to($email)->send(new MailSender($subject, $greeting, $message, '', ''));
         session()->flash('message.level', 'success');
         session()->flash('message.color', 'success');
         session()->flash('message.content', 'Withdrawal Successfully Confirmed');

@@ -115,7 +115,7 @@
                                 <div class="pretty p-svg p-curve">USD{{number_format($deposit->amount,2)}}</div>
                             </td>
                             <td>
-                                <div class="pretty p-svg p-curve">USDT{{number_format($deposit->earn,2)}}</div>
+                                <div class="pretty p-svg p-curve">USD{{number_format($deposit->earn,2)}}</div>
                             </td>
                             <td>
                                 @if(empty($deposit->due_pay))

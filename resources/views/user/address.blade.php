@@ -22,9 +22,9 @@
             <div class="text-center">
                 <button type="button" class="btn btn-info mb-5" data-bs-toggle="modal" data-bs-target="#addWallet"
                         data-bs-whatever="@newWallet">Add New Wallet</button>
-       
-            
-                </div>
+
+
+            </div>
             <div class="modal fade" id="addWallet" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="background-color: #49749a29  !important">
                 <div class="modal-dialog">
                     <form method="post" action="{{url('confirm-wallet')}}">
@@ -34,23 +34,7 @@
                                 <h5 class="modal-title" id="exampleModalLabel">Add New Wallet for Withdraw</h5>
                             </div>
                             <div class="modal-body">
-
-                                <div class="mb-3">
-                                    <input type="text" name="address" class="form-control" value="" placeholder="Wallet Address" required="" class="">
-
-                                </div>
-                                <div class="mb-3">
-                                    <label for="message-text" class="col-form-label">For Automatic Payment:</label>
-                                    <select name="preferable" class="form-control">
-                                        <option value="" selected disabled>Choose preferred</option>
-                                        <option value="1">Yes
-                                        </option>
-                                        <option value="0">No
-                                        </option>
-
-                                    </select>
-                                </div>
-                                <div class="mb-3">
+                                <div class="mb-4">
                                     <label for="message-text" class="col-form-label">Wallet Type:</label>
                                     <select name="wallet_type" class="form-control" id="id_wallet_type">
                                         <option value="" selected disabled>Choose wallet</option>
@@ -62,6 +46,68 @@
                                         @endforeach
                                     </select>
                                 </div>
+                                <div class="mb-3" id="show" style="display:none">
+                                    <label for="message-text" class="col-form-label">Wallet Address:</label>
+                                    <input type="text" name="address" class="form-control "  value="" placeholder="Wallet Address" class="">
+
+                                </div>
+
+                                <div id="bank" style="display:none">
+                                    <div class="mb-3" >
+                                        <label for="message-text" class="col-form-label">Bank name:</label>
+                                        <input type="text" name="bank_name" class="form-control "  value="" placeholder="Bank name"  class="">
+
+                                    </div>
+
+
+
+                                    <div class="mb-3" >
+                                        <label for="message-text" class="col-form-label">Account name:</label>
+                                        <input type="text" name="account_name" class="form-control "  value="" placeholder="Account name "  class="">
+
+                                    </div>
+                                    <div class="mb-3" >
+                                        <label for="message-text" class="col-form-label">Account number:</label>
+                                        <input type="number" name="account_number" class="form-control "  value="" placeholder="Account number"  class="">
+
+                                    </div>
+                                    <div class="mb-3" >
+                                        <label for="message-text" class="col-form-label">Wire routing number:</label>
+                                        <input type="text" name="wire_routing_number" class="form-control "  value="" placeholder="Wire routing number" class="">
+
+                                    </div>
+                                    <div class="mb-3" >
+                                        <label for="message-text" class="col-form-label">ACH routing number:</label>
+                                        <input type="text" name="ach_routing_number" class="form-control "  value="" placeholder="ACH routing number"  class="">
+
+                                    </div>
+                                    <div class="mb-3" >
+                                        <label for="message-text" class="col-form-label">SWIFT code:</label>
+                                        <input type="text" name="swift_code" class="form-control "  value="" placeholder="SWIFT code"  class="">
+
+                                    </div>
+
+                                    <div class="mb-3" >
+                                        <label for="message-text" class="col-form-label">Bank address:</label>
+                                        <textarea type="text" name="bank_address" class="form-control "  value="" placeholder="Bank address"  class=""></textarea>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="mb-3">
+                                    <label for="message-text" class="col-form-label">Preferred withdraw method:</label>
+                                    <select name="preferable" class="form-control">
+                                        <option value="" selected disabled>Choose preferred</option>
+                                        <option value="1">Yes
+                                        </option>
+                                        <option value="0">No
+                                        </option>
+
+                                    </select>
+                                </div>
+
 
                             </div>
                             <div class="modal-footer">
@@ -98,10 +144,19 @@
                                 </div>
                             </td>
                             <td>
-                                <p class="text-muted mb-0">@if($coins->coin_id == 1) BTC @else ETH  @endif  wallet</p>
+                                <p class="text-muted mb-0">@if($coins->coin_id == 1) BTC wallet @elseif($coins->coin_id == 3) Bank Wire @else ETH wallet @endif </p>
                             </td>
                             <td>
-                                <p class="text-muted mb-0">{{$coins->address}}</p>
+                                <p class="text-muted mb-0">
+                                  
+                                    @if($coins->coin_id == 3)
+                                    {{$coins->account_number}}
+                                    @else
+                                    {{$coins->address}}
+
+                                    @endif
+
+                                </p>
                             </td>
 
                             <td>
@@ -117,11 +172,11 @@
                                                     </a></span>  @endif</span>
                                         </div>
                                     </li>
-                                     <li class="list-inline-item px-2">
-                                           <div>
-                                    <a href="{{url('account/capital')}}" class="btn btn-warning btn-xs text-white cap">Take Capital </a>
-                                           </div>
-                                     </li>
+                                    <li class="list-inline-item px-2">
+                                        <div>
+                                            <a href="{{url('account/capital')}}" class="btn btn-warning btn-xs text-white cap">Take Capital </a>
+                                        </div>
+                                    </li>
 
                                 </ul>
                             </td>
@@ -157,9 +212,25 @@
 
 
 
+@section('script')
+<script>
+    $("#id_wallet_type").change(function () {
+        var valueName = $(this).val();
+        if (valueName === '3') {
+            $("#show").hide();
+            $("#bank").show();
 
+        } else {
+            $("#show").show();
+            $("#bank").hide();
 
+        }
 
+    });
+
+</script>
+
+@endsection
 
 
 

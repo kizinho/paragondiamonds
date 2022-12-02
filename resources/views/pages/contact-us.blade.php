@@ -75,10 +75,10 @@
                         <div class="uk-width-1-2@m uk-grid-margin uk-first-column">
                             <div class="uk-card uk-card-default uk-card-body uk-card-small">
                                 <h3>Email Us</h3>
-                                <p>
+<!--                                <p>
                                   <a href="mailto:Georgebrandon@paragondiamonds.co.uk">Georgebrandon@paragondiamonds.co.uk</a><br />
                                     
-                                </p>
+                                </p>-->
                                 <p>
                                   <a href="mailto:Carolynreid@paragondiamonds.co.uk">Carolynreid@paragondiamonds.co.uk</a><br />
                                     

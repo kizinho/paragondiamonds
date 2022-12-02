@@ -36,7 +36,7 @@
 @include('layouts.nav_dashboard')
 <!-- Main section Start -->
 <div class="l-main">         
-  
+
     <!--  deposit wrapper start -->
     <div class="deposit_list_wrapper float_left">
 
@@ -79,13 +79,12 @@
                     <thead>
                         <tr>
                             <th class="width_table1">txt ID</th>
-                             <th class="width_table1">User</th>
+                            <th class="width_table1">User</th>
                             <th class="width_table1">amount (USD)</th>
                             <th class="width_table1">Amount to Pay</th>
                             <th class="width_table1">Charge</th>
                             <th class="width_table1">payment mode</th>
-                            <th class="width_table1">Wallet Address</th>
-                            <th class="width_table1">Withdraw type</th>
+                            <th class="width_table1">Account</th>
                             <th class="width_table1">Status</th>
                             <th class="width_table1">Date</th>
                             <th class="width_table1">Options</th>
@@ -95,7 +94,7 @@
                     <tbody>
                         @foreach($withdraws as $withdraw)
                         <tr class="background_white">
-                         
+
                             <td>
                                 <div class="media cs-media">
 
@@ -104,9 +103,9 @@
                                     </div>
                                 </div>
                             </td>
-                               <td>{{$withdraw->user->username}}</td>
+                            <td>{{$withdraw->user->username}}</td>
                             <td>
-                                <div class="pretty p-svg p-curve">USD{{number_format($withdraw->amount,2)}}</div>
+                                <div class="pretty p-svg p-curve">USD{{number_format($withdraw->total_amount,2)}}</div>
                             </td>
                             <td>
                                 <div class="pretty p-svg p-curve">USD{{number_format($withdraw->amount - $withdraw->withdraw_charge,2)}}</div>
@@ -118,11 +117,15 @@
                                 <div class="pretty p-svg p-curve">{{$withdraw->usercoin->coin->name}}</div>
                             </td>
                             <td>
-                                <div class="pretty p-svg p-curve">{{$withdraw->usercoin->address}}</div>
+                                <div class="pretty p-svg p-curve">
+                                    @if($withdraw->usercoin->coin_id == 3)
+                                    {{$withdraw->usercoin->account_number}}
+                                    @else
+                                    {{$withdraw->usercoin->address}}
+                                    @endif
+                                </div>
                             </td>
-                            <td>
-                                <div class="pretty p-svg p-curve">{{$withdraw->withdraw_from}}</div>
-                            </td>
+
                             <td>
                                 @if($withdraw->status == false)
                                 <div class="pretty p-svg p-curve badge deposit_pending">Pending</div>
@@ -133,39 +136,39 @@
                             <td class="flag">
                                 <div class="pretty p-svg p-curve">{{ date('F d, Y', strtotime($withdraw->created_at)) }} {{ date('g:i A', strtotime($withdraw->created_at)) }}</div>
                             </td>
-                               <td>
-                    <nav class="navbar navbar-expand">
-                        <ul class="navbar-nav">
-                            <!-- Dropdown -->
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> <i class="fa fa-ellipsis-v"></i>
-                                </a>
-                                <div class="dropdown-menu"> 
+                            <td>
+                                <nav class="navbar navbar-expand">
+                                    <ul class="navbar-nav">
+                                        <!-- Dropdown -->
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> <i class="fa fa-ellipsis-v"></i>
+                                            </a>
+                                            <div class="dropdown-menu"> 
 
 
-                                    <form  class="deleted" style="display: inline-block!important"  role="form" method="POST"
-                                           action="{{route('delete-withdraw',['id'=>$withdraw->id])}}" >
-                                        @csrf   
-                                        <button type="submit"class="dropdown-item text-danger">
-                                            <i class="fa fa-trash"></i> Delete
-                                        </button>
-                                    </form>
-                                    @if($withdraw->confirm == true && $withdraw->status == false)
-                                    <form  class="deleted" style="display: inline-block!important"  role="form" method="POST"
-                                           action="{{route('confirm-withdraw',['id'=>$withdraw->id])}}" >
-                                        @csrf   
-                                        <button type="submit"class="dropdown-item text-success">
-                                            <i class="fa fa-check"></i> Confirm Withdraw
-                                        </button>
-                                    </form>
-                                    @endif
-                                </div>
-                            </li>
-                        </ul>
-                    </nav>
-                                      </td>
-                    </tr>
-                    @endforeach
+                                                <form  class="deleted" style="display: inline-block!important"  role="form" method="POST"
+                                                       action="{{route('delete-withdraw',['id'=>$withdraw->id])}}" >
+                                                    @csrf   
+                                                    <button type="submit"class="dropdown-item text-danger">
+                                                        <i class="fa fa-trash"></i> Delete
+                                                    </button>
+                                                </form>
+                                                @if($withdraw->confirm == true && $withdraw->status == false)
+                                                <form  class="deleted" style="display: inline-block!important"  role="form" method="POST"
+                                                       action="{{route('confirm-withdraw',['id'=>$withdraw->id])}}" >
+                                                    @csrf   
+                                                    <button type="submit"class="dropdown-item text-success">
+                                                        <i class="fa fa-check"></i> Confirm Withdraw
+                                                    </button>
+                                                </form>
+                                                @endif
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </td>
+                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
 

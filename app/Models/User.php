@@ -56,7 +56,7 @@ class User extends Authenticatable {
     }
 
     public function coin() {
-        return $this->hasMany(UserCoin::class, 'user_id')->orderBy('created_at', 'desc')->where('address', '!=', '')->with('userWithdraw');
+        return $this->hasMany(UserCoin::class, 'user_id')->orderBy('created_at', 'desc')->with('userWithdraw');
     }
 
      public function coinWallet() {

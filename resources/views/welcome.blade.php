@@ -107,7 +107,7 @@
                     </div>
                     <div class="uk-relative">
                         <a class="slider-feature uk-flex uk-flex-middle uk-flex-center text-center h-full" href="{{url('environmental')}}" target="_blank">
-                            <div class="uk-padding flex items-center h-full"><span class="uppercase">Enviroment</span></div>
+                            <div class="uk-padding flex items-center h-full"><span class="uppercase">Environment</span></div>
                         </a>
                     </div>
                     <div class="uk-relative">

@@ -113,6 +113,14 @@
                         <span key="t-chat">FINANCE</span>
                     </a>
                 </li>
+                
+                 <li>
+                    <a href="{{url('withdraw')}}" class="waves-effect">
+                        <i class="fa fa-money"></i>
+                        <span key="t-chat"> WITHDRAW</span>
+                    </a>
+                </li>
+               
                  <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="fas fa-compress-alt"></i>

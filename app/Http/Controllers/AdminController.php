@@ -1019,14 +1019,22 @@ class AdminController extends Controller {
             if ($action == 2) {
                 $name = 'Ethereum';
             }
+            if ($action == 3) {
+                $name = 'Bank Wire';
+            }
             $setting = Setting::whereId(1)->first();
             $amount = number_format($withdraw->amount);
             $address = $withdraw->usercoin->address;
             $site = $setting['site_name'];
-            $greeting = 'Hello ' . $withdraw->user->username.' ,';
+            $greeting = 'Hello ' . $withdraw->user->username . ' ,';
             $text = "You have been credited $$amount from  $site trading account to your $name wallet  <br> <br>$address <br><br> If you need assistance simply reply to this message or visit our website via <br><br> metafxgroup.com <br>We are online and ready to help.<br> Best regards";
             //send admin email
             Mail::to($withdraw->user->email)->send(new MailSender('Payment Notification', $greeting, $text, '', ''));
+
+            $all_money = userTrackEarn::whereUser_id($withdraw->user_id)->first();
+            $all_money->update([
+                'amount' => $all_money->amount - $withdraw->total_amount
+            ]);
 
             DB::commit();
         } catch (\Exception $e) {
@@ -1060,7 +1068,7 @@ class AdminController extends Controller {
                 'status' => true,
             ]);
 
-            $greeting = 'Hello ' . $withdraw->user->username .  ' automatic payout Initiated';
+            $greeting = 'Hello ' . $withdraw->user->username . ' automatic payout Initiated';
             $text = "your deposit has been confirmed and fund credited to your walllet";
             //send admin email
             Mail::to($withdraw->user->email)->send(new MailSender('Deposit confirmed from Blockchain', $greeting, $text, '', ''));

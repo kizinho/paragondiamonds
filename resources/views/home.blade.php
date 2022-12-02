@@ -273,7 +273,7 @@
                                     <tbody>
                                         <tr>
                                             <td class="invest_td1">Total Balance</td>
-                                            <td class="invest_td1"> : {{$all_total_balance}} USDT</td>
+                                            <td class="invest_td1"> : {{$all_total_balance}} USD</td>
                                         </tr>
 
 
@@ -301,11 +301,11 @@
                                     <tbody>
                                         <tr>
                                             <td class="invest_td1">Total Deposit</td>
-                                            <td class="invest_td1"> : {{number_format($all_total_deposit,2)}} USDT</td>
+                                            <td class="invest_td1"> : {{number_format($all_total_deposit,2)}} USD</td>
                                         </tr>
                                         <tr>
                                             <td class="invest_td1">Active Deposit</td>
-                                            <td class="invest_td1"> : {{number_format($all_active_deposit,2)}} USDT</td>
+                                            <td class="invest_td1"> : {{number_format($all_active_deposit,2)}} USD</td>
                                         </tr>
 
 
@@ -501,7 +501,7 @@
                                     <thead>
                                         <tr>
                                             <th class="width_table1">transaction ID</th>
-                                            <th class="width_table1">amount (USDT)</th>
+                                            <th class="width_table1">amount (USD)</th>
                                             <th class="width_table1">description</th>
                                             <th class="width_table1">payment mode</th>
                                             <th class="width_table1">Status</th>
@@ -522,7 +522,7 @@
                                                 </div>
                                             </td>
                                             <td>
-                                                <div class="pretty p-svg p-curve">USDT{{number_format($hi->amount)}}</div>
+                                                <div class="pretty p-svg p-curve">USD{{number_format($hi->amount)}}</div>
                                             </td>
                                             <td>
                                                 <div class="pretty p-svg p-curve">{{$hi->description}}</div>
