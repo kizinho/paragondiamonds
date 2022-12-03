@@ -1493,7 +1493,7 @@ class AdminController extends Controller {
         $coin = Coin::find($id);
         $rules = ([
             'name' => 'required',
-            'address' => 'required'
+//            'address' => 'required'
         ]);
         $error = static::getErrorMessageSweet($input, $rules);
         if ($error) {
