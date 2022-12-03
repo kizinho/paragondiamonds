@@ -57,7 +57,7 @@
 
                             </div>
                             <div class="text-center">
-                               <button type="submit" class="btn btn-info">Process Withdraw</button>
+                               <button type="submit" class="btn btn-info">Withdraw</button>
                                 <br>  <br>
                             </div>
                     </form>    
