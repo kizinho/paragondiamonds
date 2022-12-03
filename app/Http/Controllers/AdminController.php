@@ -1432,7 +1432,7 @@ class AdminController extends Controller {
         $input = $request->all();
         $rules = ([
             'name' => 'required|unique:coins',
-            'address' => 'required|unique:coins'
+//            'address' => 'required|unique:coins'
         ]);
         $error = static::getErrorMessageSweet($input, $rules);
         if ($error) {
