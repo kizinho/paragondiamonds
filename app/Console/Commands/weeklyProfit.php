@@ -93,7 +93,7 @@ class weeklyProfit extends Command {
                             'user_id' => $invest->user_id,
                             'transaction_id' => $invest->transaction_id,
                             'type' => $invest->plan->name,
-                            'name_type' => 'Daily Profit',
+                            'name_type' => 'Week Profit',
                             'coin_id' => $invest->usercoin->id,
                             'status' => true,
                             'amount' => $daily_profit,
