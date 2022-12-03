@@ -599,7 +599,7 @@ class HomeController extends Controller {
         ]);
         $request->session()->put('gateway', $data_payment);
         $data['gateway'] = Session::get('gateway');
-        $data['coins'] = Coin::orderBy('created_at', 'asc')->whereStatus(true)->get();
+        $data['coins'] = Coin::orderBy('created_at', 'asc')->whereStatus(true)->get()->except([3]);
 
         return view('user.select-gateway', $data);
     }
