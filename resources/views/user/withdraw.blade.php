@@ -40,8 +40,14 @@
                             <div class="modal-body">
 
                                 <div class="mb-3">
-                                    <label for="message-text" class="col-form-label">Amount:</label>
-                                    <input type="text" name="amount" class="form-control "  class="">
+
+                                    <div class="dd input-group bootstrap-touchspin bootstrap-touchspin-injected">
+                                        <span class="input-group-btn input-group-prepend"><button class="btn btn-info bootstrap-touchspin-down" type="button">Amount</button>
+                                        </span><span class="input-group-addon bootstrap-touchspin-prefix input-group-prepend">
+                                        </span>
+                                        <input data-toggle="touchspin" type="text" name="amount" placeholder="enter amount" class="form-control">
+                                        <span class="input-group-btn input-group-append"><button class="btn btn-info bootstrap-touchspin-up" type="button">$</button></span>
+                                    </div>
 
                                 </div>
 
@@ -51,8 +57,7 @@
 
                             </div>
                             <div class="text-center">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Compound</button>
-                                <button type="submit" class="btn btn-info">Process Withdraw</button>
+                               <button type="submit" class="btn btn-info">Process Withdraw</button>
                                 <br>  <br>
                             </div>
                     </form>    

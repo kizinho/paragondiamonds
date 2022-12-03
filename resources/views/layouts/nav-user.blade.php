@@ -56,13 +56,13 @@
                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img class="rounded-circle header-profile-user" src="@if(empty(Auth::user()->photo)){{asset('user/img/avatar-default.png')}} @else {{url(Auth::user()->photo)}} @endif"
                          alt="Header Avatar">
-                    <span class="d-none d-xl-inline-block ms-1" key="t-henry">{{ucfirst(Auth::user()->last_name)}} {{ucfirst(Auth::user()->first_name)}}</span>
+                    <span class="d-none d-xl-inline-block ms-1" key="t-henry">{{ucfirst(Auth::user()->username)}}</span>
                     <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
                     <!-- item-->
                     <a class="dropdown-item" href="{{url('profile/personal')}}"><i class="bx bx-user font-size-16 align-middle me-1"></i> <span key="t-profile">Profile</span></a>
-                    <a class="dropdown-item" href="{{url('account/profile/addresses')}}"><i class="bx bx-wallet font-size-16 align-middle me-1"></i> <span key="t-my-wallet">My Wallet</span></a>
+                    <a class="dropdown-item" href="{{url('account/profile/addresses')}}"><i class="bx bx-wallet font-size-16 align-middle me-1"></i> <span key="t-my-wallet">Wallet</span></a>
                     <div class="dropdown-divider"></div>
                     <a onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();"class="dropdown-item text-danger" href="#"><i class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span key="t-logout">Logout</span></a>

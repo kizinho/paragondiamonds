@@ -32,7 +32,7 @@
 
                                         <th scope="col">Transaction ID</th>
                                             <th scope="col">Amount</th>
-                                            <th scope="col">Address</th>
+                                            <th scope="col">Account</th>
                                             <th scope="col">Account</th>
                                             <th scope="col">Charge</th>
                                             <th scope="col">Status</th>
@@ -52,14 +52,20 @@
                                         <p class="text-muted mb-0">{{number_format($hi->amount)}} USD</p>
                                     </td>
                                     <td>
-                                        <p class="mb-0 badge badge-pill badge-soft-info font-size-11">{{$withdraw->usercoin->address }}</p>
+                                        <p class="mb-0 badge badge-pill badge-soft-info font-size-11">
+                                            @if($hi->usercoin->coin_id == 3)
+                                            {{$hi->usercoin->account_number }}
+                                        @else
+                                           {{$hi->usercoin->address }}
+                                        @endif
+                                        </p>
                                     </td>
 
                                     <td>
-                                        <p class="text-muted mb-0">{{$withdraw->usercoin->coin->name }}</p>
+                                        <p class="text-muted mb-0">{{$hi->usercoin->coin->name }}</p>
                                     </td>
                                        <td>
-                                        <p class="text-muted mb-0">{{$withdraw->withdraw_charge }}</p>
+                                        <p class="text-muted mb-0">{{$hi->withdraw_charge }}</p>
                                     </td>
                                     <td>
                                         @if($hi->status == false)
