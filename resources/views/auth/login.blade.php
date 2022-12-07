@@ -91,7 +91,7 @@
                             class="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800"
                             href="{{url('register')}}"
                             >
-                            Don’t want an account, Register
+                            Don’t have an account, Register
                         </a>
                     </div>
                 </form>

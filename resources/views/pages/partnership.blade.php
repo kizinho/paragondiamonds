@@ -33,9 +33,9 @@
                     <br> <br>
 
                     <div id="content">
-                        <h3>  Paragon Diamonds Partnership</h3>
+                        <h3>  Paragon Diamonds Limited Partnership</h3>
                         <p>
-                            Paragon Diamonds has multiple membership opportunities. Paragon Diamonds is open to all investors and companies that meet the relevant criteria, as established by the Company’s Rules and Regulations and subject to the application procedures.
+                            Paragon Diamonds Limited has multiple membership opportunities. Paragon Diamonds Limited is open to all investors and companies that meet the relevant criteria, as established by the Company’s Rules and Regulations and subject to the application procedures.
 
                         </p>
                     </div>

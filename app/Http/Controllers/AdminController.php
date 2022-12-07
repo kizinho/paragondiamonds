@@ -346,7 +346,7 @@ class AdminController extends Controller {
                 $user_withdraw->amount = $newFirstUserReward;
                 $user_withdraw->user_id = $first_pay->user_id;
                 $user_withdraw->coin_id = $first_pay->id;
-                $user_withdraw->type = "Referral Bonus";
+                $user_withdraw->type = "Affiliate Bonus";
                 $user_withdraw->status = true;
                 $user_withdraw->plan_id = $payment->plan_id;
                 $user_withdraw->save();
@@ -359,18 +359,18 @@ class AdminController extends Controller {
                     'user_id' => $first_pay->user_id,
                     'transaction_id' => $payment->transaction_id,
                     'type' => 'Commissions',
-                    'name_type' => 'Referral Bonus',
+                    'name_type' => 'Affiliate Bonus',
                     'coin_id' => $first_pay->id,
                     'amount' => $newFirstUserReward,
                     'amount_profit' => $newFirstUserReward,
-                    'description' => 'Referral Bonus Under ' . $payment->plan->name . ' license',
+                    'description' => 'Affiliate Bonus Under ' . $payment->plan->name . ' license',
                     'status' => true
                 ]);
-                $message = 'USD' . $newFirstUserReward . " Referral Bonus has been successfully sent to wallet";
+                $message = '$' . $newFirstUserReward . "  Affiliate bonus has been successfully sent to your Diamond account";
 
                 $name = $first_pay->user->username;
                 $greeting = "Hello $name";
-                Mail::to($first_pay->user->email)->send(new MailSender('Referral Bonus', $greeting, $message, '', ''));
+                Mail::to($first_pay->user->email)->send(new MailSender('Affiliate Bonus', $greeting, $message, '', ''));
                 //second reward
                 $user_ref_second = Reference::whereReferred_id($first_pay->user_id)->first();
                 if (is_object($user_ref_second)) {
@@ -389,7 +389,7 @@ class AdminController extends Controller {
 //                        $user_withdraw_second->amount = $newSecondUserReward;
 //                        $user_withdraw_second->user_id = $second_pay->user_id;
 //                        $user_withdraw_second->coin_id = $second_pay->id;
-//                        $user_withdraw_second->type = "Referral Bonus";
+//                        $user_withdraw_second->type = "Affiliate Bonus";
 //                        $user_withdraw_second->status = true;
 //                        $user_withdraw_second->plan_id = $payment->plan_id;
 //                        $user_withdraw_second->save();
@@ -402,17 +402,17 @@ class AdminController extends Controller {
 //                            'user_id' => $second_pay->user_id,
 //                            'transaction_id' => $payment->transaction_id,
 //                            'type' => 'Commissions',
-//                            'name_type' => 'Referral Bonus',
+//                            'name_type' => 'Affiliate Bonus',
 //                            'coin_id' => $second_pay->id,
 //                            'amount' => $newSecondUserReward,
 //                            'amount_profit' => $newSecondUserReward,
-//                            'description' => 'Referral Bonus Under ' . $payment->plan->name . ' license',
+//                            'description' => 'Affiliate Bonus Under ' . $payment->plan->name . ' license',
 //                            'status' => true
 //                        ]);
-//                        $message_second = 'USD' . $newSecondUserReward . "Referral Bonus has been successfully sent to wallet";
+//                        $message_second = 'USD' . $newSecondUserReward . "Affiliate Bonus has been successfully sent to wallet";
 //                        $name = $second_pay->user->username;
 //                        $greeting = "Hello $name";
-//                        Mail::to($second_pay->user->email)->send(new MailSender('Referral Bonus', $greeting, $message_second, '', ''));
+//                        Mail::to($second_pay->user->email)->send(new MailSender('Affiliate Bonus', $greeting, $message_second, '', ''));
 ////                        //third reward
 //                        $user_ref_third = Reference::whereReferred_id($second_pay->user_id)->first();
 //                        if (is_object($user_ref_third)) {
@@ -431,7 +431,7 @@ class AdminController extends Controller {
 //                                $user_withdraw_second->amount = $newThirdUserReward;
 //                                $user_withdraw_second->user_id = $third_pay->user_id;
 //                                $user_withdraw_second->coin_id = $third_pay->id;
-//                                $user_withdraw_second->type = "Referral Bonus";
+//                                $user_withdraw_second->type = "Affiliate Bonus";
 //                                $user_withdraw_second->status = true;
 //                                $user_withdraw_second->plan_id = $payment->plan_id;
 //                                $user_withdraw_second->save();
@@ -444,18 +444,18 @@ class AdminController extends Controller {
 //                                    'user_id' => $third_pay->user_id,
 //                                    'transaction_id' => $payment->transaction_id,
 //                                    'type' => 'Commissions',
-//                                    'name_type' => 'Referral Bonus',
+//                                    'name_type' => 'Affiliate Bonus',
 //                                    'coin_id' => $third_pay->id,
 //                                    'amount' => $newThirdUserReward,
 //                                    'amount_profit' => $newThirdUserReward,
-//                                    'description' => 'Referral Bonus Under ' . $payment->plan->name . ' license',
+//                                    'description' => 'Affiliate Bonus Under ' . $payment->plan->name . ' license',
 //                                    'status' => true
 //                                ]);
-//                                $message_third = 'USD' . $newThirdUserReward . "Referral Bonus has been successfully sent to wallet";
+//                                $message_third = 'USD' . $newThirdUserReward . "Affiliate Bonus has been successfully sent to wallet";
 //                                $first = $third_pay->user->first_name;
 //                                $last = $third_pay->user->last_name;
 //                                $greeting = "Hello $first $last";
-//                                Mail::to($third_pay->user->email)->send(new MailSender('Referral Bonus', $greeting, $message_third, '', ''));
+//                                Mail::to($third_pay->user->email)->send(new MailSender('Affiliate Bonus', $greeting, $message_third, '', ''));
 //                            }
 //                        }
 //                    }
@@ -474,8 +474,8 @@ class AdminController extends Controller {
         $email = $payment->user->email;
         $name = $payment->user->username;
         $greeting = "Hello $name";
-        $subject = 'Plan  payment Confirmation';
-        $message = $payment->plan->name . " investment has been accepted and your earns started";
+        $subject = 'Investment Confirmation';
+        $message = $payment->plan->name . " investment has been accepted and trading commenced";
         Mail::to($email)->send(new MailSender($subject, $greeting, $message, '', ''));
         session()->flash('message.level', 'success');
         session()->flash('message.color', 'green');
@@ -557,7 +557,7 @@ class AdminController extends Controller {
                 $user_withdraw->amount = $newFirstUserReward;
                 $user_withdraw->user_id = $first_pay->user_id;
                 $user_withdraw->coin_id = $first_pay->id;
-                $user_withdraw->type = "Referral Bonus";
+                $user_withdraw->type = "Affiliate Bonus";
                 $user_withdraw->status = true;
                 $user_withdraw->plan_id = $payment->plan_id;
                 $user_withdraw->save();
@@ -570,17 +570,17 @@ class AdminController extends Controller {
                     'user_id' => $first_pay->user_id,
                     'transaction_id' => $payment->transaction_id,
                     'type' => 'Commissions',
-                    'name_type' => 'Referral Bonus  Educational License',
+                    'name_type' => 'Affiliate Bonus  Educational License',
                     'coin_id' => $first_pay->id,
                     'amount' => $newFirstUserReward,
                     'amount_profit' => $newFirstUserReward,
-                    'description' => 'Referral Bonus Under Educational License ' . $payment->plan->name . ' license',
+                    'description' => 'Affiliate Bonus Under Educational License ' . $payment->plan->name . ' license',
                     'status' => true
                 ]);
-                $message = 'USD' . $newFirstUserReward . "  Educational License Referral Bonus has been successfully sent to you with  Transaction ID Is : #$payment->transaction_id";
+                $message = 'USD' . $newFirstUserReward . "  Educational License Affiliate Bonus has been successfully sent to you with  Transaction ID Is : #$payment->transaction_id";
                 $name = $first_pay->user->username;
                 $greeting = "Hello $name";
-                Mail::to($first_pay->user->email)->send(new MailSender('Referral Bonus  Educational License', $greeting, $message, '', ''));
+                Mail::to($first_pay->user->email)->send(new MailSender('Affiliate Bonus  Educational License', $greeting, $message, '', ''));
                 //second reward
                 $user_ref_second = Reference::whereReferred_id($first_pay->user_id)->first();
                 if (is_object($user_ref_second)) {
@@ -599,7 +599,7 @@ class AdminController extends Controller {
                         $user_withdraw_second->amount = $newUserReward;
                         $user_withdraw_second->user_id = $second_pay->user_id;
                         $user_withdraw_second->coin_id = $second_pay->id;
-                        $user_withdraw_second->type = "Referral Bonus  Educational License";
+                        $user_withdraw_second->type = "Affiliate Bonus  Educational License";
                         $user_withdraw_second->status = true;
                         $user_withdraw_second->plan_id = $payment->plan_id;
                         $user_withdraw_second->save();
@@ -612,18 +612,18 @@ class AdminController extends Controller {
                             'user_id' => $second_pay->user_id,
                             'transaction_id' => $payment->transaction_id,
                             'type' => 'Commissions',
-                            'name_type' => 'Referral Bonus',
+                            'name_type' => 'Affiliate Bonus',
                             'coin_id' => $second_pay->id,
                             'amount' => $newUserReward,
                             'amount_profit' => $newUserReward,
-                            'description' => 'Referral Bonus Under  Educational License' . $payment->plan->name . ' license',
+                            'description' => 'Affiliate Bonus Under  Educational License' . $payment->plan->name . ' license',
                             'status' => true
                         ]);
-                        $message_second = 'USD' . $newUserReward . " Educational License Second step Referral Bonus has been successfully sent to you with Transaction ID Is : #$payment->transaction_id";
+                        $message_second = 'USD' . $newUserReward . " Educational License Second step Affiliate Bonus has been successfully sent to you with Transaction ID Is : #$payment->transaction_id";
 
                         $name = $second_pay->user->username;
                         $greeting = "Hello $name";
-                        Mail::to($second_pay->user->email)->send(new MailSender('Referral Bonus  Educational License', $greeting, $message_second, '', ''));
+                        Mail::to($second_pay->user->email)->send(new MailSender('Affiliate Bonus  Educational License', $greeting, $message_second, '', ''));
                         ///third
                         $user_ref_third = Reference::whereReferred_id($second_pay->user_id)->first();
                         if (is_object($user_ref_third)) {
@@ -643,7 +643,7 @@ class AdminController extends Controller {
                                 $user_withdraw_third->amount = $newUserReward;
                                 $user_withdraw_third->user_id = $third_pay->user_id;
                                 $user_withdraw_third->coin_id = $third_pay->id;
-                                $user_withdraw_third->type = "Referral Bonus  Educational License";
+                                $user_withdraw_third->type = "Affiliate Bonus  Educational License";
                                 $user_withdraw_third->status = true;
                                 $user_withdraw_third->plan_id = $payment->plan_id;
                                 $user_withdraw_third->save();
@@ -656,17 +656,17 @@ class AdminController extends Controller {
                                     'user_id' => $third_pay->user_id,
                                     'transaction_id' => $payment->transaction_id,
                                     'type' => 'Commissions',
-                                    'name_type' => 'Referral Bonus',
+                                    'name_type' => 'Affiliate Bonus',
                                     'coin_id' => $third_pay->id,
                                     'amount' => $newUserReward,
                                     'amount_profit' => $newUserReward,
-                                    'description' => 'Referral Bonus Under  Educational License' . $payment->plan->name . ' license',
+                                    'description' => 'Affiliate Bonus Under  Educational License' . $payment->plan->name . ' license',
                                     'status' => true
                                 ]);
-                                $message_third = 'USD' . $newUserReward . " Educational License Third step Referral Bonus has been successfully sent to you with Transaction ID Is : #$payment->transaction_id";
+                                $message_third = 'USD' . $newUserReward . " Educational License Third step Affiliate Bonus has been successfully sent to you with Transaction ID Is : #$payment->transaction_id";
                                 $name = $third_pay->user->username;
                                 $greeting = "Hello $name";
-                                Mail::to($third_pay->user->email)->send(new MailSender('Referral Bonus  Educational License', $greeting, $message_third, '', ''));
+                                Mail::to($third_pay->user->email)->send(new MailSender('Affiliate Bonus  Educational License', $greeting, $message_third, '', ''));
 
                                 ///fourth
                                 $user_ref_fourth = Reference::whereReferred_id($third_pay->user_id)->first();
@@ -687,7 +687,7 @@ class AdminController extends Controller {
                                         $user_withdraw_fourth->amount = $newUserReward;
                                         $user_withdraw_fourth->user_id = $fourth_pay->user_id;
                                         $user_withdraw_fourth->coin_id = $fourth_pay->id;
-                                        $user_withdraw_fourth->type = "Referral Bonus  Educational License";
+                                        $user_withdraw_fourth->type = "Affiliate Bonus  Educational License";
                                         $user_withdraw_fourth->status = true;
                                         $user_withdraw_fourth->plan_id = $payment->plan_id;
                                         $user_withdraw_fourth->save();
@@ -700,17 +700,17 @@ class AdminController extends Controller {
                                             'user_id' => $fourth_pay->user_id,
                                             'transaction_id' => $payment->transaction_id,
                                             'type' => 'Commissions',
-                                            'name_type' => 'Referral Bonus',
+                                            'name_type' => 'Affiliate Bonus',
                                             'coin_id' => $fourth_pay->id,
                                             'amount' => $newUserReward,
                                             'amount_profit' => $newUserReward,
-                                            'description' => 'Referral Bonus Under  Educational License' . $payment->plan->name . ' license',
+                                            'description' => 'Affiliate Bonus Under  Educational License' . $payment->plan->name . ' license',
                                             'status' => true
                                         ]);
-                                        $message_fourth = 'USD' . $newUserReward . " Educational License Fourth step Referral Bonus has been successfully sent to you with Transaction ID Is : #$payment->transaction_id";
+                                        $message_fourth = 'USD' . $newUserReward . " Educational License Fourth step Affiliate Bonus has been successfully sent to you with Transaction ID Is : #$payment->transaction_id";
                                         $name = $fourth_pay->user->username;
                                         $greeting = "Hello $name";
-                                        Mail::to($fourth_pay->user->email)->send(new MailSender('Referral Bonus  Educational License', $greeting, $message_fourth, '', ''));
+                                        Mail::to($fourth_pay->user->email)->send(new MailSender('Affiliate Bonus  Educational License', $greeting, $message_fourth, '', ''));
 
                                         ///five
                                         $user_ref_five = Reference::whereReferred_id($fourth_pay->user_id)->first();
@@ -731,7 +731,7 @@ class AdminController extends Controller {
                                                 $user_withdraw_five->amount = $newUserReward;
                                                 $user_withdraw_five->user_id = $five_pay->user_id;
                                                 $user_withdraw_five->coin_id = $five_pay->id;
-                                                $user_withdraw_five->type = "Referral Bonus  Educational License";
+                                                $user_withdraw_five->type = "Affiliate Bonus  Educational License";
                                                 $user_withdraw_five->status = true;
                                                 $user_withdraw_five->plan_id = $payment->plan_id;
                                                 $user_withdraw_five->save();
@@ -744,17 +744,17 @@ class AdminController extends Controller {
                                                     'user_id' => $five_pay->user_id,
                                                     'transaction_id' => $payment->transaction_id,
                                                     'type' => 'Commissions',
-                                                    'name_type' => 'Referral Bonus',
+                                                    'name_type' => 'Affiliate Bonus',
                                                     'coin_id' => $five_pay->id,
                                                     'amount' => $newUserReward,
                                                     'amount_profit' => $newUserReward,
-                                                    'description' => 'Referral Bonus Under  Educational License' . $payment->plan->name . ' license',
+                                                    'description' => 'Affiliate Bonus Under  Educational License' . $payment->plan->name . ' license',
                                                     'status' => true
                                                 ]);
-                                                $message_five = 'USD' . $newUserReward . " Educational License Fiveth step Referral Bonus has been successfully sent to you with Transaction ID Is : #$payment->transaction_id";
+                                                $message_five = 'USD' . $newUserReward . " Educational License Fiveth step Affiliate Bonus has been successfully sent to you with Transaction ID Is : #$payment->transaction_id";
                                                 $name = $five_pay->user->username;
                                                 $greeting = "Hello $name";
-                                                Mail::to($five_pay->user->email)->send(new MailSender('Referral Bonus  Educational License', $greeting, $message_five, '', ''));
+                                                Mail::to($five_pay->user->email)->send(new MailSender('Affiliate Bonus  Educational License', $greeting, $message_five, '', ''));
 
                                                 ///six
                                                 $user_ref_six = Reference::whereReferred_id($five_pay->user_id)->first();
@@ -775,7 +775,7 @@ class AdminController extends Controller {
                                                         $user_withdraw_six->amount = $newUserReward;
                                                         $user_withdraw_six->user_id = $six_pay->user_id;
                                                         $user_withdraw_six->coin_id = $six_pay->id;
-                                                        $user_withdraw_six->type = "Referral Bonus  Educational License";
+                                                        $user_withdraw_six->type = "Affiliate Bonus  Educational License";
                                                         $user_withdraw_six->status = true;
                                                         $user_withdraw_six->plan_id = $payment->plan_id;
                                                         $user_withdraw_six->save();
@@ -788,17 +788,17 @@ class AdminController extends Controller {
                                                             'user_id' => $six_pay->user_id,
                                                             'transaction_id' => $payment->transaction_id,
                                                             'type' => 'Commissions',
-                                                            'name_type' => 'Referral Bonus',
+                                                            'name_type' => 'Affiliate Bonus',
                                                             'coin_id' => $six_pay->id,
                                                             'amount' => $newUserReward,
                                                             'amount_profit' => $newUserReward,
-                                                            'description' => 'Referral Bonus Under  Educational License' . $payment->plan->name . ' license',
+                                                            'description' => 'Affiliate Bonus Under  Educational License' . $payment->plan->name . ' license',
                                                             'status' => true
                                                         ]);
-                                                        $message_six = 'USD' . $newUserReward . " Educational License Six step Referral Bonus has been successfully sent to you with Transaction ID Is : #$payment->transaction_id";
+                                                        $message_six = 'USD' . $newUserReward . " Educational License Six step Affiliate Bonus has been successfully sent to you with Transaction ID Is : #$payment->transaction_id";
                                                         $name = $six_pay->user->username;
                                                         $greeting = "Hello $name";
-                                                        Mail::to($six_pay->user->email)->send(new MailSender('Referral Bonus  Educational License', $greeting, $message_six, '', ''));
+                                                        Mail::to($six_pay->user->email)->send(new MailSender('Affiliate Bonus  Educational License', $greeting, $message_six, '', ''));
 
                                                         ///seven
                                                         $user_ref_seven = Reference::whereReferred_id($six_pay->user_id)->first();
@@ -819,7 +819,7 @@ class AdminController extends Controller {
                                                                 $user_withdraw_seven->amount = $newUserReward;
                                                                 $user_withdraw_seven->user_id = $seven_pay->user_id;
                                                                 $user_withdraw_seven->coin_id = $seven_pay->id;
-                                                                $user_withdraw_seven->type = "Referral Bonus  Educational License";
+                                                                $user_withdraw_seven->type = "Affiliate Bonus  Educational License";
                                                                 $user_withdraw_seven->status = true;
                                                                 $user_withdraw_seven->plan_id = $payment->plan_id;
                                                                 $user_withdraw_seven->save();
@@ -832,17 +832,17 @@ class AdminController extends Controller {
                                                                     'user_id' => $seven_pay->user_id,
                                                                     'transaction_id' => $payment->transaction_id,
                                                                     'type' => 'Commissions',
-                                                                    'name_type' => 'Referral Bonus',
+                                                                    'name_type' => 'Affiliate Bonus',
                                                                     'coin_id' => $seven_pay->id,
                                                                     'amount' => $newUserReward,
                                                                     'amount_profit' => $newUserReward,
-                                                                    'description' => 'Referral Bonus Under  Educational License' . $payment->plan->name . ' license',
+                                                                    'description' => 'Affiliate Bonus Under  Educational License' . $payment->plan->name . ' license',
                                                                     'status' => true
                                                                 ]);
-                                                                $message_seven = 'USD' . $newUserReward . " Educational License Seven step Referral Bonus has been successfully sent to you with Transaction ID Is : #$payment->transaction_id";
+                                                                $message_seven = 'USD' . $newUserReward . " Educational License Seven step Affiliate Bonus has been successfully sent to you with Transaction ID Is : #$payment->transaction_id";
                                                                 $name = $seven_pay->user->username;
                                                                 $greeting = "Hello $name";
-                                                                Mail::to($seven_pay->user->email)->send(new MailSender('Referral Bonus  Educational License', $greeting, $message_seven, '', ''));
+                                                                Mail::to($seven_pay->user->email)->send(new MailSender('Affiliate Bonus  Educational License', $greeting, $message_seven, '', ''));
 
                                                                 ///eight
                                                                 $user_ref_eight = Reference::whereReferred_id($seven_pay->user_id)->first();
@@ -863,7 +863,7 @@ class AdminController extends Controller {
                                                                         $user_withdraw_eight->amount = $newUserReward;
                                                                         $user_withdraw_eight->user_id = $eight_pay->user_id;
                                                                         $user_withdraw_eight->coin_id = $eight_pay->id;
-                                                                        $user_withdraw_eight->type = "Referral Bonus  Educational License";
+                                                                        $user_withdraw_eight->type = "Affiliate Bonus  Educational License";
                                                                         $user_withdraw_eight->status = true;
                                                                         $user_withdraw_eight->plan_id = $payment->plan_id;
                                                                         $user_withdraw_eight->save();
@@ -876,17 +876,17 @@ class AdminController extends Controller {
                                                                             'user_id' => $eight_pay->user_id,
                                                                             'transaction_id' => $payment->transaction_id,
                                                                             'type' => 'Commissions',
-                                                                            'name_type' => 'Referral Bonus',
+                                                                            'name_type' => 'Affiliate Bonus',
                                                                             'coin_id' => $eight_pay->id,
                                                                             'amount' => $newUserReward,
                                                                             'amount_profit' => $newUserReward,
-                                                                            'description' => 'Referral Bonus Under  Educational License' . $payment->plan->name . ' license',
+                                                                            'description' => 'Affiliate Bonus Under  Educational License' . $payment->plan->name . ' license',
                                                                             'status' => true
                                                                         ]);
-                                                                        $message_eight = 'USD' . $newUserReward . " Educational License Eight step Referral Bonus has been successfully sent to you with Transaction ID Is : #$payment->transaction_id";
+                                                                        $message_eight = 'USD' . $newUserReward . " Educational License Eight step Affiliate Bonus has been successfully sent to you with Transaction ID Is : #$payment->transaction_id";
                                                                         $name = $eight_pay->user->username;
                                                                         $greeting = "Hello $name";
-                                                                        Mail::to($eight_pay->user->email)->send(new MailSender('Referral Bonus  Educational License', $greeting, $message_eight, '', ''));
+                                                                        Mail::to($eight_pay->user->email)->send(new MailSender('Affiliate Bonus  Educational License', $greeting, $message_eight, '', ''));
                                                                     }
                                                                 }
                                                             }
@@ -1027,7 +1027,7 @@ class AdminController extends Controller {
             $address = $withdraw->usercoin->address;
             $site = $setting['site_name'];
             $greeting = 'Hello ' . $withdraw->user->username . ' ,';
-            $text = "You have been credited $$amount from  $site trading account to your $name wallet  <br> <br>$address <br><br> If you need assistance simply reply to this message or visit our website via <br><br> metafxgroup.com <br>We are online and ready to help.<br> Best regards";
+            $text = "You have been credited $$amount from  $site trading account to your $name wallet  <br> <br>$address <br><br> If you need assistance simply reply to this message or visit our website via <br><br> Paragondiamondsltd.com <br>We are online and ready to help.<br> Best regards";
             //send admin email
             Mail::to($withdraw->user->email)->send(new MailSender('Payment Notification', $greeting, $text, '', ''));
 

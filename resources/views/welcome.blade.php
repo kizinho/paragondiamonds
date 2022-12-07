@@ -140,7 +140,7 @@
             </div>
             <div class="uk-width-2-3@m verbage">
                 <h1>{{$settings['site_name']}}</h1>
-<p>  Paragon Diamonds is an international diamond production and distribution company and a consistent supplier of polished diamonds to the international market. We have an extensive portfolio incorporating interests in Lemphane project in Lesotho.
+<p>  Paragon Diamonds Limited is an international diamond production and distribution company and a consistent supplier of polished diamonds to the international market. We have an extensive portfolio incorporating interests in Lemphane project in Lesotho.
 Paragon's strategy is to focus on value rather than volume production by optimizing recoveries from its high-quality asset base inorder to maximize their efficiency and profitability. We have a significant resource base of ca. 243 million carats, which supports the potential for long- life operations.
 </p>
 <p>

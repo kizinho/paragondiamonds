@@ -93,17 +93,17 @@ class weeklyProfit extends Command {
                             'user_id' => $invest->user_id,
                             'transaction_id' => $invest->transaction_id,
                             'type' => $invest->plan->name,
-                            'name_type' => 'Week Profit',
+                            'name_type' => 'Weekly Profit',
                             'coin_id' => $invest->usercoin->id,
                             'status' => true,
                             'amount' => $daily_profit,
                             'amount_profit' => $daily_profit,
-                            'description' => 'Profit Notification Under ' . $invest->plan->name,
+                            'description' => 'Weekly Profit Notification Under ' . $invest->plan->name,
                         ]);
                         $name = $invest->user->username;
                         $greeting = "Hello $name";
-                        $text_p = "Profit of $$daily_profit has been credited to your  <b>wallet<b/>";
-                        Mail::to($invest->user->email)->send(new MailSender('Daily Profit Notification', $greeting, $text_p, '', ''));
+                        $text_p = "Weekly Profit of $$daily_profit has been credited to your  <b>diamond account<b/>";
+                        Mail::to($invest->user->email)->send(new MailSender('Weekly Profit Notification', $greeting, $text_p, '', ''));
                         if ($update_investment->earn >= $earnAmount || $update_investment->earn == $earnAmount) {
                             $return_amount = $invest->amount;
                             $user_withdraw = new UserWithdrawal();

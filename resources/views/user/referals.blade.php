@@ -138,7 +138,7 @@
                                         {{$loop->iteration}}
                                     </td>
                                     <td>
-                                        <p class="text-muted mb-0">{{$ref->first_name}} {{$ref->last_name}}</p>
+                                        <p class="text-muted mb-0">{{$ref->username}}</p>
                                     </td>
                                     <td>
                                         @if(empty($ref->activeIn))

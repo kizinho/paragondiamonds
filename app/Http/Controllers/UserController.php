@@ -60,13 +60,13 @@ class UserController extends Controller {
                 //send mail
                 $email = $owner->email;
                 $greeting = "Hello $owner->first_name $owner->last_name ,";
-                $subject = 'Referral New User Notification';
-                $message = $user->username . ' joined us today with your referral link';
+                $subject = 'Affiliate Notification';
+                $message = $user->username . ' joined us today with your affiliate link';
                 Mail::to($email)->send(new MailSender($subject, $greeting, $message, '', ''));
             }
 
             $subject = 'Verify Account';
-            $message = "Please, complete your registration using the below link:";
+            $message = " Please complete your registration using the link below:";
             $greeting = "Hello $user->first_name $user->last_name ,";
             $link = url('account-activate?user=' . $verify_code);
             $link_name = "Activate";

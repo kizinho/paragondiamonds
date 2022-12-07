@@ -165,7 +165,7 @@
                                                                     <polyline points="22 4 12 14.01 9 11.01"></polyline>
                                                                     </svg>
                                                                 </div>
-                                                                <span class="text-gray-700 text-sm ml-3">Monthly withdrawal</span
+                                                                <span class="text-gray-700 text-sm ml-3">Weekly withdrawal</span
                                                                 >
                                                             </li>
                                                             <li class="flex items-center">

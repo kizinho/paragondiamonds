@@ -34,7 +34,7 @@
 
                     <div id="content">
                         <p>
-                          We are committed to maintaining strong working relationships with our workforce, suppliers, communities and stakeholders. Paragon Diamonds recognises that any mining project is finite, and therefore works to provide lasting, sustainable benefits in the communities where we live and work. Our contributions to the development of our local communities goes beyond the creation of jobs, generation of taxes and payment of royalties, we also invest in sustainable, community-driven projects and initiatives that advance our commitments.
+                          We are committed to maintaining strong working relationships with our workforce, suppliers, communities and stakeholders. Paragon Diamonds Limited recognises that any mining project is finite, and therefore works to provide lasting, sustainable benefits in the communities where we live and work. Our contributions to the development of our local communities goes beyond the creation of jobs, generation of taxes and payment of royalties, we also invest in sustainable, community-driven projects and initiatives that advance our commitments.
                         </p>
                        
                     </div>

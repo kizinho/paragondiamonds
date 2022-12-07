@@ -36,15 +36,15 @@
                           <h1 style="color:grey">TRADING</h1>
                        
                         <h3> Trade Matching Rules</h3>
-                        <p> Paragon Diamonds has implemented standard exchange based technology delivered by MarketGrid Systems. The MarketGrid team have extensive experience in the development of matching engines and automated trading systems for global financial markets. They have developed highly evolved next generation architecture, with the fastest commercially available matching engine that provides complete infrastructure for automated trading including execution, clearing, depository, surveillance and regulatory requirements.
+                        <p> Paragon Diamonds Limited has implemented standard exchange based technology delivered by MarketGrid Systems. The MarketGrid team have extensive experience in the development of matching engines and automated trading systems for global financial markets. They have developed highly evolved next generation architecture, with the fastest commercially available matching engine that provides complete infrastructure for automated trading including execution, clearing, depository, surveillance and regulatory requirements.
                         </p>
-                        <p>  Paragon Diamonds will employ both continuous matching and negotiated matching in our baskets and single stone products.
+                        <p>  Paragon Diamonds Limited will employ both continuous matching and negotiated matching in our baskets and single stone products.
                         </p>
                         <h3> Negotiated Matching (Single Stones)</h3>
-                        <p>  Paragon Diamonds will provide the trading of single stones through an electronically negotiated market with a customized matching methodology. Order books are presented by classes of diamonds characterized by the 4 C’s with multiple individual stones listed for sale, each identified by its own unique GIA Certificate ID.
+                        <p>  Paragon Diamonds Limited will provide the trading of single stones through an electronically negotiated market with a customized matching methodology. Order books are presented by classes of diamonds characterized by the 4 C’s with multiple individual stones listed for sale, each identified by its own unique GIA Certificate ID.
                         </p>
                         <h3>Continuous Matching (Diamond Baskets)</h3>
-                        <p>Paragon Diamonds will establish the first continuous price / time priority matching for the diamond industry parallel to other global commodity exchanges. True price discovery will be achieved through real-time full order book depth and market data available to all participants in real time. Automatic matching occurs at the best prevailing bid or offer.
+                        <p>Paragon Diamonds Limited will establish the first continuous price / time priority matching for the diamond industry parallel to other global commodity exchanges. True price discovery will be achieved through real-time full order book depth and market data available to all participants in real time. Automatic matching occurs at the best prevailing bid or offer.
                         </p>
 
                     </div>

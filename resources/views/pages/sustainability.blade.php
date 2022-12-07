@@ -34,10 +34,10 @@
 
                     <div id="content">
                         <p> 
-                            Paragon Diamonds believes that sustainability is a long-term commitment that requires focus and discipline to help drive continuous improvements in all areas of our business and is fundamental to our success as an organization and in delivering broad based, lasting economic and social benefits to all of our stakeholders and the communities in which we live and work.
+                            Paragon Diamonds Limited believes that sustainability is a long-term commitment that requires focus and discipline to help drive continuous improvements in all areas of our business and is fundamental to our success as an organization and in delivering broad based, lasting economic and social benefits to all of our stakeholders and the communities in which we live and work.
                         </p>
                         <p>
-                            We are committed to the responsible development of our assets to the benefit of all stakeholders and our operations are planned and structured with their long-term success in mind. Paragon Diamonds has developed a dynamic company, underpinned by a ‘can do’ attitude and a sense of collaboration and teamwork. Inspired by a shared vision for success, employees are encouraged to fulfil their true potential and to work together for the enduring prosperity of the business.
+                            We are committed to the responsible development of our assets to the benefit of all stakeholders and our operations are planned and structured with their long-term success in mind. Paragon Diamonds Limited has developed a dynamic company, underpinned by a ‘can do’ attitude and a sense of collaboration and teamwork. Inspired by a shared vision for success, employees are encouraged to fulfil their true potential and to work together for the enduring prosperity of the business.
                         </p>
 
 
