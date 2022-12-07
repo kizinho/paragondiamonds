@@ -80,7 +80,7 @@
                                     
                                 </p>-->
                                 <p>
-                                  <a href="mailto:Carolynreid@paragondiamonds.co.uk">Carolynreid@paragondiamonds.co.uk</a><br />
+                                  <a href="mailto:Carolynreid@paragondiamondsltd.com">Carolynreid@paragondiamondsltd.com</a><br />
                                     
                                 </p>
                             </div>
