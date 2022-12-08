@@ -1,8 +1,9 @@
-<header>
-    <div class="uk-container uk-container-large">
+<header id="nav-section">
+    <div class="uk-container uk-container-large ">
         <div class="grid">
-            <a href="{{url('/')}}" title="Back to Home Page" class="">
-                <img src="{{asset($settings['logo']) }}"  style="height:70px;width: 230px!important;margin-top: 30px" alt="{{$settings['site_name']}}" /></a>
+            <a class="hide" href="{{url('/')}}" title="Back to Home Page" class="">
+                <img src="{{asset($settings['logo']) }}"  style="height:70px;width: 230px!important;margin-top: 30px" alt="{{$settings['site_name']}}" />
+            </a>
             <div class="right-c" uk-navbar="offset: 0">
 
                 <div class="topinfo">
@@ -25,7 +26,8 @@
                     <img src="{{ asset("frontend/igs.png")}}" alt="" />
 
                 </div>
-                <ul class="main-nav uk-navbar-nav">
+              
+                <ul class="main-nav uk-navbar-nav pad" >
                     <li class="@if(request()->path() == 'overview') uk-active @endif ">
                         <a href="{{url('overview')}}">Overview</a>
                         <div uk-dropdown>

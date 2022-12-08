@@ -20,6 +20,15 @@
      <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
 
     <style>
+     header.fixed{
+  position:fixed;
+  top:0;
+  z-index: 2000;
+  width:100%;
+  height: 60px;
+  padding: 10px;
+}
+
         .text-blue-500 {
     color: #205b66!important;
 }
@@ -263,5 +272,20 @@
 </script>
  
  @endif
+ <script>
+$(window).scroll(function(){
+      if ($(this).scrollTop() > 120) {
+          $('header').addClass('fixed');
+          $(".hide").hide();
+            $(".topinfo").hide();
+              $(".industry-logo").hide();
+      } else {
+            $(".hide").show();
+            $(".topinfo").show();
+              $(".industry-logo").show();
+          $('header').removeClass('fixed');
+      }
+});
+ </script>
 </body>
 </html>

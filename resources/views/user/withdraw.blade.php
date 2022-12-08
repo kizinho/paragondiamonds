@@ -28,7 +28,7 @@
                         @csrf 
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Avaliable Balance 
+                                <h5 class="modal-title" id="exampleModalLabel">Available Balance 
                                     <span class="badge badge-pill badge-soft-success">
                                         @if(empty(Auth::user()->earn))
                                         $0.0

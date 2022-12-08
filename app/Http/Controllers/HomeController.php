@@ -1524,7 +1524,7 @@ class HomeController extends Controller {
         if ($amount > $all_money->amount) {
             session()->flash('message.level', 'error');
             session()->flash('message.color', 'red');
-            session()->flash('message.content', 'Amont to withdraw is higher than amount in your avaliable balance');
+            session()->flash('message.content', 'Amont to withdraw is higher than amount in your available balance');
             return redirect()->back();
         }
         if (Auth::user()->can_withdraw == true) {
@@ -1637,9 +1637,9 @@ class HomeController extends Controller {
         //send mail
         $email = $withdraw->user->email;
         $user = $withdraw->user->username;
-        $subject = '“Withdrawal Confirmation';
-        $text = "You Iniated a withdrawal of  " . "$" . $withdraw->amount;
-        $message = $text . ' from your diamond account. Kindly wait for your profits to arrive in your account xxxxxxxx. We will notify you once your withdrawal is approved.';
+        $subject = 'Withdrawal Confirmation';
+        $text = "You initiated a withdrawal of  " . "$" . $withdraw->amount;
+        $message = $text . " from your diamond account. Kindly wait for your profits to arrive in your account $address. We will notify you once your withdrawal is approved.";
         Withdraw::whereId($request->withdraw)->update([
             'confirm' => true
         ]);
