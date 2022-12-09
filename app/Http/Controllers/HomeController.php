@@ -1687,7 +1687,7 @@ class HomeController extends Controller {
 
     public function earnings() {
         $data['earnings'] = Transaction::whereUser_id(Auth::user()->id)->whereStatus(true)->where(function ($query) {
-                    $query->where('name_type', 'Daily Profit')
+                    $query->where('name_type', 'Weekly Profit')
                             ->orWhere('name_type', 'Return Investment Amount')
                             ->orWhere('name_type', 'Profit Amount')
                             ->orWhere('name_type', 'Profit')
