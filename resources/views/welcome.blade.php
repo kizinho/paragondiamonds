@@ -1,6 +1,6 @@
 @section('title')
 <title>{{ucfirst($settings['site_name'])}} ::: Home page</title>
-<meta name="description" content="{{ucfirst($settings['site_name'])}}  forex and trading.">
+<meta name="description" content="{{ucfirst($settings['site_name'])}} Diamond mining and trading.">
 <meta itemprop="keywords" name="keywords" content="{{ucfirst($settings['site_name'])}}:: Home page"/>
 <meta name="author" content="{{ucfirst($settings['site_name'])}}" />
 

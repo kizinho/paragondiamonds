@@ -13,7 +13,7 @@
                         <div class="symbol">
 
 
-                            <div id="google_translate_element" class="" style="display:inline-block!important"></div>&nbsp;     <a href="{{url('login')}}">Login</a>/<a href="{{url('register')}}">Register</a>
+                            <div id="google_translate_element" class="" style="display:inline-block!important"></div>&nbsp;     <a href="{{url('login')}}">Login</a> | <a href="{{url('register')}}">Register</a>
                         </div>
                     </div>
                 </div>
